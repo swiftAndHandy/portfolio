@@ -1,6 +1,7 @@
 <button [ngClass]="(type == 'regular') ? type : type">
-    <span class="label">{{text}}</span>
+    <span class="label">{{ text }}</span>
     @if (type == 'regular') {
-    <span class="label--cloned">{{text}}</span>
+    <span class="label--cloned">{{ text }}</span>
+    <span class="spacer">{{ text }}</span>
     }
 </button>
