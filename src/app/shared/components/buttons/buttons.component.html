@@ -1,7 +1,7 @@
-<button [ngClass]="(type == 'regular') ? type : type">
-    <span class="label">{{ text }}</span>
+<button [ngClass]="(type == 'regular') ? type : type" (mousemove)="hover($event)" (mouseleave)="endHover($event)">
+    <span #spanElement class="label">{{ text }}</span>
     @if (type == 'regular') {
-    <span class="label--cloned">{{ text }}</span>
-    <span class="spacer">{{ text }}</span>
+    <span #spanElement class="label--cloned">{{ text }}</span>
+    <span #spanElement class="spacer">{{ text }}</span>
     }
 </button>
