@@ -1,7 +1,7 @@
 @use "./../../scss/abstracts/" as *;
 
 button {
-    @include dflex($gap: 100px);
+    @include dflex();
     position: relative;
     width: 100%;
     color: #ffffff;

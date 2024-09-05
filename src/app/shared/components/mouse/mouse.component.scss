@@ -1,0 +1,9 @@
+@use './../../scss/variables' as *;
+
+.spotlight {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(
+        circle 5dvw at 50% 50%, $signatureColor 1%, rgba(0,0,0,0.0)
+    );
+}
