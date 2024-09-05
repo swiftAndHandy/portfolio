@@ -1,1 +1,13 @@
 @use './../../scss/abstracts/' as *;
+@use './../../scss/variables' as *;
+
+header {
+    @include dflex(space-between, center);
+    position: fixed;
+    top: 48px;
+    padding: 0 96px;
+    @include widthLimiter();
+    background-color: $signatureColor;
+    height: $headerHeight;
+    box-sizing: border-box;
+}

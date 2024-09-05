@@ -5,3 +5,7 @@
     gap: $gap;
     flex-direction: $direction;
 }
+
+@mixin widthLimiter($maxWidth: 1920) {
+    width: min(100%, $maxWidth * 1px);
+}
