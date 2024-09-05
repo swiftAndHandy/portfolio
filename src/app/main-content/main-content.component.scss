@@ -1,5 +1,4 @@
 @use './../shared/scss/abstracts/' as *;
-@use './../shared/scss/buttons';
 
 .page-wrapper {
         @include dflex(flex-start, flex-start);

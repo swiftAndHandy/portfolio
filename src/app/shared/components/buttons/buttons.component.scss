@@ -1,0 +1,86 @@
+@use "./../../scss/abstracts/" as *;
+
+button {
+    @include dflex();
+    position: relative;
+    width: 100%;
+    color: #ffffff;
+    border-radius: 16px;
+    height: 48px;
+    padding: 0 24px;
+    gap: 10px;
+    border-radius: 100px;
+    border: 1px solid white;
+    box-sizing: border-box;
+    background-color: transparent;
+    overflow: clip;
+    cursor: pointer;
+    transition: border-color 100ms ease-out;
+
+    .label, .label--cloned {
+        position: absolute;
+        font-family: "Karla";
+        gap: 4px;
+        font-weight: 400;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        transform: translateX(0%);
+        transition: color 100ms ease-out;
+    }
+
+    .label--cloned {
+        transform: translateX(-150%);
+    }
+
+    &.link {
+        overflow: visible;
+    }
+
+    &.link .label::after {
+        display: block;
+        background-image: url("./../../../../assets/icons/arrow_outward_regular.svg");
+        background-position: left;
+        background-repeat: no-repeat;
+        content: "";
+        width: 20px;
+        height: 20px;
+    }
+
+    &:hover {
+        border-color: $signatureColor;
+        .label, .label--cloned {
+            color: $signatureColor;
+        }
+        &.link .label::after {
+            background-image: url("./../../../../assets/icons/arrow_outward_hovered.svg");
+        }
+
+        &.regular .label {
+            animation: marquee 2s linear 0.5;
+        }
+
+        &.regular .label--cloned {
+            animation: marquee 2s linear -1s 1;
+        }
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    49% {
+        transform: translateX(-150%);
+    }
+
+    50% {
+        transform: translateX(150%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
