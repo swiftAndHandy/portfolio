@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-@use './app/scss/fonts';
+@use './app/shared/scss/fonts';
+@use './app/shared/scss/abstracts/' as *;
 
 * {
     margin: 0;
     font-family: 'Fira Code';
+    color: #FFFFFF;
 }
