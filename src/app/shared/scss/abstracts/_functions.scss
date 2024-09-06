@@ -1,3 +1,5 @@
+@use './../variables' as *;
+
 @mixin dflex($jc: center, $ai: center, $direction: row, $gap: 0) {
     display: flex;
     justify-content: $jc;
@@ -8,4 +10,11 @@
 
 @mixin widthLimiter($maxWidth: 1920) {
     width: min(100%, $maxWidth * 1px);
+}
+
+@mixin signatureGradient() {
+    background: $signatureGradient;
+    transform: rotate(90deg);
+    width: 100%;
+    height: 100%;
 }
