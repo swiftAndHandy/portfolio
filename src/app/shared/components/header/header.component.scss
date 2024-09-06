@@ -2,19 +2,29 @@
 
 @mixin logoBasics() {
     position: absolute;
-    transform: translate(-100%, -50%);
-    transition: all 100ms ease-in-out;
+    @media (min-width: 900px) {
+        transform: translate(-100%, -50%);
+    }
+    transform: translateY(-50%);
+    transition: all 100ms ease-in;
 }
 
-header {
-    @include dflex(space-between, center);
+@mixin headerBasics($width, $value: 0) {
+    @include widthLimiter();
+    @media ($width: $value) {
+        @include dflex(space-between, center);
+    }
+    display: none;
     position: fixed;
     top: 48px;
-    padding: 0 96px;
-    @include widthLimiter();
-    background-color: none;
+    padding: 0 clamp(12px, 5dvw, 96px);
+    background-color: unset;
     height: $headerHeight;
     box-sizing: border-box;
+}
+
+.header--large {
+    @include headerBasics(min-width, 900px);
     > nav {
         @include dflex($gap: 24px);
         > a {
@@ -39,19 +49,34 @@ header {
                 transition: all 100ms ease-in;
             }
 
-            &:hover {
-                color: $signatureColor;
-                &::after {
-                    opacity: 1;
+            @media (pointer: fine) {
+                &:hover {
+                    color: $signatureColor;
+                    &::after {
+                        opacity: 1;
+                    }
                 }
             }
 
             &:active {
                 color: $dimmedSignatureColor;
                 &::after {
-                    filter: invert(65%) sepia(34%) saturate(778%) hue-rotate(120deg) brightness(105%) contrast(81%) opacity(0.5);
+                    opacity: 1;
+                    filter: invert(65%) sepia(34%) saturate(778%) hue-rotate(120deg) brightness(105%) contrast(81%)
+                        opacity(0.5);
                 }
             }
+        }
+    }
+}
+
+.header--small {
+    @include headerBasics(max-width, 899px);
+
+    & .burger-menu {
+        transition: all 200ms ease-out;
+        &:active {
+            filter: invert(65%) sepia(34%) saturate(778%) hue-rotate(120deg) brightness(105%) contrast(81%);
         }
     }
 }
@@ -89,30 +114,39 @@ header {
             transition: all 100ms ease-out;
         }
     }
-    &:hover {
-        border-color: white;
-        > span {
-            &.inactive {
-                color: $signatureColor;
+    @media (pointer: fine) {
+        &:hover {
+            border-color: white;
+            > span {
+                &.inactive {
+                    color: $signatureColor;
+                }
             }
         }
     }
 }
 
-.logo {
-    @include logoBasics();
-    &:hover {
-        opacity: 0;
+.logo-wrapper {
+    position: relative;
+    > .logo {
+        @include logoBasics();
     }
-    &-wrapper {
-        position: relative;
-    }
-}
 
-.hovered-logo {
-    @include logoBasics();
-    opacity: 0;
-    &:hover {
-        opacity: 1;
+    > .hovered-logo {
+        @include logoBasics();
+    }
+
+    @media (pointer: fine) {
+        &:hover {
+            > .logo {
+                opacity: 0;
+            }
+        }
+    }
+
+    &:active {
+        > .logo {
+            opacity: 0;
+        }
     }
 }

@@ -2,6 +2,10 @@
 @use './app/shared/scss/fonts';
 @use './app/shared/scss/abstracts/' as *;
 
+html {
+    background: $backgroundDark;
+}
+
 * {
     margin: 0;
     font-family: 'Fira Code';
