@@ -3,20 +3,16 @@
         <app-toggle></app-toggle>
         <app-link-list></app-link-list>
     </nav>
-    <div class="logo-wrapper">
-        <img draggable="false" src="./assets/icons/logo_v2_regular.svg" alt="logo" class="logo">
-        <img draggable="false" src="./assets/icons/logo_v2_hovered.svg" alt="hovered-logo" class="hovered-logo">
-    </div>
+
+    <app-logo size="large"></app-logo>
+
 </header>
 
 <header class="header--small">
-    <div class="logo-wrapper">
-        <img draggable="false" src="./assets/icons/logo_v2_initials_regular.svg" alt="logo" class="logo">
-        <img draggable="false" src="./assets/icons/logo_v2_initials_hovered.svg" alt="hovered-logo" class="hovered-logo">
-    </div>
+    <app-logo size="small"></app-logo>
     <div class="burger-menu-wrapper">
         <img src="./assets/icons/burger-menu.svg" alt="" class="burger-menu--toggle" (click)="showBurgerMenu()">
         <div id="dimmer" class="dimmer" [ngClass]="{'d-none': !displayBurgerMenu}" (click)="hideBurgerMenu()"></div>
-            <app-burger-menu [ngClass]="{'d-none': !displayBurgerMenu}"></app-burger-menu>
+        <app-burger-menu [ngClass]="{'d-none': !displayBurgerMenu}"></app-burger-menu>
     </div>
 </header>

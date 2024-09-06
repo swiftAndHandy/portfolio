@@ -1,14 +1,5 @@
 @use "./../../scss/abstracts/" as *;
 
-@mixin logoBasics() {
-    position: absolute;
-    @media (min-width: $desktopResolution) {
-        transform: translate(-100%, -50%);
-    }
-    transform: translateY(-50%);
-    transition: all 100ms ease-in;
-}
-
 @mixin headerBasics($width, $value: 0) {
     @include widthLimiter();
     @media ($width: $value) {
@@ -49,31 +40,6 @@
             bottom: 0;
             left: 0;
             right: 0;
-        }
-    }
-}
-
-.logo-wrapper {
-    position: relative;
-    > .logo {
-        @include logoBasics();
-    }
-
-    > .hovered-logo {
-        @include logoBasics();
-    }
-
-    @media (pointer: fine) {
-        &:hover {
-            > .logo {
-                opacity: 0;
-            }
-        }
-    }
-
-    &:active {
-        > .logo {
-            opacity: 0;
         }
     }
 }

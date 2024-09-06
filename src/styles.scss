@@ -1,16 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-@use './app/shared/scss/fonts';
-@use './app/shared/scss/abstracts/' as *;
+@use "./app/shared/scss/fonts";
+@use "./app/shared/scss/abstracts/" as *;
 
 html {
     background: $backgroundDark;
 }
 
-
 * {
     margin: 0;
-    font-family: 'Fira Code';
-    color: #FFFFFF;
+    font-family: "Fira Code";
+    color: #ffffff;
+    cursor: default;
 }
 
 .d-none {

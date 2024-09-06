@@ -1,0 +1,84 @@
+@use "./../../scss/abstracts/" as *;
+
+footer {
+    @include dflex(unset, unset, column, 32px);
+    @include widthLimiter();
+    margin: 64px min(10dvw, 96px);
+    height: $footerHeight;
+}
+
+.wrapper {
+    @include dflex(space-between, flex-end);
+    white-space: nowrap;
+    font-family: "Karla";
+}
+
+.copyright {
+    align-self: center;
+    font-family: "Fira Code";
+    color: $signatureColor;
+    font-weight: 400;
+    font-size: 18px;
+    white-space: nowrap;
+
+    &__desktop {
+        @media (max-width: calc($desktopResolution - 1px)) {
+            display: none;
+        }
+    }
+    &__mobile {
+        @media (min-width: $desktopResolution) {
+            display: none;
+        }
+    }
+}
+
+.left {
+    @include dflex(flex-start, $direction: column, $gap: 32px);
+    > .personal-info {
+        @include dflex(center, flex-start, column, 8px);
+    }
+}
+
+.right {
+    @include dflex(flex-start, flex-start, column, 8px);
+    > a {
+        font-family: "Karla";
+        position: relative;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 100ms ease-in;
+        &::before {
+            position: absolute;
+            margin-left: -8px;
+            left: 0%;
+            top: 50%;
+            content: "";
+            display: inline-block;
+            background-image: url("./../../../../assets/icons/dot.svg");
+            height: 8px;
+            width: 8px;
+            transform: translate(-100%, -50%);
+            opacity: 0;
+            transition: all 100ms ease-in;
+        }
+
+        @media (pointer: fine) {
+            &:hover {
+                color: $signatureColor;
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &:active {
+            color: $dimmedSignatureColor;
+            &::before {
+                opacity: 1;
+                filter: invert(65%) sepia(34%) saturate(778%) hue-rotate(120deg) brightness(105%) contrast(81%)
+                    opacity(0.5);
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+<div class="logo-wrapper">
+@if (size=='large') {
+    <img draggable="false" src="./assets/icons/logo_v2_regular.svg" alt="logo" [ngClass]="{'footer-location': location}" class="logo">
+    <img draggable="false" src="./assets/icons/logo_v2_hovered.svg" alt="hovered-logo" [ngClass]="{'footer-location': location}" class="hovered-logo">
+} @else {
+    <img draggable="false" src="./assets/icons/logo_v2_initials_regular.svg" alt="logo" class="logo">
+    <img draggable="false" src="./assets/icons/logo_v2_initials_hovered.svg" alt="hovered-logo" class="hovered-logo">
+}
+</div>
