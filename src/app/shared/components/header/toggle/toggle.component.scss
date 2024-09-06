@@ -11,12 +11,6 @@
         @include dflex();
         height: 100%;
         padding: 0 12px;
-        + .toggle-state--en {
-            padding: 0 12px;
-        }
-        + .toggle-state--de {
-            padding-left: 8px;
-        }
         font-family: "Fira Code";
         background-color: unset;
         &.active {
@@ -31,6 +25,12 @@
             color: $dimmedSignatureColor;
             font-weight: 400;
             transition: all 100ms ease-out;
+            &.toggle-state--en {
+                padding-right: 8px;
+            }
+            &.toggle-state--de {
+                padding-left: 8px;
+            }
         }
     }
     @media (pointer: fine) {

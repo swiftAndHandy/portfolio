@@ -1,4 +1,4 @@
-<div class="toggle">
-    <span [ngClass]="(language == 'EN') ? 'active' : 'inactive'" class="toggle-state--en">EN</span>
-    <span [ngClass]="(language == 'DE') ? 'active' : 'inactive'" class="toggle-state--de">DE</span>
+<div class="toggle" (click)="toggleLanguage()">
+    <span [ngClass]="(translate.store.currentLang == 'en') ? 'active' : 'inactive'" class="toggle-state--en">EN</span>
+    <span [ngClass]="(translate.store.currentLang == 'de') ? 'active' : 'inactive'" class="toggle-state--de">DE</span>
 </div>

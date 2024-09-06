@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-toggle',
@@ -9,5 +10,14 @@ import { Component } from '@angular/core';
   styleUrl: './toggle.component.scss'
 })
 export class ToggleComponent {
-  language: 'DE' | 'EN' = 'EN';
+  constructor(public translate: TranslateService) {
+  }
+
+  toggleLanguage() {
+    if (this.translate.store.currentLang === 'de') {
+      this.translate.use('en');
+    } else {
+      this.translate.use('de');
+    }
+  }
 }
