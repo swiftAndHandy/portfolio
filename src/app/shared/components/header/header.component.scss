@@ -1,4 +1,4 @@
-@use './../../scss/abstracts/' as *;
+@use "./../../scss/abstracts/" as *;
 
 @mixin logoBasics() {
     position: absolute;
@@ -15,8 +15,45 @@ header {
     background-color: none;
     height: $headerHeight;
     box-sizing: border-box;
+    > nav {
+        @include dflex($gap: 24px);
+        > a {
+            position: relative;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 26.24px;
+            letter-spacing: -0.03em;
+            text-decoration: none;
+            transition: all 100ms ease-in;
+            &::after {
+                position: absolute;
+                left: 50%;
+                top: 100%;
+                content: "";
+                display: inline-block;
+                background-image: url("./../../../../assets/icons/dot.svg");
+                height: 8px;
+                width: 8px;
+                transform: translateX(-50%);
+                opacity: 0;
+                transition: all 100ms ease-in;
+            }
 
+            &:hover {
+                color: $signatureColor;
+                &::after {
+                    opacity: 1;
+                }
+            }
 
+            &:active {
+                color: $dimmedSignatureColor;
+                &::after {
+                    filter: invert(65%) sepia(34%) saturate(778%) hue-rotate(120deg) brightness(105%) contrast(81%) opacity(0.5);
+                }
+            }
+        }
+    }
 }
 
 .toggle {
@@ -26,17 +63,17 @@ header {
     height: 28px;
     transition: all 300ms ease-out;
     cursor: pointer;
-    >span {
+    > span {
         @include dflex();
         height: 100%;
         padding: 0 12px;
-        +.toggle-state--en {
+        + .toggle-state--en {
             padding: 0 12px;
         }
-        +.toggle-state--de {
+        + .toggle-state--de {
             padding-left: 8px;
         }
-        font-family: 'Fira Code';
+        font-family: "Fira Code";
         background-color: unset;
         &.active {
             color: white;
@@ -54,7 +91,7 @@ header {
     }
     &:hover {
         border-color: white;
-        >span {
+        > span {
             &.inactive {
                 color: $signatureColor;
             }
@@ -62,7 +99,7 @@ header {
     }
 }
 
-.logo{
+.logo {
     @include logoBasics();
     &:hover {
         opacity: 0;
