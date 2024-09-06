@@ -1,6 +1,12 @@
 <header>
     <nav>
-        <span>toggle</span>
+        <div class="toggle">
+            <span [ngClass]="(language == 'EN') ? 'active' : 'inactive'" class="toggle-state--en">EN</span>
+            <span [ngClass]="(language == 'DE') ? 'active' : 'inactive'" class="toggle-state--de">DE</span>
+        </div>
     </nav>
-    <img draggable="false" src="" alt="logo" class="logo">
+    <div class="logo-wrapper">
+        <img draggable="false" src="./assets/icons/logo_regular.png" alt="logo" class="logo">
+        <img draggable="false" src="./assets/icons/logo_hovered.png" alt="hovered-logo" class="hovered-logo">
+    </div>
 </header>

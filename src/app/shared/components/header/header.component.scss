@@ -1,12 +1,81 @@
 @use './../../scss/abstracts/' as *;
 
+@mixin logoBasics() {
+    position: absolute;
+    transform: translate(-100%, -50%);
+    transition: all 100ms ease-in-out;
+}
+
 header {
     @include dflex(space-between, center);
     position: fixed;
     top: 48px;
     padding: 0 96px;
     @include widthLimiter();
-    background-color: $signatureColor;
+    background-color: none;
     height: $headerHeight;
     box-sizing: border-box;
+
+
+}
+
+.toggle {
+    @include dflex(center, center);
+    border: 1px solid $signatureColor;
+    border-radius: 100px;
+    height: 28px;
+    transition: all 300ms ease-out;
+    cursor: pointer;
+    >span {
+        @include dflex();
+        height: 100%;
+        padding: 0 12px;
+        +.toggle-state--en {
+            padding: 0 12px;
+        }
+        +.toggle-state--de {
+            padding-left: 8px;
+        }
+        font-family: 'Fira Code';
+        background-color: unset;
+        &.active {
+            color: white;
+            font-weight: 700;
+            border-radius: 100px;
+            outline: 1px solid $signatureColor;
+            background-color: $signatureColor;
+            transition: all 100ms ease-out;
+        }
+        &.inactive {
+            color: $dimmedSignatureColor;
+            font-weight: 400;
+            transition: all 100ms ease-out;
+        }
+    }
+    &:hover {
+        border-color: white;
+        >span {
+            &.inactive {
+                color: $signatureColor;
+            }
+        }
+    }
+}
+
+.logo{
+    @include logoBasics();
+    &:hover {
+        opacity: 0;
+    }
+    &-wrapper {
+        position: relative;
+    }
+}
+
+.hovered-logo {
+    @include logoBasics();
+    opacity: 0;
+    &:hover {
+        opacity: 1;
+    }
 }
