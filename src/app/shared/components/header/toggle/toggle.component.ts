@@ -1,12 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-toggle',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './toggle.component.html',
   styleUrl: './toggle.component.scss'
 })
 export class ToggleComponent {
-
+  language: 'DE' | 'EN' = 'EN';
 }

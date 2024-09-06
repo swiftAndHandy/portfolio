@@ -1,1 +1,4 @@
-<p>toggle works!</p>
+<div class="toggle">
+    <span [ngClass]="(language == 'EN') ? 'active' : 'inactive'" class="toggle-state--en">EN</span>
+    <span [ngClass]="(language == 'DE') ? 'active' : 'inactive'" class="toggle-state--de">DE</span>
+</div>

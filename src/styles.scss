@@ -6,8 +6,13 @@ html {
     background: $backgroundDark;
 }
 
+
 * {
     margin: 0;
     font-family: 'Fira Code';
     color: #FFFFFF;
+}
+
+.d-none {
+    display: none;
 }

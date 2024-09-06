@@ -1,34 +1,22 @@
 <header class="header--large">
     <nav>
-        <div class="toggle">
-            <span [ngClass]="(language == 'EN') ? 'active' : 'inactive'" class="toggle-state--en">EN</span>
-            <span [ngClass]="(language == 'DE') ? 'active' : 'inactive'" class="toggle-state--de">DE</span>
-        </div>
-        <a draggable="false" href="#about-me">About me</a>
-        <a draggable="false" href="#skills">Skills</a>
-        <a draggable="false" href="#projects">Projects</a>
-        <a draggable="false" href="#contact">Contact</a>
+        <app-toggle></app-toggle>
+        <app-link-list></app-link-list>
     </nav>
     <div class="logo-wrapper">
-        <img draggable="false" src="./assets/icons/logo_deep_regular.svg" alt="logo" class="logo">
-        <img draggable="false" src="./assets/icons/logo_deep_hovered.svg" alt="hovered-logo" class="hovered-logo">
+        <img draggable="false" src="./assets/icons/logo_v2_regular.svg" alt="logo" class="logo">
+        <img draggable="false" src="./assets/icons/logo_v2_hovered.svg" alt="hovered-logo" class="hovered-logo">
     </div>
 </header>
 
 <header class="header--small">
     <div class="logo-wrapper">
-        <img draggable="false" src="./assets/icons/logo_deep_initials_regular.svg" alt="logo" class="logo">
-        <img draggable="false" src="./assets/icons/logo_deep_initials_hovered.svg" alt="hovered-logo" class="hovered-logo">
+        <img draggable="false" src="./assets/icons/logo_v2_initials_regular.svg" alt="logo" class="logo">
+        <img draggable="false" src="./assets/icons/logo_v2_initials_hovered.svg" alt="hovered-logo" class="hovered-logo">
     </div>
-    <nav>
-        <img src="./assets/icons/burger-menu.svg" alt="" class="burger-menu">
-        <!-- <div class="toggle">
-            <span [ngClass]="(language == 'EN') ? 'active' : 'inactive'" class="toggle-state--en">EN</span>
-            <span [ngClass]="(language == 'DE') ? 'active' : 'inactive'" class="toggle-state--de">DE</span>
-        </div>
-        <a draggable="false" href="#about-me">About me</a>
-        <a draggable="false" href="#skills">Skills</a>
-        <a draggable="false" href="#projects">Projects</a>
-        <a draggable="false" href="#contact">Contact</a> -->
-    </nav>
+    <div class="burger-menu-wrapper">
+        <img src="./assets/icons/burger-menu.svg" alt="" class="burger-menu--toggle" (click)="showBurgerMenu()">
+        <div id="dimmer" class="dimmer" [ngClass]="{'d-none': !displayBurgerMenu}" (click)="hideBurgerMenu()"></div>
+            <app-burger-menu [ngClass]="{'d-none': !displayBurgerMenu}"></app-burger-menu>
+    </div>
 </header>

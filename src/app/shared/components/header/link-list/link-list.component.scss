@@ -1,0 +1,48 @@
+@use "./../../../scss/abstracts/" as *;
+.wrapper {
+    @media (min-width: $desktopResolution) {
+        @include dflex($gap: 24px);
+    }
+    @include dflex($gap: 24px, $direction: column);
+    > a {
+        position: relative;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 26.24px;
+        letter-spacing: -0.03em;
+        text-decoration: none;
+        transition: all 100ms ease-in;
+        white-space: nowrap;
+        &::after {
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            content: "";
+            display: inline-block;
+            background-image: url("./../../../../../assets/icons/dot.svg");
+            height: 8px;
+            width: 8px;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: all 100ms ease-in;
+        }
+
+        @media (pointer: fine) {
+            &:hover {
+                color: $signatureColor;
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &:active {
+            color: $dimmedSignatureColor;
+            &::after {
+                opacity: 1;
+                filter: invert(65%) sepia(34%) saturate(778%) hue-rotate(120deg) brightness(105%) contrast(81%)
+                    opacity(0.5);
+            }
+        }
+    }
+}

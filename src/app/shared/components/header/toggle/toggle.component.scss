@@ -1,3 +1,5 @@
+@use "./../../../scss/abstracts/" as *;
+
 .toggle {
     @include dflex(center, center);
     border: 1px solid $signatureColor;
