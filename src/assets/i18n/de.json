@@ -1,5 +1,8 @@
 {
-    "demo" : {
-        "title": "Hallo"
+    "nav": {
+        "about": "Vorstellung",
+        "skills": "Skills",
+        "projects": "Portfolio",
+        "contact": "Kontakt"
     }
 }

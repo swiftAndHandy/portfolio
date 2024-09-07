@@ -1,5 +1,75 @@
-@use './../../shared/scss/abstracts/' as *;
+@use "./../../shared/scss/abstracts/" as *;
 
-section {
+div {
+    position: relative;
     @include widthLimiter();
+    @include dflex();
+    height: 100%;
+    > section {
+        @include dflex($direction: column, $gap: 40px);
+        width: 100%;
+        > hgroup {
+            @include dflex($direction: column);
+            white-space: nowrap;
+
+            > span {
+                font-family: "Fira Code";
+                font-size: clamp(1.25rem, 6dvw, 2.5rem);
+            }
+            > h1 {
+                font-family: "Karla";
+                font-weight: 700;
+                font-size: clamp(2.5rem, 12dvw, 8rem);
+            }
+        }
+        .button-wrapper {
+            @include dflex($direction: column, $gap: min(4dvw, 48px));
+            @media (min-width: $desktopResolution) {
+                flex-direction: row;
+            }
+        }
+    }
+}
+
+.left {
+    pointer-events: none;
+    @include unsetWidthAndHeight();
+    @include dflex(flex-end, center, column, 24px);
+    position: absolute;
+    left: clamp(0px, 7dvw, 96px);
+    bottom: 0;
+    top: 0;
+    > .line {
+        width: 1px;
+        height: 26%;
+        background-color: $signatureColor;
+    }
+}
+
+.right {
+    pointer-events: none;
+    position: absolute;
+}
+
+.pill {
+    @include dflex();
+    width: 30px;
+    height: 48px;
+    border-radius: 32px;
+    border: 1px solid $signatureColor;
+    > img {
+        animation: pill-movement 1s ease-in 10ms infinite;
+    }
+
+    @keyframes pill-movement {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(75%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
 }

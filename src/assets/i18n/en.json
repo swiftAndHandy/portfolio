@@ -1,5 +1,14 @@
 {
-    "demo": {
-        "title": "Hi"
+    "nav": {
+        "about": "About me",
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "hero": {
+        "button": {
+            "check-work": "Check my work",
+            "contact": "Contact me"
+        }
     }
 }
