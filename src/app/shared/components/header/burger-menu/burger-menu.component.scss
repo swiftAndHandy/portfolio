@@ -5,7 +5,7 @@
     @include dflex($direction: column, $gap: 24px);
     background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     padding: 40px 77px;
-    transform: translateX(min(-190px, -70%));
+    transform: translateX(min(-190px, -80%));
     border: 1px solid $signatureColor;
     border-radius: 30px;
     > a {

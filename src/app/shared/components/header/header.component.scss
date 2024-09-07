@@ -27,6 +27,7 @@
 
     & .burger-menu--toggle {
         transition: all 200ms ease-out;
+        cursor: pointer;
         &:active {
             filter: invert(65%) sepia(34%) saturate(778%) hue-rotate(120deg) brightness(105%) contrast(81%);
         }

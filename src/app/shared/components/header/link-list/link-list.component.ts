@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { HeaderComponent } from '../header.component';
 
 @Component({
   selector: 'app-link-list',
@@ -9,6 +10,6 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrl: './link-list.component.scss'
 })
 export class LinkListComponent {
-  constructor() {
+  constructor(public burgerMenu: HeaderComponent) {
   }
 }

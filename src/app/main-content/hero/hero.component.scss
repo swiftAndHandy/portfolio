@@ -1,6 +1,42 @@
 @use "./../../shared/scss/abstracts/" as *;
 
-div {
+@mixin afterBullet($translateX, $translateY) {
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        content: "";
+        width: 8px;
+        height: 8px;
+        background-image: url("./../../../assets/icons/dot.svg");
+        transform: translate($translateX, $translateY);
+        opacity: 0;
+        transition: all 100ms ease-in;
+    }
+    @include hoverBullet();
+}
+
+@mixin hoverBullet() {
+    @media (pointer: fine) {
+        &:hover {
+            > img {
+                filter: brightness(0) invert(1);
+            }
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &:active {
+        &::after {
+            opacity: 0.5;
+        }
+    }
+}
+
+.hero-wrapper {
     position: relative;
     @include widthLimiter();
     @include dflex();
@@ -32,7 +68,6 @@ div {
 }
 
 .left {
-    pointer-events: none;
     @include unsetWidthAndHeight();
     @include dflex(flex-end, center, column, 24px);
     position: absolute;
@@ -47,8 +82,68 @@ div {
 }
 
 .right {
-    pointer-events: none;
+    @include unsetWidthAndHeight();
+    @include dflex(flex-end, center, column, 24px);
     position: absolute;
+    right: clamp(0px, 7dvw, 96px);
+    bottom: 0;
+    top: 0;
+    > .line {
+        width: 1px;
+        height: 20%;
+        background-color: #ffffff;
+    }
+    > .external-links {
+        @include dflex(center, center, column, 4px);
+        @media (min-width: $desktopResolution) {
+            @include dflex(center, center, column, 24px);
+        }
+        > .mail {
+            width: 0;
+            cursor: pointer;
+            > a {
+                display: none;
+            }
+
+            @media (max-width: calc($desktopResolution - 1px)) {
+                .mail-icon {
+                    position: relative;
+                    display: unset;
+                    @include afterBullet(-50%, -50%);
+                }
+            }
+
+            img {
+                display: inline;
+                transform: translate(-50%);
+            }
+
+            @media (min-width: $desktopResolution) {
+                > a {
+                    display: block;
+                    transform: rotate(270deg);
+                    text-decoration: none;
+                    font-family: "Karla";
+                    font-size: 18px;
+                    font-weight: 400;
+                    transition: all 100ms ease-in;
+                    &:hover {
+                        color: $signatureColor;
+                    }
+                    > img {
+                        display: none;
+                    }
+                }
+            }
+        }
+        > .social-links {
+            @include dflex(center, center, column, 12px);
+            > a {
+                position: relative;
+                @include afterBullet(150%, 150%);
+            }
+        }
+    }
 }
 
 .pill {
