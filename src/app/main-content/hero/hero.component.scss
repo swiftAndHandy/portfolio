@@ -67,6 +67,12 @@
     }
 }
 
+app-marquee {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
 .left {
     @include unsetWidthAndHeight();
     @include dflex(flex-end, center, column, 24px);

@@ -9,6 +9,12 @@
         "button": {
             "check-work": "Check my work",
             "contact": "Contact me"
+        },
+        "marquee": {
+            "remote": "Available for remote work",
+            "skills": "Frontend Developer",
+            "location": "Based in Paderborn",
+            "open-to-work": "Open to work"
         }
     }
 }

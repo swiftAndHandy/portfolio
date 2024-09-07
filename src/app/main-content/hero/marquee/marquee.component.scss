@@ -1,0 +1,37 @@
+@use "./../../../shared/scss/abstracts/" as *;
+
+$marqueeGap: 24px;
+
+.marquee {
+    overflow: hidden;
+    font-family: "Karla";
+    background-color: rgba($color: #ffffff, $alpha: 0.12);
+    padding: 12px 32px;
+    rotate: -3deg;
+    margin-bottom: 32px;
+    @include dflex();
+
+    & * {
+        font-family: inherit;
+        font-size: clamp(1.5rem, 3dvw, 2rem);
+        color: $signatureColor;
+        white-space: nowrap;
+        clip: auto;
+    }
+
+    &__body {
+        @include widthLimiter($maxWidth);
+        @include dflex(flex-start, center, row);
+    }
+}
+
+.marquee-item {
+    @include dflex($gap: $marqueeGap);
+    &::after {
+        margin-right: $marqueeGap;
+        content: '';
+        width: 8px;
+        height: 8px;
+        background-image: url('./../../../../assets/icons/dot.svg');
+    }
+}

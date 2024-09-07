@@ -8,8 +8,8 @@
     flex-direction: $direction;
 }
 
-@mixin widthLimiter() {
-    width: min(100%, $maxWidth);
+@mixin widthLimiter($requiredWidth: 100%, $maxWidth: $maxWidth) {
+    width: min($requiredWidth, $maxWidth);
 }
 
 @mixin signatureGradient() {
