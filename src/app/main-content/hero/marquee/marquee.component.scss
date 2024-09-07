@@ -1,6 +1,18 @@
 @use "./../../../shared/scss/abstracts/" as *;
 
-$marqueeGap: 24px;
+$marqueeGap: 96px;
+
+@mixin marqueItem($marginRight: $marqueeGap) {
+    @include dflex($gap: $marqueeGap);
+    &::after {
+        margin-right: $marginRight;
+        content: "";
+        width: 8px;
+        height: 8px;
+        background-image: url("./../../../../assets/icons/dot.svg");
+    }
+    animation: marquee-scrolling 40s -20s infinite linear;
+}
 
 .marquee {
     overflow: hidden;
@@ -9,29 +21,45 @@ $marqueeGap: 24px;
     padding: 12px 32px;
     rotate: -3deg;
     margin-bottom: 32px;
+    backdrop-filter: blur(2px);
+    height: 62px;
     @include dflex();
+
+    &-wrapper {
+        @include dflex();
+        @include widthLimiter($maxWidth);
+        overflow: hidden;
+    }
 
     & * {
         font-family: inherit;
-        font-size: clamp(1.5rem, 3dvw, 2rem);
+        // font-size: clamp(1.5rem, 3dvw, 2rem);
+        font-size: 2rem;
         color: $signatureColor;
         white-space: nowrap;
-        clip: auto;
     }
 
     &__body {
-        @include widthLimiter($maxWidth);
+        position: absolute;
+        @include widthLimiter();
+        overflow: hidden;
         @include dflex(flex-start, center, row);
+        border: 1px $signatureColor;
+        border-style: none dashed;
+        > .marquee-item {
+            @include marqueItem();
+        }
+        > .marquee-item.second-iteration {
+            animation: marquee-scrolling 40s 0s infinite linear;
+        }
     }
 }
 
-.marquee-item {
-    @include dflex($gap: $marqueeGap);
-    &::after {
-        margin-right: $marqueeGap;
-        content: '';
-        width: 8px;
-        height: 8px;
-        background-image: url('./../../../../assets/icons/dot.svg');
+@keyframes marquee-scrolling {
+    from {
+        transform: translate($maxWidth, 0);
+    }
+    to {
+        transform: translate(-$maxWidth, 0);
     }
 }

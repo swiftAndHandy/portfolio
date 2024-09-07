@@ -1,11 +1,19 @@
 <div class="marquee">
     <div class="marquee__left-end"></div>
-    @for (iteration of [0, 1]; track $index) {
-    <div class="marquee__body">
-        @for (item of marqueeItems; track $index) {
-        <span class="marquee-item">{{'hero.marquee.'+item | translate}}</span>
+    <div class="marquee-wrapper">
+        @for (iteration of [0, 1]; track []; let i = $index;) {
+        <div class="marquee__body">
+            @if (i == 0) {
+            @for (item of marqueeItems; track $index) {
+            <span class="marquee-item">{{'hero.marquee.'+item | translate}}</span>
+            }
+            } @else {
+            @for (item of marqueeItems; track $index) {
+            <span class="marquee-item second-iteration">{{'hero.marquee.'+item | translate}}</span>
+            }
+            }
+        </div>
         }
     </div>
-    }
     <div class="marquee__right-end"></div>
 </div>
