@@ -18,19 +18,20 @@
 
     > .hovered-logo {
         @include logoBasics();
+        opacity: 0;
     }
 
     @media (pointer: fine) {
         &:hover {
-            > .logo {
-                opacity: 0;
+            > .hovered-logo {
+                opacity: 1;
             }
         }
     }
 
     &:active {
-        > .logo {
-            opacity: 0;
+        > .hovered-logo {
+            opacity: 1;
         }
     }
 }

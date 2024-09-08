@@ -1,0 +1,10 @@
+@use './abstracts/' as *;
+
+@mixin regularBox($gap: 20px) {
+    @include dflex(flex-start, flex-start, column, $gap);
+    background: $boxGradient;
+    border: 1px solid $dimmedSignatureColor;
+    border-radius: 30px;
+    padding: 32px;
+}
+

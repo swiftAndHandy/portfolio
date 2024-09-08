@@ -1,4 +1,4 @@
-@use './../variables' as *;
+@use "./../variables" as *;
 
 @mixin dflex($jc: center, $ai: center, $direction: row, $gap: 0) {
     display: flex;
@@ -22,4 +22,12 @@
 @mixin unsetWidthAndHeight() {
     width: unset;
     height: unset;
+}
+
+@mixin karla($weight: 400, $size: 1rem, $color: #ffffff, $align: left) {
+    font-family: "Karla";
+    font-weight: $weight;
+    color: $color;
+    font-size: $size;
+    text-align: $align;
 }

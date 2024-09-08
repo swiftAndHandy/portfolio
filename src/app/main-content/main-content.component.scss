@@ -16,11 +16,14 @@ main {
         width: 100%;
         height: 100dvh;
     }
+    > app-about-me {
+        @include dflex(center, flex-start);
+        width: 100%;
+    }
     > app-skills {
         @include dflex(center, flex-start);
         background: $signatureGradient;
         width: 100%;
-        // height:100dvh;
     }
     > app-footer {
         @include dflex(center, flex-start);

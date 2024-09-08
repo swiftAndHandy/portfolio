@@ -1,0 +1,122 @@
+@use "./../../shared/scss/abstracts/" as *;
+@use "./../../shared/scss/boxes" as *;
+
+.box {
+    @include regularBox(20px);
+}
+
+.about-me-wrapper {
+    @include dflex(space-between);
+    @media (max-width: $mobileResolution) {
+        flex-direction: column;
+    }
+    @include widthLimiter();
+    margin: 144px min(10dvw, 96px);
+    gap: 40px;
+    @media (orientation: landscape) and (min-width: $desktopResolution) {
+        margin: 144px min(10dvh, 96px);
+        gap: clamp(40px, 4dvw, 96px);
+        // min-height: 100dvh;
+    }
+}
+
+.portrait-wrapper {
+    position: relative;
+    max-width: 50%;
+    align-self: flex-start;
+
+    @media (max-width: $mobileResolution) {
+        min-width: 100%;
+    }
+    > img {
+        width: 100%;
+        border-radius: 30px;
+    }
+    > .portrait {
+        position: relative;
+        z-index: 1;
+    }
+
+    > .portrait-bg {
+        position: absolute;
+        left: 0;
+        bottom: 10px;
+        right: 0;
+        top: 0;
+        border-radius: 30px;
+        background-image: url("./../../../assets/img/image-bg.svg");
+        background-repeat: no-repeat;
+        transition: all 125ms ease-in;
+        @media (pointer: coarse) and (min-width: $desktopResolution) {
+            transform: translate(clamp(-23px, 2.5dvh, -46px), clamp(12px, 2.5dvh, 30px));
+        }
+        @media (pointer: coarse) and (max-width: $mobileResolution) {
+            transform: translate(clamp(-12px, 2.5dvh, -23px), clamp(12px, 2.5dvh, 24px));
+        }
+    }
+
+    &:hover {
+        > .portrait-bg {
+            @media (min-width: $desktopResolution) {
+                transform: translate(clamp(-23px, 2.5dvh, -46px), clamp(12px, 2.5dvh, 30px));
+            }
+            @media (max-width: $mobileResolution) {
+                transform: translate(clamp(-12px, 2.5dvh, -23px), clamp(12px, 2.5dvh, 24px));
+            }
+        }
+    }
+}
+
+.details-wrapper {
+    width: 50%;
+    box-sizing: border-box;
+    align-self: flex-end;
+    @media (max-width: $mobileResolution) {
+        width: 100%;
+    }
+
+    .title {
+        font-family: "Fira Code";
+        font-size: clamp(3rem, 14dvw, 4rem);
+        font-weight: 700;
+        color: $signatureColor;
+        white-space: nowrap;
+    }
+
+    .subtitle {
+        font-family: "Karla";
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: $signatureColor;
+        margin-bottom: 20px;
+    }
+
+    article {
+        @include dflex(flex-start, flex-start, column, 32px);
+        & * {
+            img {
+                height: 32px;
+                width: 32px;
+            }
+        }
+
+        .subsumption {
+            @include karla($size: 1.125rem);
+            &__bulletpoint {
+                @include dflex(flex-start, $gap: 24px);
+                & * {
+                    transition: all 125ms ease-in;
+                    @media (pointer: fine) {
+                        @include karla(400, 1.125rem, rgba($color: #ffffff, $alpha: 0.8));
+                    }
+                    @media (pointer: coarse) {
+                        @include karla(400, 1.125rem, #ffffff);
+                    }
+                }
+                &:hover * {
+                    @include karla(400, 1.125rem, #ffffff);
+                }
+            }
+        }
+    }
+}
