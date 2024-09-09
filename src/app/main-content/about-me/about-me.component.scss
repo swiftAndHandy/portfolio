@@ -11,10 +11,10 @@
         flex-direction: column;
     }
     @include widthLimiter();
-    margin: 144px min(10dvw, 96px) 0;
+    margin: 0 min(10dvw, 96px);
     gap: 40px;
     @media (orientation: landscape) and (min-width: $desktopResolution) {
-        margin: 144px min(10dvh, 96px) 0;
+        margin: 0 min(10dvh, 96px);
         gap: clamp(40px, 4dvw, 96px);
     }
 }

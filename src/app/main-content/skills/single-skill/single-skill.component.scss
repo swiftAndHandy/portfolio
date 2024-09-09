@@ -2,6 +2,7 @@
 
 .single-skill {
     position: relative;
+    cursor: pointer;
     @include dflex($direction: column, $gap: 8px);
     width: 104px;
     height: 116px;

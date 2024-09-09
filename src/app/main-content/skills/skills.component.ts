@@ -33,4 +33,9 @@ export class SkillsComponent {
   checkContainer(skill: Skill) {
     return skill.container ? true : false;
   }
+
+  contactMe() {
+    console.log('klappt');
+    
+  }
 }

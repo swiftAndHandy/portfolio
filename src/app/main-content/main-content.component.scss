@@ -15,10 +15,14 @@ main {
         background: $heroGradient;
         width: 100%;
         height: 100dvh;
+        margin-bottom: 144px;
     }
     > app-about-me {
         @include dflex(center, flex-start);
         width: 100%;
+        @media (max-width: $mobileResolution) {
+            margin-bottom: 70px;
+        }
     }
     > app-skills {
         @include dflex(center, flex-start);
@@ -26,11 +30,13 @@ main {
         background-repeat: no-repeat;
         background-size: contain;
         width: 100%;
+        margin-bottom: 144px;
     }
     > app-footer {
         @include dflex(center, flex-start);
         background: $backgroundDark;
         width: 100%;
+        margin-bottom: 144px;
     }
 }
 
