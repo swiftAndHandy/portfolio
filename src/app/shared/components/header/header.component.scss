@@ -19,6 +19,13 @@
     @include headerBasics(min-width, $desktopResolution);
     > nav {
         @include dflex($gap: 24px);
+        padding: 24px 24px;
+        background-color: rgba($color: $backgroundDark, $alpha: 0.0);
+        border-radius: 30px;
+        transition: all 100ms ease-in;
+        &:hover {
+            background-color: rgba($color: $backgroundDark, $alpha: 0.9);
+        }
     }
 }
 

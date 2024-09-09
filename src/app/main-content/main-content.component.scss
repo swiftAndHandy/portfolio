@@ -32,6 +32,21 @@ main {
         width: 100%;
         margin-bottom: 144px;
     }
+    > app-projects {
+        @include dflex(center, flex-start);
+        width: 100%;
+        margin-bottom: 144px;
+    }
+    > app-references {
+        @include dflex(center, flex-start);
+        width: 100%;
+        margin-bottom: 144px;
+    }
+    > app-contact {
+        @include dflex(center, flex-start);
+        width: 100%;
+        margin-bottom: 144px;
+    }
     > app-footer {
         @include dflex(center, flex-start);
         background: $backgroundDark;
