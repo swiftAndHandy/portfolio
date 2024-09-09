@@ -6,7 +6,7 @@
 }
 
 .about-me-wrapper {
-    @include dflex(space-between);
+    @include dflex();
     @media (max-width: $mobileResolution) {
         flex-direction: column;
     }
@@ -16,7 +16,6 @@
     @media (orientation: landscape) and (min-width: $desktopResolution) {
         margin: 144px min(10dvh, 96px);
         gap: clamp(40px, 4dvw, 96px);
-        // min-height: 100dvh;
     }
 }
 
@@ -71,8 +70,12 @@
     width: 50%;
     box-sizing: border-box;
     align-self: flex-end;
+    transform: translateY(max(80px, 8dvh));
+    margin-bottom: 144px;
     @media (max-width: $mobileResolution) {
         width: 100%;
+        transform: unset;
+        margin-bottom: unset;
     }
 
     article {
