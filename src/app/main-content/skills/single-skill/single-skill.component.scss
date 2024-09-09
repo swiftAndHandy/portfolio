@@ -1,0 +1,29 @@
+@use "./../../../shared/scss/abstracts/" as *;
+
+.single-skill {
+    position: relative;
+    @include dflex($direction: column, $gap: 8px);
+    width: 104px;
+    height: 116px;
+
+    & * {
+        white-space: break-spaces;
+        text-align: center;
+        transition: all 100ms ease-in;
+    }
+
+    > img {
+        height: 64px;
+        width: 64px;
+    }
+
+    &:hover {
+        > img {
+            scale: (1.1);
+        }
+
+        & .container {
+            color: $signatureColor;
+        }
+    }
+}

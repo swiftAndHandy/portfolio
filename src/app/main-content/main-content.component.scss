@@ -22,7 +22,9 @@ main {
     }
     > app-skills {
         @include dflex(center, flex-start);
-        background: $signatureGradient;
+        background-image: url('./../../assets/img/skills-bg.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
         width: 100%;
     }
     > app-footer {

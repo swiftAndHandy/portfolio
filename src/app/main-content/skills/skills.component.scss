@@ -1,0 +1,31 @@
+@use "./../../shared/scss/abstracts/" as *;
+@use "./../../shared/scss/boxes" as *;
+
+.box--regular {
+    @include boxDesign();
+}
+
+.skills {
+    @include widthLimiter();
+    @include dflex(flex-start, flex-start, $direction: column);
+    margin: 144px min(10dvw, 96px);
+    &__list {
+        @include dflex(flex-start, flex-start, row, 0px);
+        flex-wrap: wrap;
+        row-gap: 40px;
+        column-gap: 72px;
+        flex: 1;
+    }
+}
+
+.left {
+    @media (min-width: $desktopResolution) {
+        max-width: 45%;
+    }
+}
+
+main {
+    @include dflex(space-between, flex-start);
+    width: 100%;
+    gap: min(10dvw, 96px);
+}

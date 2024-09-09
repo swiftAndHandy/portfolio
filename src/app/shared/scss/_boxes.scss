@@ -6,22 +6,24 @@
     border: 1px solid $dimmedSignatureColor;
     border-radius: 30px;
     padding: 32px;
+    width: fit-content;
 }
 
-@mixin box($style: 'regular', $gap: 20px) {
+@mixin boxDesign($style: 'regular', $gap: 20px) {
     @if ($style == 'regular') {
         @include regularBox($gap);
     }
+    box-sizing: border-box;
     .box__title {
         font-family: "Fira Code";
-        font-size: clamp(2rem, 14dvw, 4rem);
+        font-size: clamp(1.2rem, 8dvw, 4rem);
         font-weight: 700;
         color: $signatureColor;
         white-space: nowrap;
     }
 }
 
-.section-title:has(+ [class^="box"]) {
+.section-title {
     font-family: "Karla";
     font-weight: 500;
     font-size: clamp(1rem, 8dvw, 1.5rem);

@@ -1,1 +1,16 @@
-<p>skills works!</p>
+<section class="skills">
+    <h2 class="section-title">{{'skills.section-title' | translate }}</h2>
+    <main>
+        <div class="left">
+            <div class="box--regular">
+                <h1 class="box__title">{{'skills.title' | translate}}</h1>
+                <p>{{'skills.intro' | translate}}</p>
+            </div>
+        </div>
+        <div class="skills__list">
+            @for (skill of frontendSkills; track skill) {
+                <app-single-skill [name]="skill.name" category="frontend" [container]="checkContainer(skill)"></app-single-skill>
+            }
+        </div>
+    </main>
+</section>

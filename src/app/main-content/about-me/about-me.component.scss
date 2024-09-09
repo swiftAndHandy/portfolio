@@ -2,7 +2,7 @@
 @use "./../../shared/scss/boxes" as *;
 
 .box--regular {
-    @include box();
+    @include boxDesign();
 }
 
 .about-me-wrapper {
@@ -11,10 +11,10 @@
         flex-direction: column;
     }
     @include widthLimiter();
-    margin: 144px min(10dvw, 96px);
+    margin: 144px min(10dvw, 96px) 0;
     gap: 40px;
     @media (orientation: landscape) and (min-width: $desktopResolution) {
-        margin: 144px min(10dvh, 96px);
+        margin: 144px min(10dvh, 96px) 0;
         gap: clamp(40px, 4dvw, 96px);
     }
 }
@@ -89,6 +89,9 @@
 
         .subsumption {
             @include karla($size: 1.125rem);
+            @media (max-width: 500px) {
+                font-size: 16px !important;
+            }
             &__bulletpoint {
                 @include dflex(flex-start, $gap: 24px);
                 & * {
@@ -99,9 +102,15 @@
                     @media (pointer: coarse) {
                         @include karla(400, 1.125rem, #ffffff);
                     }
+                    @media (max-width: 500px) {
+                        font-size: 16px !important;
+                    }
                 }
                 &:hover * {
                     @include karla(400, 1.125rem, #ffffff);
+                    @media (max-width: 500px) {
+                        font-size: 16px !important;
+                    }
                 }
             }
         }
