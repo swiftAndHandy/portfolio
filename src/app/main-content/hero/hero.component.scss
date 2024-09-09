@@ -111,7 +111,7 @@ app-marquee {
                 display: none;
             }
 
-            @media (max-width: calc($desktopResolution - 1px)) {
+            @media (max-width: $mobileResolution) {
                 .mail-icon {
                     position: relative;
                     display: unset;

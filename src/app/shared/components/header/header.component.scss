@@ -23,7 +23,7 @@
 }
 
 .header--small {
-    @include headerBasics(max-width, ($desktopResolution - 1px));
+    @include headerBasics(max-width, $mobileResolution);
 
     & .burger-menu--toggle {
         transition: all 200ms ease-out;

@@ -24,14 +24,6 @@ $marqueeGap: 96px;
     backdrop-filter: blur(2px);
     height: 62px;
 
-&::after {
-    display: block;
-    content: '';
-    height: 62px;
-    width: 2dvw;
-    background-color: rgba($color: #ffffff, $alpha: 0.12);
-}
-
     @include dflex();
 
     &-wrapper {

@@ -22,7 +22,7 @@ footer {
     white-space: nowrap;
 
     &__desktop {
-        @media (max-width: calc($desktopResolution - 1px)) {
+        @media (max-width: $mobileResolution) {
             display: none;
         }
     }
