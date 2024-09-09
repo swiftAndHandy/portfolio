@@ -4,12 +4,17 @@
         <div class="left">
             <div class="box--regular">
                 <h1 class="box__title">{{'skills.title' | translate}}</h1>
-                <p>{{'skills.intro' | translate}}</p>
+                <article class="skills__article">
+                    <p>{{'skills.intro' | translate}}</p>
+                    <h2 class="subheadline"><span>{{ 'skills.subheadline.part.one' | translate }}</span><span class="subheadline--colorized">{{ 'skills.subheadline.part.two' | translate }}</span></h2>
+                    <p>{{ 'skills.subheadline.body' | translate }}</p>
+                    <app-buttons text="{{'skills.button' | translate}}"></app-buttons>
+                </article>
             </div>
         </div>
         <div class="skills__list">
             @for (skill of frontendSkills; track skill) {
-                <app-single-skill [name]="skill.name" category="frontend" [container]="checkContainer(skill)"></app-single-skill>
+            <app-single-skill [name]="skill.name" category="frontend" [container]="checkContainer(skill)"></app-single-skill>
             }
         </div>
     </main>

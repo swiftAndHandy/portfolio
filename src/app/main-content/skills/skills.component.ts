@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { SingleSkillComponent } from "./single-skill/single-skill.component";
+import { ButtonsComponent } from "../../shared/components/buttons/buttons.component";
 
 interface Skill {
   name: string;
@@ -10,7 +11,7 @@ interface Skill {
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [TranslateModule, SingleSkillComponent],
+  imports: [TranslateModule, SingleSkillComponent, ButtonsComponent],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })

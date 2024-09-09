@@ -13,19 +13,37 @@
         @include dflex(flex-start, flex-start, row, 0px);
         flex-wrap: wrap;
         row-gap: 40px;
-        column-gap: 72px;
+        column-gap: clamp(20px, 2dvw, 72px);
         flex: 1;
+        margin-right: -30px;
+    }
+
+    &__article {
+        @include dflex(flex-start, flex-start, column, 32px);
+        & * {
+            @include karla(400, 1.125rem, #ffffff);
+        }
+        & .subheadline {
+            & * {
+                font-family: 'Fira Code';
+                font-size: 1.5rem;
+            }
+            &--colorized {
+                color: $signatureColor !important;
+            }
+            
+        }
     }
 }
 
 .left {
     @media (min-width: $desktopResolution) {
-        max-width: 45%;
+        max-width:50%;
     }
 }
 
 main {
     @include dflex(space-between, flex-start);
     width: 100%;
-    gap: min(10dvw, 96px);
+    gap: min(4dvw, 96px);
 }
