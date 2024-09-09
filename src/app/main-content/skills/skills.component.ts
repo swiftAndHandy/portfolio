@@ -2,11 +2,7 @@ import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { SingleSkillComponent } from "./single-skill/single-skill.component";
 import { ButtonsComponent } from "../../shared/components/buttons/buttons.component";
-
-interface Skill {
-  name: string;
-  container?: boolean;
-}
+import { Skill } from '../../interfaces/skill.interface';
 
 @Component({
   selector: 'app-skills',

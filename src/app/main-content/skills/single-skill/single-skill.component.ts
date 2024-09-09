@@ -1,11 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { Skill } from '../../../interfaces/skill.interface';
 
-interface Skill {
-  name: string;
-  category: string;
-}
 
 @Component({
   selector: 'app-single-skill',

@@ -1,0 +1,59 @@
+@use "./../../shared/scss/abstracts/" as *;
+
+$itemBorder: 2px solid $signatureColor;
+
+@mixin itemText() {
+    @include karla(400, 1.125rem);
+}
+
+// .expose {
+
+// }
+
+.projects {
+    & .item {
+        @include dflex(space-between);
+        border-top: $itemBorder;
+        transition: all 125ms ease-in;
+        @media (pointer: fine) {
+            &:hover:not(app-buttons) {
+                background: #3dcfb64d;
+                cursor: pointer;
+
+            }
+        }
+        &:last-child {
+            border-bottom: $itemBorder;
+        }
+
+        &__general-information {
+            @include dflex(center, flex-start, column);
+            & .project-name {
+                font-family: "Fira Code";
+                font-weight: 700;
+                color: #ffffff;
+                font-size: 1.5rem;
+            }
+            & * {
+                @include itemText();
+            }
+        }
+
+        &__technical-information {
+            & * {
+                @include itemText();
+            }
+            .item__links {
+                @include dflex(center, flex-start);
+            }
+
+            .technologies {
+                @include dflex($gap: 4px);
+            }
+        }
+    }
+}
+
+.seperator {
+    color: $signatureColor !important;
+}

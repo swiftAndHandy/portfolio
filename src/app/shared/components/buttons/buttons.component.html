@@ -1,4 +1,4 @@
-<button [ngClass]="type">
+<button [ngClass]="[type, 'bg--' + bg]">
     <span class="label">{{ text }}</span>
     @if (type == 'regular') {
     <span class="label--cloned">{{ text }}</span>

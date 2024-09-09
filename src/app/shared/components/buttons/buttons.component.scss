@@ -8,13 +8,22 @@ button {
     padding: 0 24px;
     border-radius: 100px;
     border: 1px solid white;
-    background-color: transparent;
+
+    &.bg--transparent {
+        background-color: transparent;
+    }
+
+    &.bg--dark {
+        background-color: $backgroundDark;
+    }
+
     overflow: clip;
     cursor: pointer;
     transition: border-color 100ms ease-out;
     animation-play-state: paused;
 
-    .label, .label--cloned {
+    .label,
+    .label--cloned {
         font-family: "Karla";
         gap: 4px;
         font-weight: 400;
@@ -23,18 +32,20 @@ button {
         justify-content: center;
         width: 100%;
         transform: translateX(0%);
-        transition: color 100ms ease-out, transform 2s ease-in-out;
+        transition:
+            color 100ms ease-out,
+            transform 2s ease-in-out;
     }
 
-    &.regular .label, &.regular .label--cloned {
+    &.regular .label,
+    &.regular .label--cloned {
         position: absolute;
     }
 
-
-    >.spacer {
+    > .spacer {
         opacity: 0;
         user-select: none;
-        font-family: 'Karla';
+        font-family: "Karla";
         font-weight: 400;
         font-size: 18px;
     }
@@ -55,7 +66,8 @@ button {
 
     &:hover {
         border-color: $signatureColor;
-        .label, .label--cloned {
+        .label,
+        .label--cloned {
             color: $signatureColor;
         }
         &.link .label::after {

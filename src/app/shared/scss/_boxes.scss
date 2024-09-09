@@ -14,19 +14,4 @@
         @include regularBox($gap);
     }
     box-sizing: border-box;
-    .box__title {
-        font-family: "Fira Code";
-        font-size: clamp(1.2rem, 6dvw, 4rem);
-        font-weight: 700;
-        color: $signatureColor;
-        white-space: nowrap;
-    }
-}
-
-.section-title {
-    font-family: "Karla";
-    font-weight: 500;
-    font-size: clamp(1rem, 8dvw, 1.5rem);
-    color: $signatureColor;
-    margin-bottom: 20px;
 }
