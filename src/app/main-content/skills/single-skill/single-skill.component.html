@@ -1,4 +1,7 @@
 <div class="single-skill">
     <img [src]="returnImgPath()" alt="" draggable="false">
     <span [ngClass]="{'container': container}" id="skill-name">{{ returnSkillNameHtml() }}</span>
+    @if (container) {
+        <img draggable="false" class="popup" [src]="returnImgPath(true)" alt="">
+    }
 </div>

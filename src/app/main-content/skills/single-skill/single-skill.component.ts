@@ -19,21 +19,21 @@ export class SingleSkillComponent {
   @Input() category: string = '';
   @Input() container: boolean = false;
 
-skill!: Skill;
+  skill!: Skill;
 
-ngOnInit() {
-  this.skill = {
-    name: this.name,
-    category: this.category.toLowerCase()
-  };
-}
+  ngOnInit() {
+    this.skill = {
+      name: this.name,
+      category: this.category.toLowerCase()
+    };
+  }
 
-returnSkillNameHtml() {
-  return this.skill.name.split(' ').join('\n')
-}
+  returnSkillNameHtml(): string {
+    return this.skill.name.split(' ').join('\n')
+  }
 
-returnImgPath() {
-  const imageName: string = this.skill.name.split(' ').join('-').toLowerCase();
-  return `./assets/icons/${this.skill.category}/${imageName}.svg`;
-}
+  returnImgPath(popup: boolean = false): string {
+    const imageName: string = this.skill.name.split(' ').join('-').toLowerCase();
+    return popup ? `./assets/icons/${this.skill.category}/${imageName}-popup.svg` : `./assets/icons/${this.skill.category}/${imageName}.svg`;
+  }
 }

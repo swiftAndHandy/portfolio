@@ -13,18 +13,30 @@
         transition: all 100ms ease-in;
     }
 
-    > img {
+    & > img:not(.popup) {
         height: 64px;
         width: 64px;
     }
 
+    & .popup {
+        pointer-events: none;
+        position: absolute;
+        transform: translate(21%, -75%);
+        opacity: 0;
+        transition: all 100ms ease-in;
+    }
+
     &:hover {
-        > img {
+        > img:not(.popup) {
             scale: (1.1);
         }
 
         & .container {
             color: $signatureColor;
+        }
+
+        & .popup {
+            opacity: 1;
         }
     }
 }
