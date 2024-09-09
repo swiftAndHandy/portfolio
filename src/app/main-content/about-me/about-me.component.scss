@@ -1,8 +1,8 @@
 @use "./../../shared/scss/abstracts/" as *;
 @use "./../../shared/scss/boxes" as *;
 
-.box {
-    @include regularBox(20px);
+.box--regular {
+    @include box();
 }
 
 .about-me-wrapper {
@@ -73,22 +73,6 @@
     align-self: flex-end;
     @media (max-width: $mobileResolution) {
         width: 100%;
-    }
-
-    .title {
-        font-family: "Fira Code";
-        font-size: clamp(3rem, 14dvw, 4rem);
-        font-weight: 700;
-        color: $signatureColor;
-        white-space: nowrap;
-    }
-
-    .subtitle {
-        font-family: "Karla";
-        font-weight: 500;
-        font-size: 1.5rem;
-        color: $signatureColor;
-        margin-bottom: 20px;
     }
 
     article {

@@ -1,4 +1,4 @@
-@use './abstracts/' as *;
+@use "./abstracts/" as *;
 
 @mixin regularBox($gap: 20px) {
     @include dflex(flex-start, flex-start, column, $gap);
@@ -8,3 +8,23 @@
     padding: 32px;
 }
 
+@mixin box($style: 'regular', $gap: 20px) {
+    @if ($style == 'regular') {
+        @include regularBox($gap);
+    }
+    .box__title {
+        font-family: "Fira Code";
+        font-size: clamp(2rem, 14dvw, 4rem);
+        font-weight: 700;
+        color: $signatureColor;
+        white-space: nowrap;
+    }
+}
+
+.section-title:has(+ [class^="box"]) {
+    font-family: "Karla";
+    font-weight: 500;
+    font-size: clamp(1rem, 8dvw, 1.5rem);
+    color: $signatureColor;
+    margin-bottom: 20px;
+}
