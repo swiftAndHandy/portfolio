@@ -37,6 +37,12 @@ $SmallMobileResolution: 600px;
     .project-img {
         opacity: 0;
     }
+
+    @media (min-width: $desktopResolution) {
+        @media (pointer: coarse) {
+            margin-bottom: 24px;
+        }
+    }
 }
 
 .projects {
@@ -51,12 +57,17 @@ $SmallMobileResolution: 600px;
     box-sizing: border-box;
     @media (max-width: $desktopResolution) {
         width: 100%;
+        
     }
     @media (max-width: 1099px) {
         @include dflex(center, flex-start, column, 24px);
+        padding: 30px clamp(2px, 1dvw, 32px);
     }
+    @media (max-width: $mobileResolution) {
+        padding: 40px clamp(2px, 1dvw, 32px);
+    }
+    padding: 60px clamp(2px, 1dvw, 32px);
     border-top: $itemBorder;
-    padding: 40px clamp(2px, 1dvw, 32px);
     transition: all 125ms ease-in;
 
     @media (pointer: fine) {
@@ -70,6 +81,12 @@ $SmallMobileResolution: 600px;
             & + .project-img {
                 opacity: 1;
             }
+        }
+    }
+
+    @media (pointer: coarse) {
+        & + .project-img {
+            opacity: 1;
         }
     }
 

@@ -12,6 +12,8 @@ import { ButtonsComponent } from "../../shared/components/buttons/buttons.compon
 })
 export class ProjectsComponent {
 
+  visiblePopup: boolean = false;
+
   projects: Project[] = [
     {
       name: 'Join',
@@ -71,5 +73,13 @@ export class ProjectsComponent {
 
   removeDiacritics(str: string):string {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+
+  openPopup() {
+    this.visiblePopup = true;
+  }
+
+  closePopup() {
+    this.visiblePopup = false;
   }
 }
