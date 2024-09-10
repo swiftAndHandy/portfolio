@@ -23,7 +23,9 @@ $marqueeGap: 96px;
     margin-bottom: 32px;
     backdrop-filter: blur(2px);
     height: 62px;
-    border-radius: 16px;
+    @media (min-width: $maxWidth) {
+        border-radius: 16px;
+    }
 
     @include dflex();
 

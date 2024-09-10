@@ -39,38 +39,22 @@
 .hero-wrapper {
     position: relative;
     @include widthLimiter();
-    @include dflex();
+    @include dflex(center, center, column);
+    overflow: hidden;
     height: 100%;
     > section {
-        @include dflex($direction: column, $gap: 40px);
+        @include dflex(space-between, center, column, $gap: 40px);
         width: 100%;
-        > hgroup {
-            @include dflex($direction: column);
-            white-space: nowrap;
-
-            > span {
-                font-family: "Fira Code";
-                font-size: clamp(1.25rem, 6dvw, 2.5rem);
-            }
-            > h1 {
-                font-family: "Karla";
-                font-weight: 700;
-                font-size: clamp(2.5rem, 12dvw, 8rem);
-            }
-        }
-        .button-wrapper {
-            @include dflex($direction: column, $gap: min(4dvw, 48px));
-            @media (min-width: $desktopResolution) {
-                flex-direction: row;
-            }
-        }
+        height: 100%;
     }
 }
 
 app-marquee {
-    position: absolute;
-    bottom: 0;
-    width: 99%;
+    transform: translateY(-50%);
+    width: 110%;
+    @media (min-width: $maxWidth) {
+        width: 100%;
+    }
 }
 
 .left {
@@ -171,6 +155,29 @@ app-marquee {
         }
         100% {
             transform: translateY(0);
+        }
+    }
+}
+
+main {
+    > hgroup {
+        @include dflex($direction: column);
+        white-space: nowrap;
+
+        > span {
+            font-family: "Fira Code";
+            font-size: clamp(1.25rem, 6dvw, 2.5rem);
+        }
+        > h1 {
+            font-family: "Karla";
+            font-weight: 700;
+            font-size: clamp(2.5rem, 12dvw, 8rem);
+        }
+    }
+    .button-wrapper {
+        @include dflex($direction: column, $gap: min(4dvw, 48px));
+        @media (min-width: $desktopResolution) {
+            flex-direction: row;
         }
     }
 }
