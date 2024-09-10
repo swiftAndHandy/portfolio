@@ -1,17 +1,29 @@
 <div id="projects" class="anchor"></div>
 <section id="projects" class="projects">
-    <h2 class="section__subheadline">{{'portfolio.subheadline' | translate }}</h2>
-    <h1 class="section__main-title">{{'portfolio.title' | translate }}</h1>
-    <p class="expose">{{'portfolio.expose' | translate}}</p>
+    <article class="section__header">
+        <div class="titles">
+            <h2 class="section__subheadline">{{'portfolio.subheadline' | translate }}</h2>
+            <h1 class="section__main-title">{{'portfolio.title' | translate }}</h1>
+        </div>
+        <p class="expose">{{'portfolio.expose' | translate}}</p>
+    </article>
 
     @for (project of projects; track $index) {
     <div class="item">
         <div class="item__general-information">
-            <h3 class="project-name">{{project.name}}</h3>
+            <div class="project-name-wrapper">
+                <h3 class="project-name">{{project.name}}</h3>
+                <div class="technologies technologies--mobile">
+                    @for (technology of project.technologies; let last=$last; track $index) {
+                    <span>{{ technology }}</span>
+                    @if (!last) {<span class="seperator">|</span>}
+                    }
+                </div>
+            </div>
             <span>{{ returnDescription(project, 'short') | translate}}</span>
         </div>
         <div class="item__technical-information">
-            <div class="technologies">
+            <div class="technologies technologies--desktop">
                 @for (technology of project.technologies; let last=$last; track $index) {
                 <span>{{ technology }}</span>
                 @if (!last) {<span class="seperator">|</span>}

@@ -1,22 +1,40 @@
 @use "./../../shared/scss/abstracts/" as *;
 
 $itemBorder: 2px solid $signatureColor;
+$itemDetailsGap: 8px;
+
+$SmallMobileResolution: 600px;
 
 @mixin itemText() {
     @include karla(400, 1.125rem);
 }
 
-.expose {
-    @include itemText();
+.section__header {
+    margin-bottom: 40px;
+    .titles {
+        margin-bottom: 40px;
+        @include dflex(center, flex-start, column, 20px);
+        .section__subheadline {
+            margin-bottom: 0;
+        }
+    }
+    .expose {
+        @include itemText();
+    }
 }
 
 .projects {
     @include widthLimiter();
+    @include dflex(flex-start, flex-start, column, 0);
     @include applyLimitMargin();
     & .item {
-        @include dflex(space-between);
+        @include dflex(space-between, $gap: 24px);
+        width: inherit;
+        @media (max-width: $mobileResolution) {
+            @include dflex(center, flex-start, column, 24px);
+        }
         border-top: $itemBorder;
-        padding: 40px 32px;
+        // padding: 40px clamp(2px, 1dvw, 32px);
         transition: all 125ms ease-in;
 
         & .project-name {
@@ -30,7 +48,7 @@ $itemBorder: 2px solid $signatureColor;
                 width: 20px;
                 height: 20px;
                 opacity: 0;
-                background-image: url('./../../../assets/icons/arrow_outward_white.svg');
+                background-image: url("./../../../assets/icons/arrow_outward_white.svg");
                 background-repeat: no-repeat;
                 transform: translate(50%, 50%);
             }
@@ -45,12 +63,22 @@ $itemBorder: 2px solid $signatureColor;
                 }
             }
         }
+
+        &:active {
+            background: #3dcfb64d;
+            cursor: pointer;
+            & .project-name::after {
+                opacity: 1;
+            }
+        }
+
         &:last-child {
             border-bottom: $itemBorder;
         }
 
         &__general-information {
-            @include dflex(center, flex-start, column);
+            @include dflex(center, flex-start, column, $itemDetailsGap);
+            width: 100%;
             & .project-name {
                 font-family: "Fira Code";
                 font-weight: 700;
@@ -63,15 +91,19 @@ $itemBorder: 2px solid $signatureColor;
         }
 
         &__technical-information {
+            @include dflex(center, flex-end, column, $itemDetailsGap);
+            @media (max-width: $mobileResolution) {
+                @include dflex(center, center, column, $itemDetailsGap);
+                align-self: center;
+            }
             & * {
                 @include itemText();
             }
             .item__links {
-                @include dflex(center, flex-start);
-            }
-
-            .technologies {
-                @include dflex($gap: 4px);
+                @include dflex(center, flex-start, row, 8px);
+                @media (max-width: $SmallMobileResolution) {
+                    @include dflex(center, center, column, 8px);
+                }
             }
         }
     }
@@ -79,4 +111,28 @@ $itemBorder: 2px solid $signatureColor;
 
 .seperator {
     color: $signatureColor !important;
+}
+
+.technologies {
+    @include dflex($gap: 4px);
+    &.technologies--mobile {
+        @media (min-width: $desktopResolution) {
+            display: none !important;
+        }
+    }
+
+    &.technologies--desktop {
+        @media (max-width: $mobileResolution) {
+            display: none;
+        }
+    }
+}
+
+.project-name-wrapper {
+    width: inherit;
+    @include dflex(space-between);
+    flex-wrap: wrap;
+    // @media (max-width: (600px)) {
+    //     @include dflex(center, flex-start, column, 8px);
+    // }
 }

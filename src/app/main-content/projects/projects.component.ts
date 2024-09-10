@@ -14,7 +14,7 @@ export class ProjectsComponent {
 
   projects: Project[] = [
     {
-      name: 'Join',
+      name: 'El Pollo Loco',
       technologies: [
         'Javascript',
         'Firebase',
