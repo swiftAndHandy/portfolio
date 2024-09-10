@@ -28,8 +28,8 @@ button {
         gap: 4px;
         font-weight: 400;
         font-size: 18px;
-        display: flex;
-        justify-content: center;
+        white-space: nowrap;
+        @include dflex($gap: 8px);
         width: 100%;
         transform: translateX(0%);
         transition:
@@ -52,16 +52,22 @@ button {
 
     &.link {
         overflow: visible;
-    }
 
-    &.link .label::after {
-        display: block;
-        background-image: url("./../../../../assets/icons/arrow_outward_regular.svg");
-        background-position: left;
-        background-repeat: no-repeat;
-        content: "";
-        width: 20px;
-        height: 20px;
+        & .label {
+            padding-left: 8px;
+            box-sizing: border-box;
+
+            &::after {
+                display: block;
+                background-image: url("./../../../../assets/icons/arrow_outward_regular.svg");
+                background-position: left;
+                background-repeat: no-repeat;
+                content: "";
+                width: 20px;
+                height: 20px;
+            }
+        }
+
     }
 
     &:hover {

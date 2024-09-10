@@ -11,7 +11,7 @@
         flex-direction: column;
     }
     @include widthLimiter();
-    margin: 0 min(10dvw, 96px);
+    @include applyLimitMargin();
     gap: 40px;
     @media (orientation: landscape) and (min-width: $desktopResolution) {
         margin: 0 min(10dvh, 96px);

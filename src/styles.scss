@@ -21,6 +21,12 @@ a {
     text-decoration: none;
 }
 
+.anchor {
+    position: relative;
+    top: -150px;
+    visibility: hidden;
+  }
+
 .section__subheadline {
     font-family: "Karla";
     font-weight: 500;

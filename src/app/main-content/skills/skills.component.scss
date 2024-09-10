@@ -8,7 +8,7 @@
 .skills {
     @include widthLimiter();
     @include dflex(flex-start, flex-start, $direction: column);
-    margin: 0 min(10dvw, 96px);
+    @include applyLimitMargin();
     &__list {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(clamp(65px, 8dvw, 120px), 1fr));

@@ -6,20 +6,43 @@ $itemBorder: 2px solid $signatureColor;
     @include karla(400, 1.125rem);
 }
 
-// .expose {
-
-// }
+.expose {
+    @include itemText();
+}
 
 .projects {
+    @include widthLimiter();
+    @include applyLimitMargin();
     & .item {
         @include dflex(space-between);
         border-top: $itemBorder;
+        padding: 40px 32px;
         transition: all 125ms ease-in;
+
+        & .project-name {
+            position: relative;
+            &::after {
+                position: absolute;
+                top: 0%;
+                left: 100%;
+                content: "";
+                display: block;
+                width: 20px;
+                height: 20px;
+                opacity: 0;
+                background-image: url('./../../../assets/icons/arrow_outward_white.svg');
+                background-repeat: no-repeat;
+                transform: translate(50%, 50%);
+            }
+        }
+
         @media (pointer: fine) {
-            &:hover:not(app-buttons) {
+            &:hover {
                 background: #3dcfb64d;
                 cursor: pointer;
-
+                & .project-name::after {
+                    opacity: 1;
+                }
             }
         }
         &:last-child {

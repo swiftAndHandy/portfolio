@@ -12,6 +12,10 @@
     width: min($requiredWidth, $maxWidth);
 }
 
+@mixin applyLimitMargin() {
+    margin: 0 min(10dvw, 96px);
+}
+
 @mixin signatureGradient() {
     background: $signatureGradient;
     transform: rotate(90deg);
