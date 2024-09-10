@@ -46,15 +46,30 @@ export class ProjectsComponent {
   ];
 
   returnDescription(project: Project, variant: 'short' | 'long'): string {
-    return `portfolio.project.${project.name}.description.${variant}`.split(' ').join('-').toLocaleLowerCase();
+    const nameResult = this.purgeName(project.name);
+    return `portfolio.project.${nameResult}.description.${variant}`.split(' ').join('-').toLocaleLowerCase();
   }
 
   returnLiveServer(project: Project): string {
     if (!project.liveserver) {
-      const nameResult = project.name.split(' ').join('-').toLowerCase();
+      const nameResult = this.purgeName(project.name);
       return `https://${nameResult}.veltens.info`;
     } else {
       return project.liveserver;
     }
+  }
+
+  returnImage(project: Project): string {
+    const nameResult = this.purgeName(project.name);
+    return `./assets/img/${nameResult}.webp`;
+  }
+
+  purgeName(name: string): string {
+    const nameResult = this.removeDiacritics(name);
+    return nameResult.split(' ').join('-').toLowerCase();
+  }
+
+  removeDiacritics(str: string):string {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   }
 }

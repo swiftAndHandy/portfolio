@@ -58,7 +58,7 @@
                     "long": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen."
                 }
             },
-            "pokédex": {
+            "pokedex": {
                 "description": {
                     "short": "A Pokédex that uses the Poke API. Provides an options menu.",
                     "long": "A Pokédex that uses the Poke API. Provides an options menu where you can activate an autoload function and switch between classic and modern sounds."
