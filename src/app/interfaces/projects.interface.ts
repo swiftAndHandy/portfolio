@@ -1,6 +1,6 @@
 export interface Project {
     name: string,
     technologies: string[],
-    liveserver: string,
+    liveserver?: string,
     github: string
 }

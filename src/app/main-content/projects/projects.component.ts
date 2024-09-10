@@ -21,12 +21,20 @@ export class ProjectsComponent {
         'HTML',
         'CSS'
       ],
-      liveserver: 'https://join.veltens.info',
       github: 'https://github.com/swiftAndHandy/Join'
     }
   ];
 
   returnDescription(project: Project, variant: 'short' | 'long'): string {
     return `portfolio.project.${project.name}.description.${variant}`.toLocaleLowerCase();
+  }
+
+  returnLiveServer(project: Project): string {
+    if (!project.liveserver) {
+      const nameResult = project.name.split(' ').join('-').toLowerCase();
+      return `https://${nameResult}.veltens.info`;
+    } else {
+      return project.liveserver;
+    }
   }
 }

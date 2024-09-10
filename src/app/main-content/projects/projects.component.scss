@@ -34,7 +34,7 @@ $SmallMobileResolution: 600px;
             @include dflex(center, flex-start, column, 24px);
         }
         border-top: $itemBorder;
-        // padding: 40px clamp(2px, 1dvw, 32px);
+        padding: 40px clamp(2px, 1dvw, 32px);
         transition: all 125ms ease-in;
 
         & .project-name {
@@ -130,9 +130,9 @@ $SmallMobileResolution: 600px;
 
 .project-name-wrapper {
     width: inherit;
-    @include dflex(space-between);
+    @include dflex(center, flex-start, column, 8px);
     flex-wrap: wrap;
-    // @media (max-width: (600px)) {
-    //     @include dflex(center, flex-start, column, 8px);
-    // }
+    @media (max-width: $mobileResolution) {
+        margin-bottom: 16px;
+    }
 }
