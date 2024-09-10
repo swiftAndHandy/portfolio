@@ -42,7 +42,7 @@
     }
 }
 
-main {
+.main {
     @include dflex(space-between, flex-start);
     gap: min(4dvw, 96px);
     @media (max-width: $mobileResolution) {

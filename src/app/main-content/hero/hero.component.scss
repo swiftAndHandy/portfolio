@@ -159,7 +159,7 @@ app-marquee {
     }
 }
 
-main {
+.main {
     > hgroup {
         @include dflex($direction: column);
         white-space: nowrap;

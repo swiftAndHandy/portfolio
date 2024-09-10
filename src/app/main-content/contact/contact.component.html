@@ -1,2 +1,37 @@
 <div id="contact" class="anchor"></div>
-<p>contact works!</p>
+<section class="contact-section">
+    <div class="left">
+        <div class="titles">
+            <h2 class="section__subheadline">{{ 'contact.subheadline' | translate }}</h2>
+            <h1 class="section__main-title">{{ 'contact.title' | translate }}</h1>
+        </div>
+        <article class="contact-content">
+            <h3 class="article__headline">{{ 'contact.article.headline' | translate }}</h3>
+            <p>{{ 'contact.article.p.1' | translate }}</p>
+            <p>{{ 'contact.article.p.2' | translate }}<span>{{ 'contact.article.span' | translate }}</span></p>
+        </article>
+    </div>
+    <div class="right">
+        <div class="formular__body">
+            <div class="formular__body__name">
+                <label for="formular-name" class="formular__headline">{{ 'contact.form.headline.name' | translate }}</label>
+                <input type="name" id="formular-name" placeholder="{{'contact.form.placeholder.name' | translate}}">
+            </div>
+            <div class="formular__body__email">
+                <label for="formular-email" class="formular__headline">{{ 'contact.form.headline.email' | translate }}</label>
+                <input type="email" id="formular-email" placeholder="{{'contact.form.placeholder.email' | translate}}">
+            </div>
+            <div class="formular__body__message">
+                <label for="formular-msg" class="formular__headline">{{ 'contact.form.headline.msg' | translate }}</label>
+                <textarea id="formular-msg" name="msg" placeholder="{{'contact.form.placeholder.msg' | translate}}"></textarea>
+            </div>
+        </div>
+        <input type="checkbox" id="checkbox-privacy-policy" checked="false" name="privacy-checkbox">
+        <label for="checkbox-privacy-policy">
+            {{ 'contact.form.checkbox-label.read' | translate }}
+            <a href="imprint">{{ 'contact.form.checkbox-label.privacy-policy' | translate }}</a>
+            {{ 'contact.form.checkbox-label.confirm' | translate }}
+        </label>
+        <app-buttons text="{{ 'contact.form.submit' | translate }}" type="static"></app-buttons>
+    </div>
+</section>

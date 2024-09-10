@@ -26,6 +26,11 @@ $SmallMobileResolution: 600px;
 .items-wrapper {
     width: 100%;
     @include dflex(center, flex-start, column);
+    @media (min-width: $desktopResolution) {
+        @media (pointer: coarse) {
+            gap: 24px
+        }
+    }
 }
 
 .single-item-wrapper {
@@ -36,12 +41,6 @@ $SmallMobileResolution: 600px;
     }
     .project-img {
         opacity: 0;
-    }
-
-    @media (min-width: $desktopResolution) {
-        @media (pointer: coarse) {
-            margin-bottom: 24px;
-        }
     }
 }
 

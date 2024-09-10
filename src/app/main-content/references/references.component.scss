@@ -1,0 +1,8 @@
+@use './../../shared/scss/abstracts/' as *;
+
+.contact-section {
+    @include widthLimiter();
+    @include dflex(stretch, flex-start, column, 0);
+    @include applyLimitMargin();
+}
+

@@ -65,5 +65,39 @@
                 }
             }
         }
+    },
+    "references": {},
+    "contact": {
+        "subheadline": "Contact me",
+        "title": "Let's work together",
+        "article": {
+            "headline": "Got a problem to solve?",
+            "p": {
+                "1": "",
+                "2": ""
+            },
+            "span": ""
+        },
+        "form": {
+            "headline": {
+                "name": "",
+                "email": "",
+                "msg": ""
+            },
+            "placeholder": {
+                "name": "",
+                "email": "",
+                "msg": ""
+            },
+            "checkbox-label": {
+                "read": "",
+                "privacy-policy": "",
+                "confirm": ""
+            },
+            "submit": "Say Hello :)"
+        }
+    },
+    "footer": {
+        "imprint": "Imprint"
     }
 }
