@@ -4,5 +4,24 @@
         "skills": "Skills",
         "projects": "Portfolio",
         "contact": "Kontakt"
-    }
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+    "pokédex": {
+                "description": {
+                    "short": "Ein Pokédex, der die Poke-API verwendet. Bietet ein Optionsmenü.",
+                    "long": "Ein Pokédex, der die Poke-API verwendet. Bietet ein Optionsmenü, in dem eine Autoload-Funktion aktiviert und zwischen klassischen und modernen Sounds gewechselt werden kann."
+                }
+            }
 }

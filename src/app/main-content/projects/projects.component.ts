@@ -14,6 +14,16 @@ export class ProjectsComponent {
 
   projects: Project[] = [
     {
+      name: 'Join',
+      technologies: [
+        'Javascript',
+        'Firebase',
+        'HTML',
+        'CSS'
+      ],
+      github: 'https://github.com/swiftAndHandy/Join'
+    },
+    {
       name: 'El Pollo Loco',
       technologies: [
         'Javascript',
@@ -22,11 +32,21 @@ export class ProjectsComponent {
         'CSS'
       ],
       github: 'https://github.com/swiftAndHandy/Join'
-    }
+    },
+    {
+      name: 'Pokédex',
+      technologies: [
+        'Javascript',
+        'HTML',
+        'CSS'
+      ],
+      liveserver: 'https://pokedex.veltens.info',
+      github: 'https://github.com/swiftAndHandy/Join'
+    },
   ];
 
   returnDescription(project: Project, variant: 'short' | 'long'): string {
-    return `portfolio.project.${project.name}.description.${variant}`.toLocaleLowerCase();
+    return `portfolio.project.${project.name}.description.${variant}`.split(' ').join('-').toLocaleLowerCase();
   }
 
   returnLiveServer(project: Project): string {
