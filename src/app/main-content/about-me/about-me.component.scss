@@ -7,7 +7,7 @@
 
 .about-me-wrapper {
     @include dflex();
-    @media (max-width: $mobileResolution) {
+    @media (max-width: $mobileResolution) or (orientation: portrait) {
         flex-direction: column;
     }
     @include widthLimiter();
@@ -24,7 +24,7 @@
     max-width: 50%;
     align-self: flex-start;
 
-    @media (max-width: $mobileResolution) {
+    @media (max-width: $mobileResolution) or (orientation: portrait) {
         min-width: 100%;
     }
     > img {
@@ -45,6 +45,9 @@
         border-radius: 30px;
         background-image: url("./../../../assets/img/image-bg.svg");
         background-repeat: no-repeat;
+        @media (orientation: portrait) {
+            background-repeat: repeat;
+        }
         transition: all 125ms ease-in;
         @media (pointer: coarse) and (min-width: $desktopResolution) {
             transform: translate(clamp(-23px, 2.5dvh, -46px), clamp(12px, 2.5dvh, 30px));
@@ -72,9 +75,11 @@
     align-self: flex-end;
     transform: translateY(max(80px, 8dvh));
     margin-bottom: 144px;
-    @media (max-width: $mobileResolution) {
+    @media (max-width: $mobileResolution) or (orientation: portrait) {
         width: 100%;
         transform: unset;
+    }
+    @media (max-width: $mobileResolution) {
         margin-bottom: unset;
     }
 
