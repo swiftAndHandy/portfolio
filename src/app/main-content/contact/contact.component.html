@@ -26,12 +26,14 @@
                 <textarea id="formular-msg" name="msg" placeholder="{{'contact.form.placeholder.msg' | translate}}"></textarea>
             </div>
         </div>
-        <input type="checkbox" id="checkbox-privacy-policy" checked="false" name="privacy-checkbox">
-        <label for="checkbox-privacy-policy">
-            {{ 'contact.form.checkbox-label.read' | translate }}
-            <a href="imprint">{{ 'contact.form.checkbox-label.privacy-policy' | translate }}</a>
-            {{ 'contact.form.checkbox-label.confirm' | translate }}
-        </label>
+        <div class="privacy-checkbox">
+            <input type="checkbox" id="checkbox-privacy-policy" class="checkbox" checked="false" name="privacy-checkbox">
+            <label for="checkbox-privacy-policy">
+                {{ 'contact.form.checkbox-label.read' | translate }}
+                <a href="imprint" target="_blank" rel="noopener noreferrer">{{ 'contact.form.checkbox-label.privacy-policy' | translate }}</a>
+                {{ 'contact.form.checkbox-label.confirm' | translate }}
+            </label>
+        </div>
         <app-buttons text="{{ 'contact.form.submit' | translate }}" type="static"></app-buttons>
     </div>
 </section>

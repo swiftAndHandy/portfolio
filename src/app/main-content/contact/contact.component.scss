@@ -5,3 +5,39 @@
     @include dflex(stretch, flex-start, column, 0);
     @include applyLimitMargin();
 }
+
+.checkbox {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+}
+
+.checkbox+label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 2px 8px;
+}
+
+.checkbox+label::before {
+    content: '';
+    min-width: 24px;
+    height: 24px;
+    background-image: url('./../../../assets/icons/checkbox_default.png');
+    background-position: center;
+}
+
+.checkbox+label:hover::before {
+    background-image: url('./../../../assets/icons/checkbox_default_hovered.png');
+}
+
+.checkbox:checked+label::before {
+    background-image: url('./../../../assets/icons/checkbox_checked.png');
+    background-position: center;
+}
+
+.checkbox:checked+label:hover::before {
+    background-image: url('./../../../assets/icons/checkbox_checked_hovered.png');
+}
