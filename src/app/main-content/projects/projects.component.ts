@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { Project } from '../../interfaces/projects.interface';
 import { ButtonsComponent } from "../../shared/components/buttons/buttons.component";
+import { StringUtils } from '../../utils/string-utils.utils';
 
 @Component({
   selector: 'app-projects',
@@ -42,19 +43,18 @@ export class ProjectsComponent {
         'HTML',
         'CSS'
       ],
-      liveserver: 'https://pokedex.veltens.info',
-      github: 'https://github.com/swiftAndHandy/Join'
+      github: ''
     },
   ];
 
   returnDescription(project: Project, variant: 'short' | 'long'): string {
-    const nameResult = this.purgeName(project.name);
+    const nameResult = StringUtils.cleanStr(project.name);
     return `portfolio.project.${nameResult}.description.${variant}`.split(' ').join('-').toLocaleLowerCase();
   }
 
   returnLiveServer(project: Project): string {
     if (!project.liveserver) {
-      const nameResult = this.purgeName(project.name);
+      const nameResult = StringUtils.cleanStr(project.name);
       return `https://${nameResult}.veltens.info`;
     } else {
       return project.liveserver;
@@ -62,17 +62,8 @@ export class ProjectsComponent {
   }
 
   returnImage(project: Project): string {
-    const nameResult = this.purgeName(project.name);
+    const nameResult = StringUtils.cleanStr(project.name);
     return `./assets/img/${nameResult}.webp`;
-  }
-
-  purgeName(name: string): string {
-    const nameResult = this.removeDiacritics(name);
-    return nameResult.split(' ').join('-').toLowerCase();
-  }
-
-  removeDiacritics(str: string):string {
-    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   }
 
   openPopup() {

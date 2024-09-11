@@ -1,7 +1,11 @@
 <div id="references" class="anchor"></div>
 <section class="reference-section">
     <h1 class="headline">{{ 'references.title' | translate }}</h1>
-    <div class="references"></div>
+    <div class="references">
+        @for (giver of referenceGivers; track $index) {
+            <app-reference-box [referenceGiver]="giver"></app-reference-box>
+        }
+    </div>
     <div class="controls">
         <div class="arrow-wrapper">
             <div class="arrow">

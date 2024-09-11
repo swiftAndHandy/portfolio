@@ -30,10 +30,18 @@
     }
 }
 
-.contact-section {
+.reference-section {
     @include widthLimiter();
-    @include dflex(stretch, flex-start, column, 0);
+    @include dflex(space-between, center, column, 48px);
     @include applyLimitMargin();
+}
+
+.headline {
+    font-family: "Fira Code";
+    font-weight: 700;
+    font-size: clamp(1.5rem, 6dvw, 2rem);
+    color: $signatureColor;
+    text-align: center
 }
 
 .controls {
