@@ -47,7 +47,7 @@
 
 .references {
     position: relative;
-    @include dflex($gap: 24px);
+    @include dflex();
     transform: translate(0%);
 }
 
@@ -72,26 +72,28 @@
 
 .blur {
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: -10px;
+    bottom: -10px;
     border-radius: 30px;
     pointer-events: none;
+    z-index: 1;
 
     &--left {
-        left: 0;
         right: 67.67%;
+        left: -10px;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
-        background: linear-gradient(to left, transparent 30%, $backgroundDark 67.67%);
+        background: linear-gradient(to left, transparent, $backgroundDark 5dvw);
     }
     &--right {
-        right: 0;
+        right: -10px;
         left: 67.67%;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
-        background: linear-gradient(to right, transparent 30%, $backgroundDark 67.67%);
+        background: linear-gradient(to right, transparent, $backgroundDark 5dvw);
     }
 }
 
-.bullet-point {
+app-reference-box {
+    transition: all 500ms ease-in-out;
 }

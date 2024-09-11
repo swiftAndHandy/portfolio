@@ -1,7 +1,7 @@
 @use "./../../../shared/scss/abstracts/" as *;
 
 * {
-    @include karla(400, clamp(18px, 4dvw, 20px));
+    @include karla(400, clamp(16px, 4dvw, 20px));
 }
 
 @mixin referenceLayout() {
@@ -9,12 +9,13 @@
     border: 1px solid $signatureColor;
     background: $boxGradient; //#3DCFB64D;
     border-radius: 30px;
-    padding: 16px 40px 48px;
-    width: clamp(200px, 50dvw, 400px);
+    padding: 48px 40px;
+    width: clamp(150px, 50dvw, 400px);
 }
 
 .reference {
     @include referenceLayout();
+    margin: 0 12px;
 
     &__footer {
         align-self: flex-end;
@@ -23,11 +24,12 @@
 
 .giver {
     * {
-        @include karla(400, 18px);
+        @include karla(400, clamp(1rem, 4dvw, 1.25rem));
     }
     @include dflex(center, flex-end, $gap: 8px);
     @media (max-width: $desktopResolution) {
         flex-direction: column;
+        gap: 0;
         
     }
     &__top {

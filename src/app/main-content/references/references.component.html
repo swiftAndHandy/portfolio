@@ -9,13 +9,13 @@
         <div class="blur blur--right"></div>
     </div>
     <div class="controls">
-        <div class="arrow-wrapper">
+        <div class="arrow-wrapper" (click)="previous()">
             <div class="arrow">
                 <img class="arrow--prev left" src="./assets/icons/arrow_right_white.svg" alt="previous" draggable="false">
             </div>
         </div>
         <img src="./assets/icons/dot.svg" [alt]="returnActiveBullet()" draggable="false" class="bullet-point" [ngClass]="{'bla': false}">
-        <div class="arrow-wrapper">
+        <div class="arrow-wrapper" (click)="next()">
             <div class="arrow">
                 <img class="arrow--next" src="./assets/icons/arrow_right_white.svg" alt="previous" draggable="false">
             </div>
