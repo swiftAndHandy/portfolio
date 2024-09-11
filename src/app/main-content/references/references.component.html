@@ -4,7 +4,7 @@
     <div class="references">
         <div class="blur blur--left"></div>
         @for (giver of referenceGivers; let id = $index; track id;) {
-            <app-reference-box [referenceGiver]="giver" [id]="referenceId(id)"></app-reference-box>
+        <app-reference-box [referenceGiver]="giver" [count]="id" [id]="referenceId(id)"></app-reference-box>
         }
         <div class="blur blur--right"></div>
     </div>
@@ -14,7 +14,9 @@
                 <img class="arrow--prev left" src="./assets/icons/arrow_right_white.svg" alt="previous" draggable="false">
             </div>
         </div>
-        <img src="./assets/icons/dot.svg" [alt]="returnActiveBullet()" draggable="false" class="bullet-point" [ngClass]="{'bla': false}">
+        @for (item of referenceGivers; let i = $index; track i;) {
+        <img src="./assets/icons/dot.svg" draggable="false" class="bullet-point" [ngClass]="{'active': i == currentRef}">
+        }
         <div class="arrow-wrapper" (click)="next()">
             <div class="arrow">
                 <img class="arrow--next" src="./assets/icons/arrow_right_white.svg" alt="previous" draggable="false">

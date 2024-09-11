@@ -1,5 +1,5 @@
 <article class="reference">
-    <div class="spacer"></div>
+    <img [id]="'quote' + count" src="./assets/icons/quotes.png" alt="" class="quotes" [ngClass]="{'active': count == 1}" draggable="false">
     <p class="reference__body">{{ returnReferenceTranslation('giver.', '.body') | translate }}</p>
     <div class="reference__footer">
         <div class="spacer line"></div>

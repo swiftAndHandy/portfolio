@@ -6,6 +6,7 @@
 
 @mixin referenceLayout() {
     @include dflex(space-between, center, column);
+    position: relative;
     border: 1px solid $signatureColor;
     background: $boxGradient; //#3DCFB64D;
     border-radius: 30px;
@@ -13,8 +14,23 @@
     width: clamp(150px, 50dvw, 400px);
 }
 
+.quotes {
+    top: 0;
+    position: absolute;
+    transform: translate(0, -50%);
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+    transition: all 250ms ease-in;
+    opacity: 0;
+    &.active {
+        opacity: 1;
+    }
+}
+
 .reference {
     @include referenceLayout();
+    row-gap: 24px;
     margin: 0 12px;
 
     &__footer {

@@ -31,6 +31,7 @@
 }
 
 .reference-section {
+    position: relative;
     @include widthLimiter();
     @include dflex(space-between, center, column, 48px);
     @include applyLimitMargin();
@@ -52,31 +53,39 @@
 }
 
 .controls {
-    @include dflex();
+    @include dflex($gap: 20px);
     .arrow-wrapper {
         width: 40px;
         @include afterArrow();
         .arrow {
             cursor: pointer;
+            user-select: none;
             position: relative;
             @include dflex();
             transition: all 125ms ease-in;
             &--prev {
                 rotate: 180deg;
             }
-            &--next {
-            }
         }
+    }
+}
+
+.bullet-point {
+    user-select: none;
+    filter: brightness(0) invert(1);
+    &.active {
+        filter: unset;
     }
 }
 
 .blur {
     position: absolute;
-    top: -10px;
-    bottom: -10px;
+    top: -100px;
+    bottom: -100px;
     border-radius: 30px;
     pointer-events: none;
     z-index: 1;
+    pointer-events: none;
 
     &--left {
         right: 67.67%;
