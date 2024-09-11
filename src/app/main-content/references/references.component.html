@@ -2,4 +2,17 @@
 <section class="reference-section">
     <h1 class="headline">{{ 'references.title' | translate }}</h1>
     <div class="references"></div>
+    <div class="controls">
+        <div class="arrow-wrapper">
+            <div class="arrow">
+                <img class="arrow--prev left" src="./assets/icons/arrow_right_white.svg" alt="previous" draggable="false">
+            </div>
+        </div>
+        <img src="./assets/icons/dot.svg" [alt]="returnActiveBullet()" draggable="false" class="bullet-point" [ngClass]="{'bla': false}">
+        <div class="arrow-wrapper">
+            <div class="arrow">
+                <img class="arrow--next" src="./assets/icons/arrow_right_white.svg" alt="previous" draggable="false">
+            </div>
+        </div>
+    </div>
 </section>

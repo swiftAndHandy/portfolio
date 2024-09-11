@@ -35,3 +35,12 @@
     font-size: $size;
     text-align: $align;
 }
+
+@mixin afterBasics($width, $height, $position: absolute, $content: '') {
+        display: block;
+        content: $content;
+        position: $position;
+        width: $width;
+        height: $height;
+        transition: all 125ms ease-in;
+}

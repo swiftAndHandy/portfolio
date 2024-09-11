@@ -1,4 +1,34 @@
-@use './../../shared/scss/abstracts/' as *;
+@use "./../../shared/scss/abstracts/" as *;
+
+@mixin afterArrow() {
+    .arrow {
+        &::after {
+            @include afterBasics(40px, 40px);
+            background-image: url("./../../../assets/icons/arrow_right_green.svg");
+            background-repeat: no-repeat;
+            transform: translate(10%, 10%);
+            opacity: 0;
+        }
+        &:has(.arrow--prev) {
+            &::after {
+                transform: rotate(180deg) translate(10%, 10%);
+            }
+        }
+    }
+    @media (pointer: fine) {
+        &:hover {
+            .arrow {
+                transform: translateX(10%);
+                &:has(.arrow--prev) {
+                    transform: translateX(-10%);
+                }
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
 
 .contact-section {
     @include widthLimiter();
@@ -6,3 +36,24 @@
     @include applyLimitMargin();
 }
 
+.controls {
+    @include dflex();
+    .arrow-wrapper {
+        width: 40px;
+        @include afterArrow();
+        .arrow {
+            cursor: pointer;
+            position: relative;
+            @include dflex();
+            transition: all 125ms ease-in;
+            &--prev {
+                rotate: 180deg;
+            }
+            &--next {
+            }
+        }
+    }
+}
+
+.bullet-point {
+}
