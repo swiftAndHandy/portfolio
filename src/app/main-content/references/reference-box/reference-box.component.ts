@@ -14,9 +14,6 @@ export class ReferenceBoxComponent {
 
   returnReferenceTranslation(prefix: string = '', suffix: string =''):string {
     const giverResult = StringUtils.cleanStr(this.referenceGiver);
-    return `reference.${prefix}${giverResult}${suffix}`;
+    return `references.single-reference.${prefix}${giverResult}${suffix}`;
   }
 }
-
-
-//Andre is a focused and dedicated colleague. It's a pleasure to collaborate on a project. He is always there to help, no matter the task.

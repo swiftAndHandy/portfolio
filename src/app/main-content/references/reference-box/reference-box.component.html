@@ -1,10 +1,13 @@
 <article class="reference">
+    <div class="spacer"></div>
     <p class="reference__body">{{ returnReferenceTranslation('giver.', '.body') | translate }}</p>
-    <div class="reference_footer">
-        <div class="spacer"></div>
+    <div class="reference__footer">
+        <div class="spacer line"></div>
         <div class="giver">
-            <span class="giver__name">{{ referenceGiver }}</span>
-            <span>-</span>
+            <div class="giver__top">
+                <span class="giver__name">{{ referenceGiver }}</span>
+                <span>-</span>
+            </div>
             <span class="giver__position">{{ returnReferenceTranslation('giver.', '.position') | translate }}</span>
         </div>
     </div>

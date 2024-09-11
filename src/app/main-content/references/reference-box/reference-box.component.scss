@@ -1,0 +1,45 @@
+@use "./../../../shared/scss/abstracts/" as *;
+
+* {
+    @include karla(400, clamp(18px, 4dvw, 20px));
+}
+
+@mixin referenceLayout() {
+    @include dflex(space-between, center, column);
+    border: 1px solid $signatureColor;
+    background: $boxGradient; //#3DCFB64D;
+    border-radius: 30px;
+    padding: 16px 40px 48px;
+    height: 300px;
+    width: clamp(200px, 50dvw, 1000px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.reference {
+    position: absolute;
+    @include referenceLayout();
+
+    &__footer {
+        align-self: flex-end;
+    }
+}
+
+.giver {
+    * {
+        @include karla(400, 18px);
+    }
+    @include dflex(center, flex-end, $gap: 8px);
+    @media (max-width: $desktopResolution) {
+        flex-direction: column;
+        
+    }
+    &__top {
+        @include dflex(flex-end, $gap: 8px);
+    }
+}
+
+.placeholder {
+    visibility: hidden;
+    @include referenceLayout();
+}

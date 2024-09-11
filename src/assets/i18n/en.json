@@ -67,7 +67,15 @@
         }
     },
     "references": {
-        "title": "What my colleagues say about me"
+        "title": "What my colleagues say about me",
+        "single-reference": {
+            "giver": {
+                "phillip-sauer": {
+                    "body": "Andre is a focused and dedicated colleague. It's a pleasure to collaborate on a project. He is always there to help, no matter the task.",
+                    "position": "Frontend Developer"
+                }
+            }
+        }
     },
     "contact": {
         "subheadline": "Contact me",

@@ -44,6 +44,17 @@
     text-align: center
 }
 
+.references {
+    position: relative;
+    width: 100%;
+    height: 350px;
+
+    app-reference-box {
+        position: absolute;
+        width: 100%;
+    }
+}
+
 .controls {
     @include dflex();
     .arrow-wrapper {

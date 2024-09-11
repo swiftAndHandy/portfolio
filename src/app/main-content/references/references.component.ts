@@ -13,7 +13,9 @@ import { ReferenceBoxComponent } from "./reference-box/reference-box.component";
 export class ReferencesComponent {
 
   referenceGivers: string[] = [
-    'Phillip Sauer'
+    'Phillip Sauer',
+    'Phillip Sauer',
+    'Phillip Sauer',
   ];
 
   returnActiveBullet(): boolean {
