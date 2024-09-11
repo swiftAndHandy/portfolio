@@ -2,9 +2,11 @@
 <section class="reference-section">
     <h1 class="headline">{{ 'references.title' | translate }}</h1>
     <div class="references">
-        @for (giver of referenceGivers; track $index) {
-            <app-reference-box [referenceGiver]="giver"></app-reference-box>
+        <div class="blur blur--left"></div>
+        @for (giver of referenceGivers; let id = $index; track id;) {
+            <app-reference-box [referenceGiver]="giver" [id]="referenceId(id)"></app-reference-box>
         }
+        <div class="blur blur--right"></div>
     </div>
     <div class="controls">
         <div class="arrow-wrapper">

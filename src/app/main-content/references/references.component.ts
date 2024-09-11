@@ -21,4 +21,8 @@ export class ReferencesComponent {
   returnActiveBullet(): boolean {
     return false;
   }
+
+  referenceId(index: number):string {
+    return `reference-no${index}`;
+  }
 }

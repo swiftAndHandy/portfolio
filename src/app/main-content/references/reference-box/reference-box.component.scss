@@ -10,14 +10,10 @@
     background: $boxGradient; //#3DCFB64D;
     border-radius: 30px;
     padding: 16px 40px 48px;
-    height: 300px;
-    width: clamp(200px, 50dvw, 1000px);
-    left: 50%;
-    transform: translateX(-50%);
+    width: clamp(200px, 50dvw, 400px);
 }
 
 .reference {
-    position: absolute;
     @include referenceLayout();
 
     &__footer {
