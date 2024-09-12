@@ -31,7 +31,7 @@ export class ReferenceBoxComponent {
   }
 
   toggleQuotes() {
-    if (this.refService.currentRef  === this.count) {
+    if (this.refService.currentRef === this.count) {
       return true;
     } else {
       return false;

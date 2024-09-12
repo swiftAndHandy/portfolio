@@ -42,7 +42,6 @@ export class ReferencesComponent {
   translatePrev(currentTranslateX: number, lastRefId: number, id: number) {
     let modificator: number = id + 1;
     let updatedTranslateX = currentTranslateX + 100;
-    console.log(currentTranslateX);
     if (updatedTranslateX >= (lastRefId + 1 - id) * 100) {
       return { transform: `translateX(${-(lastRefId * 100) + ((lastRefId + 1 - modificator) * 100)}%)` };
     } else {
@@ -53,7 +52,6 @@ export class ReferencesComponent {
   translateNext(currentTranslateX: number, lastRefId: number, id: number) {
     let modificator: number = id + 1;
     let updatedTranslateX = currentTranslateX - 100;
-    console.log(updatedTranslateX);
     if (updatedTranslateX <= modificator * -100) {
       return { transform: `translateX(${(lastRefId * 100) - (id * 100)}%)` };
     } else {
