@@ -11,9 +11,9 @@ export class RefService {
     'Phillip Sauer',
   ];
   
-  currentRef: number = 1;
+  currentRef: number = 1 ;
 
-  direction: 'prev' | 'next' = 'prev';
+  direction: 'prev' | 'next'  | 'none' = 'none';
 
   constructor() { }
 }

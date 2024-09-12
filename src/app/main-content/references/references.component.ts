@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, QueryList, ViewChildren } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { ReferenceBoxComponent } from "./reference-box/reference-box.component";
 import { RefService } from './ref.service';
@@ -13,11 +13,9 @@ import { RefService } from './ref.service';
 })
 export class ReferencesComponent {
 
-  constructor(public refService: RefService) { }
+  @ViewChildren(ReferenceBoxComponent) referenceBoxes!: QueryList<ReferenceBoxComponent>;
 
-  referenceId(index: number): string {
-    return `reference-no${index}`;
-  }
+  constructor(public refService: RefService) { }
 
   updateCurrentReference(addValue: number) {
     this.refService.currentRef += addValue;
@@ -28,42 +26,50 @@ export class ReferencesComponent {
     }
   }
 
-  toggleQuotes() {
-    // const quoteImages = document.querySelectorAll('[id^="quote"]') as NodeListOf<HTMLElement>;
-    // quoteImages.forEach(image => {
-    //   let imageId = Number(image.id.split('quote')[1]);
-    //   if ((this.refService.currentRef - 2) * -1 === imageId) {
-    //     image.classList.add('active');
-    //   } else {
-    //     image.classList.remove('active');
-    //   }
-
-
-    // });
+  updateTranslateX(id: number): any {
+    let currentTranslateX: number;
+    const base = id + 1;
+    const lastRefId = this.refService.referenceGivers.length - 1;
+    currentTranslateX = this.referenceBoxes ? this.referenceBoxes.get(id)!.currentTranslateX() : 0;
+    switch (this.refService.direction) {
+      case 'prev':
+        return this.translatePrev(currentTranslateX, lastRefId, id);
+      case 'next':
+        return this.translateNext(currentTranslateX, lastRefId, id);
+    }
   }
 
-  previous() {
+  translatePrev(currentTranslateX: number, lastRefId: number, id: number) {
+    let modificator: number = id + 1;
+    let updatedTranslateX = currentTranslateX + 100;
+    console.log(currentTranslateX);
+    if (updatedTranslateX >= (lastRefId + 1 - id) * 100) {
+      return { transform: `translateX(${-(lastRefId * 100) + ((lastRefId + 1 - modificator) * 100)}%)` };
+    } else {
+      return { transform: `translateX(${(updatedTranslateX)}%)` };
+    }
+  }
+
+  translateNext(currentTranslateX: number, lastRefId: number, id: number) {
+    let modificator: number = id + 1;
+    let updatedTranslateX = currentTranslateX - 100;
+    console.log(updatedTranslateX);
+    if (updatedTranslateX <= modificator * -100) {
+      return { transform: `translateX(${(lastRefId * 100) - (id * 100)}%)` };
+    } else {
+      return { transform: `translateX(${(updatedTranslateX)}%)` };
+    }
+  };
+
+  previousButton() {
     this.updateCurrentReference(-1);
-    const references = document.querySelectorAll('[id^="reference-"]') as NodeListOf<HTMLElement>;
-    const lastRefId = this.refService.referenceGivers.length - 1;
-    references.forEach(ref => {
-      const id = Number(ref.id.split('no')[1]);
-      let value = this.currentTranslateX(ref);
-      value -= 100;
-      this.animateReference(ref, id, value, lastRefId, 'prev');
-    });
+    this.refService.direction = 'prev';
   }
 
-  next() {
+  nextButton() {
     this.updateCurrentReference(1);
-    const references = document.querySelectorAll('[id^="reference-"]') as NodeListOf<HTMLElement>;
-    const lastRefId = this.refService.referenceGivers.length - 1;
-    references.forEach(ref => {
-      const id = Number(ref.id.split('no')[1]);
-      let value = this.currentTranslateX(ref);
-      value += 100;
-      this.animateReference(ref, id, value, lastRefId, 'next');
-    });
+    this.refService.direction = 'next';
+
   }
 
   currentTranslateX(ref: HTMLElement): number {
@@ -72,20 +78,4 @@ export class ReferencesComponent {
     return value;
   }
 
-  animateReference(ref: HTMLElement, id: number, transX: number, lastRefId: number, direction: 'prev' | 'next') {
-    const base = id + 1;
-    if (direction === 'prev') {
-      if (transX <= base * -100) {
-        ref.style.transform = `translate(${(lastRefId * 100) - (id * 100)}%, 0%)`;
-      } else {
-        ref.style.transform = `translate(${(transX)}%, 0%)`;
-      }
-    } else if (direction === 'next') {
-      if (transX >= (3 - id) * 100) {
-        ref.style.transform = `translate(${-(lastRefId * 100) + ((3 - base) * 100)}%, 0%)`;
-      } else {
-        ref.style.transform = `translate(${(transX)}%, 0%)`;
-      }
-    }
-  }
 }

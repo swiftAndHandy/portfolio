@@ -4,12 +4,12 @@
     <div class="references">
         <div class="blur blur--left"></div>
         @for (giver of refService.referenceGivers; let id = $index; track id;) {
-        <app-reference-box [count]="id" [id]="referenceId(id)"></app-reference-box>
+        <app-reference-box [count]="id" [ngStyle]="updateTranslateX(id)"></app-reference-box>
         }
         <div class="blur blur--right"></div>
     </div>
     <div class="controls">
-        <div class="arrow-wrapper" (click)="previous()">
+        <div class="arrow-wrapper" (click)="previousButton()">
             <div class="arrow">
                 <img class="arrow--prev left" src="./assets/icons/arrow_right_white.svg" alt="previous" draggable="false">
             </div>
@@ -17,7 +17,7 @@
         @for (item of refService.referenceGivers; let i = $index; track i;) {
         <img src="./assets/icons/dot.svg" draggable="false" class="bullet-point" [ngClass]="{'active': i == refService.currentRef}">
         }
-        <div class="arrow-wrapper" (click)="next()">
+        <div class="arrow-wrapper" (click)="nextButton()">
             <div class="arrow">
                 <img class="arrow--next" src="./assets/icons/arrow_right_white.svg" alt="previous" draggable="false">
             </div>

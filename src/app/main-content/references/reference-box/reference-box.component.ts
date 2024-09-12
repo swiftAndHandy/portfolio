@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, Renderer2 } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { StringUtils } from '../../../utils/string-utils.utils';
 import { CommonModule } from '@angular/common';
@@ -14,7 +14,7 @@ import { RefService } from '../ref.service';
 export class ReferenceBoxComponent {
   @Input() count: number = 0;
 
-  constructor(public refService: RefService) { }
+  constructor(public refService: RefService, private renderer: Renderer2, private el: ElementRef) { }
 
   isActive(): boolean {
     return true;
@@ -25,16 +25,16 @@ export class ReferenceBoxComponent {
     return `references.single-reference.${prefix}${giverResult}${suffix}`;
   }
 
-  ngOnChange() {
-    console.log('blub');
-
+  currentTranslateX(): number {
+    let transX = Number(this.el.nativeElement.style.transform.split(/[(%]+/)[1]);
+    return isNaN(transX) ? 0 : transX;
   }
 
   toggleQuotes() {
-      if ((this.refService.currentRef - 2) * -1 === this.count) {
-        return true;
-      } else {
-        return false;
-      }
+    if (this.refService.currentRef  === this.count) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
