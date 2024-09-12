@@ -3,8 +3,8 @@
     <h1 class="headline">{{ 'references.title' | translate }}</h1>
     <div class="references">
         <div class="blur blur--left"></div>
-        @for (giver of referenceGivers; let id = $index; track id;) {
-        <app-reference-box [referenceGiver]="giver" [count]="id" [id]="referenceId(id)"></app-reference-box>
+        @for (giver of refService.referenceGivers; let id = $index; track id;) {
+        <app-reference-box [count]="id" [id]="referenceId(id)"></app-reference-box>
         }
         <div class="blur blur--right"></div>
     </div>
@@ -14,8 +14,8 @@
                 <img class="arrow--prev left" src="./assets/icons/arrow_right_white.svg" alt="previous" draggable="false">
             </div>
         </div>
-        @for (item of referenceGivers; let i = $index; track i;) {
-        <img src="./assets/icons/dot.svg" draggable="false" class="bullet-point" [ngClass]="{'active': i == currentRef}">
+        @for (item of refService.referenceGivers; let i = $index; track i;) {
+        <img src="./assets/icons/dot.svg" draggable="false" class="bullet-point" [ngClass]="{'active': i == refService.currentRef}">
         }
         <div class="arrow-wrapper" (click)="next()">
             <div class="arrow">

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { ReferenceBoxComponent } from "./reference-box/reference-box.component";
+import { RefService } from './ref.service';
 
 @Component({
   selector: 'app-references',
@@ -12,47 +13,39 @@ import { ReferenceBoxComponent } from "./reference-box/reference-box.component";
 })
 export class ReferencesComponent {
 
-  referenceGivers: [string, string, string] = [
-    'Phillip Sauer',
-    'Phillip Sauer',
-    'Phillip Sauer',
-  ];
-  
-  currentRef: number = 1;
+  constructor(public refService: RefService) { }
 
   referenceId(index: number): string {
     return `reference-no${index}`;
   }
 
-  updateCurrentReference(addValue: number, oldValue: number) {
-    this.currentRef += addValue;
-    if (this.currentRef >= this.referenceGivers.length) {
-      this.currentRef = 0;
-    } else if (this.currentRef < 0) {
-      this.currentRef = this.referenceGivers.length - 1;
+  updateCurrentReference(addValue: number) {
+    this.refService.currentRef += addValue;
+    if (this.refService.currentRef >= this.refService.referenceGivers.length) {
+      this.refService.currentRef = 0;
+    } else if (this.refService.currentRef < 0) {
+      this.refService.currentRef = this.refService.referenceGivers.length - 1;
     }
-    this.toggleQuotes(oldValue);
   }
 
-  toggleQuotes(oldValue: number) {
-    const quoteImages = document.querySelectorAll('[id^="quote"]') as NodeListOf<HTMLElement>;
-    quoteImages.forEach(image => {
-      let imageId = Number(image.id.split('quote')[1]);
-      if ((this.currentRef - 2) * -1 === imageId) {
-        image.classList.add('active');
-      } else {
-        image.classList.remove('active');
-      }
+  toggleQuotes() {
+    // const quoteImages = document.querySelectorAll('[id^="quote"]') as NodeListOf<HTMLElement>;
+    // quoteImages.forEach(image => {
+    //   let imageId = Number(image.id.split('quote')[1]);
+    //   if ((this.refService.currentRef - 2) * -1 === imageId) {
+    //     image.classList.add('active');
+    //   } else {
+    //     image.classList.remove('active');
+    //   }
 
 
-    });
-
+    // });
   }
 
   previous() {
-    this.updateCurrentReference(-1, this.currentRef);
+    this.updateCurrentReference(-1);
     const references = document.querySelectorAll('[id^="reference-"]') as NodeListOf<HTMLElement>;
-    const lastRefId = references.length - 1;
+    const lastRefId = this.refService.referenceGivers.length - 1;
     references.forEach(ref => {
       const id = Number(ref.id.split('no')[1]);
       let value = this.currentTranslateX(ref);
@@ -62,9 +55,9 @@ export class ReferencesComponent {
   }
 
   next() {
-    this.updateCurrentReference(1, this.currentRef);
+    this.updateCurrentReference(1);
     const references = document.querySelectorAll('[id^="reference-"]') as NodeListOf<HTMLElement>;
-    const lastRefId = references.length - 1;
+    const lastRefId = this.refService.referenceGivers.length - 1;
     references.forEach(ref => {
       const id = Number(ref.id.split('no')[1]);
       let value = this.currentTranslateX(ref);
