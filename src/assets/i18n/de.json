@@ -5,23 +5,119 @@
         "projects": "Portfolio",
         "contact": "Kontakt"
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-    "pokédex": {
+    "hero": {
+        "button": {
+            "check-work": "Check my work",
+            "contact": "Contact me"
+        },
+        "marquee": {
+            "remote": "Available for remote work",
+            "skills": "Frontend Developer",
+            "location": "Based in Paderborn",
+            "open-to-work": "Open to work"
+        }
+    },
+    "about-me": {
+        "portrait-alt": "An image of Andre Veltens, working on a MacBook",
+        "subheadline": "Who I Am",
+        "title": "About me",
+        "subsumption": "Hi, I'm a german speaking Frontend Developer based in Paderborn. I have made it my mission to design websites and applications that are both appealing and practical. I am driven by my experience as a former employee in various industries and the associated knowledge of which software solutions can run better and how. ",
+        "bulletpoints": {
+            "location": "Flexible in terms of working environments, I can work effectively both on-site in Paderborn and remotely.",
+            "mind": "I am open-minded and always looking for personal challenges to constantly improve my knowledge and skills.",
+            "goals": "I like solving issues. Programming is a powerfull and economic way of problem-solving. You can benefit from my knowledge and skills. I'm glad to bring your visions to life. "
+        }
+    },
+    "skills": {
+        "subheadline": "Technologies",
+        "title": "Skill Set",
+        "intro": "In the meantime, I have been involved in various projects.  I have used a variety of frontend technologies and concepts. I am open to embracing new technologies and methodologies to Continously enhance my skills and stay ahead in the ever-evolving landscape of web development.",
+        "sub-subheadline": {
+            "part": {
+                "one": "You need ",
+                "two": "another skill?"
+            },
+            "body": "Feel free to contact me. I look forward to expanding on my previous knowledge."
+        },
+        "button": "Let's Talk"
+    },
+    "portfolio": {
+        "title": "Featured Projects",
+        "subheadline": "Portfolio",
+        "expose": "Explore a selection of my work here - Interact with projects to see my skills in action.",
+        "project": {
+            "join": {
+                "description": {
+                    "short": "Ein Task Manager basierend auf dem Kanban System.",
+                    "long": "Ein Task Manager basierend auf dem Kanban System. Erstellen und organisieren Sie Aufgaben mit Hilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu."
+                }
+            },
+            "el-pollo-loco": {
+                "description": {
+                    "short": "Objekt orientiertes Jump 'n' Run Spiel mit Highscore-Liste. Rumble-Feature für Gamepads.",
+                    "long": "Springe, renne und wirf Tabasco-Soße. Das Spiel basiert auf Objekt-Orientierter-Programmierung (OOP). Hilf Pepe Münzen and Tabasco-Soße zu finden um das verrückte Huhn zu besiegen."
+                }
+            },
+            "pokedex": {
                 "description": {
                     "short": "Ein Pokédex, der die Poke-API verwendet. Bietet ein Optionsmenü.",
                     "long": "Ein Pokédex, der die Poke-API verwendet. Bietet ein Optionsmenü, in dem eine Autoload-Funktion aktiviert und zwischen klassischen und modernen Sounds gewechselt werden kann."
                 }
             }
+        }
+    },
+    "references": {
+        "title": "Das sagen meine Kollegen",
+        "single-reference": {
+            "giver": {
+                "phillip-sauer": {
+                    "body": "Andre ist ein konzentrierter und engagierter Kollege. Es ist eine Freude, mit ihm an einem Projekt zu arbeiten. Er ist immer da, um zu helfen, egal bei welcher Aufgabe.",
+                    "position": "Frontend Developer"
+                }
+            }
+        }
+    },
+    "contact": {
+        "subheadline": "Unsere Zusammenarbeit",
+        "title": "Schreiben Sie mir",
+        "article": {
+            "headline": "Sie haben ein Problem?",
+            "p": {
+                "1": "Schreiben Sie mich über das nebenstehende Formular an. Ich freue mich darauf von Ihnen zu hören. Erzählen Sie mir von Ihren Ideen, ich setze Sie um.",
+                "2": "Sie brauchen einen Frontend Entwickler?"
+            },
+            "talk": "Sie haben ihn gefunden!"
+        },
+        "form": {
+            "headline": {
+                "name": "Wie lautet Ihr Name?",
+                "email": "Und Ihre E-Mail?",
+                "msg": "Wie kann ich helfen?"
+            },
+            "placeholder": {
+                "regular": {
+                    "name": "Bitte Ihren Namen eintragen",
+                    "email": "sie@beispiel.de",
+                    "msg": "Hallo Andre, ich habe Interesse an...",
+                    "privacy": ""
+                },
+                "error": {
+                    "name": "Denken Sie an Ihren Namen ;-)",
+                    "email": "Hoppla! Die E-Mail wird benötigt.",
+                    "email-pattern": "Bitte benutzen Sie das Muster abc@mail.domain",
+                    "msg": "Was darf ich für Sie entwickeln?",
+                    "privacy": "Bitte stimmen Sie der Datenschutzbestimmung zu."
+                }
+            },
+            "checkbox-label": {
+                "read": "Ich habe die",
+                "privacy-policy": "Datenschutzbestimmung",
+                "confirm": "gelesen und stimme der Verarbeitung meiner Daten entsprechend dieser zu."
+            },
+            "submit": "Say Hello :)"
+        }
+    },
+    "footer": {
+        "imprint": "Imprint"
+    }
 }
