@@ -83,26 +83,35 @@
         "article": {
             "headline": "Got a problem to solve?",
             "p": {
-                "1": "",
-                "2": ""
+                "1": "Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.",
+                "2": "Need a Frontend Developer?"
             },
-            "span": ""
+            "talk": "Let's talk!"
         },
         "form": {
             "headline": {
-                "name": "",
-                "email": "",
-                "msg": ""
+                "name": "What's your name?",
+                "email": "What's your email?",
+                "msg": "How can I help you?"
             },
             "placeholder": {
-                "name": "",
-                "email": "",
-                "msg": ""
+                "regular": {
+                    "name": "You name goes here",
+                    "email": "youremail@example.com",
+                    "msg": "Hello Andre, I'm interested in...",
+                    "privacy": "Please accept the privacy policy."
+                },
+                "error": {
+                    "name": "Oops! it seems your name is missing",
+                    "email": "Hoppla! your email is required",
+                    "msg": "What do you need to develop?",
+                    "privacy": "Please accept the privacy policy."
+                }
             },
             "checkbox-label": {
-                "read": "",
-                "privacy-policy": "",
-                "confirm": ""
+                "read": "I've read the",
+                "privacy-policy": "privacy policy",
+                "confirm": "and agree to the processing of my data as outlined."
             },
             "submit": "Say Hello :)"
         }

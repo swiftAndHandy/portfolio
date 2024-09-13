@@ -1,9 +1,17 @@
-@use './../../shared/scss/abstracts/' as *;
+@use "./../../shared/scss/abstracts/" as *;
 
 .contact-section {
     @include widthLimiter();
-    @include dflex(stretch, flex-start, column, 0);
     @include applyLimitMargin();
+    @include dflex(center, flex-start, row, 64px);
+
+    @media (max-width: $mobileResolution) or (orientation: portrait) {
+        @include dflex(flex-start, center, column, 64px);
+    }
+}
+
+.error {
+    color: #ec7b7bcc;
 }
 
 .checkbox {
@@ -13,7 +21,7 @@
     opacity: 0;
 }
 
-.checkbox+label {
+.checkbox + label {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -21,23 +29,107 @@
     padding: 2px 8px;
 }
 
-.checkbox+label::before {
-    content: '';
+.checkbox + label::before {
+    content: "";
     min-width: 24px;
     height: 24px;
-    background-image: url('./../../../assets/icons/checkbox_default.png');
+    background-image: url("./../../../assets/icons/checkbox_default.png");
     background-position: center;
 }
 
-.checkbox+label:hover::before {
-    background-image: url('./../../../assets/icons/checkbox_default_hovered.png');
+.checkbox + label:hover::before {
+    background-image: url("./../../../assets/icons/checkbox_default_hovered.png");
 }
 
-.checkbox:checked+label::before {
-    background-image: url('./../../../assets/icons/checkbox_checked.png');
+.checkbox:checked + label::before {
+    background-image: url("./../../../assets/icons/checkbox_checked.png");
     background-position: center;
 }
 
-.checkbox:checked+label:hover::before {
-    background-image: url('./../../../assets/icons/checkbox_checked_hovered.png');
+.checkbox:checked + label:hover::before {
+    background-image: url("./../../../assets/icons/checkbox_checked_hovered.png");
+}
+
+.titles {
+    @include dflex(center, flex-start, column, 16px);
+    @media (orientation: landscape) {
+        @include dflex(center, flex-start, column, 20px);
+    }
+    .section__main-title {
+        white-space: unset;
+    }
+}
+
+.contact-content {
+    @include dflex(center, flex-start, column, 16px);
+    .article__headline {
+        color: $signatureColor;
+        font-family: "Fira Code";
+        font-size: clamp(1rem, 4vw, 1.5rem);
+    }
+    > p {
+        > span {
+            color: $signatureColor;
+        }
+    }
+}
+
+.left {
+    @media (orientation: landscape) and (min-width: $desktopResolution) {
+        max-width: 50%;
+    }
+}
+
+.right {
+    @include dflex(center, flex-start, column, 40px);
+    @media (orientation: landscape) and (min-width: $desktopResolution) {
+        width: 50%;
+    }
+
+    .formular__body {
+        width: 100%;
+
+        [class^="formular__body__"] {
+            @include dflex(center, flex-start, column, 10px);
+            padding: 32px;
+            border-top: 1px solid $signatureColor;
+            > label {
+                font-family: "Fira Code";
+                font-weight: 500;
+                font-size: clamp(1rem, 4dvw, 1.5rem);
+                color: $signatureColor;
+            }
+            > input,
+            textarea {
+                @include karla(400, 1rem, rgba($color: #ffffff, $alpha: 0.8));
+                background-color: transparent;
+                border: none;
+                width: 100%;
+            }
+
+            textarea {
+                resize: none;
+            }
+        }
+
+        .formular__body__message {
+            border-bottom: 1px solid $signatureColor;
+        }
+    }
+
+    .formular__footer {
+        @include dflex(center, flex-start, column, 16px);
+        * {
+            font-size: 15px;
+            font-family: "Karla";
+        }
+
+        > app-buttons {
+            align-self: center;
+        }
+
+        a {
+            color: $signatureColor;
+        }
+    }
 }

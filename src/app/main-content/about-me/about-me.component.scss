@@ -99,6 +99,11 @@
             }
             &__bulletpoint {
                 @include dflex(flex-start, $gap: 24px);
+                >img {
+                    align-self: flex-start;
+                    height: 32px;
+                    width: 32px;
+                }
                 & * {
                     transition: all 125ms ease-in;
                     @media (pointer: fine) {
