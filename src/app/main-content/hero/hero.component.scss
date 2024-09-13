@@ -163,6 +163,7 @@ app-marquee {
     > hgroup {
         @include dflex($direction: column);
         white-space: nowrap;
+        margin-bottom: 24px;
 
         > span {
             font-family: "Fira Code";
@@ -175,9 +176,10 @@ app-marquee {
         }
     }
     .button-wrapper {
-        @include dflex($direction: column, $gap: min(4dvw, 48px));
+        @include dflex($direction: column, $gap: min(2dvh, 24px));
         @media (min-width: $desktopResolution) {
             flex-direction: row;
+            gap: min(4dvw, 48px)
         }
     }
 }
