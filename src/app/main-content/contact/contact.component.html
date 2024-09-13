@@ -15,15 +15,15 @@
         <div class="formular__body">
             <div class="formular__body__name">
                 <label for="formular-name" class="formular__headline">{{ 'contact.form.headline.name' | translate }}</label>
-                <input type="name" id="formular-name" placeholder="{{ translatePlaceholderState('name') | translate}}" [ngClass]="placeholderState('name')">
+                <input maxlength="25" type="name" id="formular-name" placeholder="{{ translatePlaceholderState('name') | translate}}" [ngClass]="placeholderState('name')">
             </div>
             <div class="formular__body__email">
                 <label for="formular-email" class="formular__headline">{{ 'contact.form.headline.email' | translate }}</label>
-                <input type="email" id="formular-email" placeholder="{{ translatePlaceholderState('email') | translate}}">
+                <input type="email" id="formular-email" placeholder="{{ translatePlaceholderState('email') | translate}}" [ngClass]="placeholderState('email')">
             </div>
             <div class="formular__body__message">
                 <label for="formular-msg" class="formular__headline">{{ 'contact.form.headline.msg' | translate }}</label>
-                <textarea id="formular-msg" name="msg" placeholder="{{ translatePlaceholderState('msg') | translate}}" (input)="resizeTextarea($event)"></textarea>
+                <textarea id="formular-msg" name="msg" placeholder="{{ translatePlaceholderState('msg') | translate}}" (input)="resizeTextarea($event)" [ngClass]="placeholderState('msg')"></textarea>
             </div>
         </div>
         <div class="formular__footer">
@@ -35,7 +35,7 @@
                         {{ 'contact.form.checkbox-label.confirm' | translate }}
                     </div>
                 </label>
-                <span class="privacy-error">{{ translatePlaceholderState('privacy') | translate}}</span>
+                <span class="privacy-error" [ngClass]="placeholderState('privacy')">{{ translatePlaceholderState('privacy') | translate}}</span>
             </div>
             <app-buttons text="{{ 'contact.form.submit' | translate }}" type="static"></app-buttons>
         </div>

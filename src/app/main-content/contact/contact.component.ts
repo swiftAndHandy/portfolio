@@ -15,16 +15,16 @@ export class ContactComponent {
 
   placeholders: ContactFormPlaceholders = {
     name: {
-      state: 'regular'
+      state: 'error'
     },
     email: {
-      state: 'regular'
+      state: 'error'
     },
     msg: {
-      state: 'regular'
+      state: 'error'
     },
     privacy: {
-      state: 'regular'
+      state: 'error'
     }
   }
 

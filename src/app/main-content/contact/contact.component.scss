@@ -12,6 +12,11 @@
 
 .error {
     color: #ec7b7bcc;
+    &::placeholder {
+        color: #ec7b7bcc;
+        white-space-collapse: break-spaces;
+        font-size: 15px;
+    }
 }
 
 .checkbox {
@@ -82,6 +87,7 @@
 
 .right {
     @include dflex(center, flex-start, column, 40px);
+    width: 100%;
     @media (orientation: landscape) and (min-width: $desktopResolution) {
         width: 50%;
     }
@@ -92,6 +98,9 @@
         [class^="formular__body__"] {
             @include dflex(center, flex-start, column, 10px);
             padding: 32px;
+            @media (max-width: calc($mobileResolution/2)) {
+                padding: 32px 0;
+            }
             border-top: 1px solid $signatureColor;
             > label {
                 font-family: "Fira Code";
@@ -105,6 +114,14 @@
                 background-color: transparent;
                 border: none;
                 width: 100%;
+
+                &:active {
+                    outline: none;
+                }
+
+                &:focus-visible {
+                    outline: none;
+                }
             }
 
             textarea {

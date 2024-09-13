@@ -99,7 +99,7 @@
                     "name": "You name goes here",
                     "email": "youremail@example.com",
                     "msg": "Hello Andre, I'm interested in...",
-                    "privacy": "Please accept the privacy policy."
+                    "privacy": ""
                 },
                 "error": {
                     "name": "Oops! it seems your name is missing",
