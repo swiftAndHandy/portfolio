@@ -14,7 +14,7 @@ export class ToggleComponent {
   }
 
   toggleLanguage() {
-    if (this.translate.store.currentLang === 'de') {
+    if (this.translate.currentLang === 'de') {
       this.translate.use('en');
     } else {
       this.translate.use('de');

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Skill } from '../../../interfaces/skill.interface';
 
 
@@ -18,6 +18,10 @@ export class SingleSkillComponent {
 
   skill!: Skill;
 
+  constructor(private translate: TranslateService){
+
+  }
+
   ngOnInit() {
     this.skill = {
       name: this.name,
@@ -31,6 +35,6 @@ export class SingleSkillComponent {
 
   returnImgPath(popup: boolean = false): string {
     const imageName: string = this.skill.name.split(' ').join('-').toLowerCase();
-    return popup ? `./assets/icons/${this.skill.category}/${imageName}-popup.svg` : `./assets/icons/${this.skill.category}/${imageName}.svg`;
+    return popup ? `./assets/icons/${this.skill.category}/${imageName}-popup_${this.translate.currentLang}.svg` : `./assets/icons/${this.skill.category}/${imageName}.svg`;
   }
 }
