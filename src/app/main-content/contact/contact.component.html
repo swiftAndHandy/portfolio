@@ -11,24 +11,25 @@
             <p>{{ 'contact.article.p.2' | translate }}&nbsp;<span>{{ 'contact.article.talk' | translate }}</span></p>
         </article>
     </div>
-    <form class="right">
+    <form class="right" (ngSubmit)="onSubmit(contactForm);" #contactForm="ngForm">
         <div class="formular__body">
             <div class="formular__body__name">
                 <label for="formular-name" class="formular__headline">{{ 'contact.form.headline.name' | translate }}</label>
-                <input maxlength="25" type="name" id="formular-name" placeholder="{{ translatePlaceholderState('name') | translate}}" [ngClass]="placeholderState('name')">
+                <input [(ngModel)]="contactData.name" name="name" maxlength="25" type="name" id="formular-name" placeholder="{{ translatePlaceholderState('name') | translate}}" [ngClass]="placeholderState('name')" required>
             </div>
             <div class="formular__body__email">
                 <label for="formular-email" class="formular__headline">{{ 'contact.form.headline.email' | translate }}</label>
-                <input type="email" id="formular-email" placeholder="{{ translatePlaceholderState('email') | translate}}" [ngClass]="placeholderState('email')">
+                <input [(ngModel)]="contactData.email" name="email" type="email" id="formular-email" placeholder="{{ translatePlaceholderState('email') | translate}}" [ngClass]="placeholderState('email')" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
+                <span class="email-pattern" [ngClass]="placeholderState('email')">{{ 'contact.form.placeholder.error.email-pattern' | translate }}</span>
             </div>
             <div class="formular__body__message">
                 <label for="formular-msg" class="formular__headline">{{ 'contact.form.headline.msg' | translate }}</label>
-                <textarea id="formular-msg" name="msg" placeholder="{{ translatePlaceholderState('msg') | translate}}" (input)="resizeTextarea($event)" [ngClass]="placeholderState('msg')"></textarea>
+                <textarea [(ngModel)]="contactData.msg" id="formular-msg" name="msg" placeholder="{{ translatePlaceholderState('msg') | translate}}" (input)="resizeTextarea($event)" [ngClass]="placeholderState('msg')" required></textarea>
             </div>
         </div>
         <div class="formular__footer">
             <div class="privacy-checkbox">
-                <input type="checkbox" id="checkbox-privacy-policy" class="checkbox" checked="false" name="privacy-checkbox">
+                <input [(ngModel)]="contactData.privacy" type="checkbox" id="checkbox-privacy-policy" class="checkbox" unchecked name="privacy" required>
                 <label for="checkbox-privacy-policy">
                     <div>{{ 'contact.form.checkbox-label.read' | translate }}
                         <a href="imprint" target="_blank" rel="noopener noreferrer">{{ 'contact.form.checkbox-label.privacy-policy' | translate }}</a>

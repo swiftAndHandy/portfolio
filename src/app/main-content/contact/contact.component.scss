@@ -11,6 +11,7 @@
 }
 
 .error {
+    display: unset !important;
     color: #ec7b7bcc;
     &::placeholder {
         color: #ec7b7bcc;
@@ -148,5 +149,13 @@
         a {
             color: $signatureColor;
         }
+    }
+
+    .email-pattern {
+        display: none;
+        color: #ec7b7bcc;
+        white-space-collapse: break-spaces;
+        font-family: 'Karla';
+        font-size: 15px;
     }
 }

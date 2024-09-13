@@ -1,5 +1,5 @@
 export interface ContactFormPlaceholders {
-    name: {
+    [name: string]: {
         state: 'regular' | 'error';
     },
     email: {

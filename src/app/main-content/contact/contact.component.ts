@@ -1,32 +1,55 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonsComponent } from '../../shared/components/buttons/buttons.component';
 import { ContactFormPlaceholders } from '../../interfaces/contact-placeholders.interface';
 import { CommonModule } from '@angular/common';
+import { FormsModule, NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [TranslateModule, ButtonsComponent, CommonModule],
+  imports: [TranslateModule, ButtonsComponent, CommonModule, FormsModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
 
+  contactData = {
+    name: '',
+    email: '',
+    msg: '',
+    privacy: false
+  }
+
   placeholders: ContactFormPlaceholders = {
     name: {
-      state: 'error'
+      state: 'regular'
     },
     email: {
-      state: 'error'
+      state: 'regular'
     },
     msg: {
-      state: 'error'
+      state: 'regular'
     },
     privacy: {
-      state: 'error'
+      state: 'regular'
     }
   }
+
+  mailTest = true;
+  http = inject(HttpClient);
+
+  post = {
+    endPoint: 'https://veltens.info/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
+  };
 
   translatePlaceholderState(field: 'name' | 'email' | 'msg' | 'privacy') {
     return `contact.form.placeholder.${this.placeholderState(field)}.${field}`;
@@ -36,19 +59,38 @@ export class ContactComponent {
     return this.placeholders[field].state;
   }
 
-  togglePlaceholderState(field: 'name' | 'email' | 'msg' | 'privacy'){
-    switch (this.placeholders[field].state) {
-      case 'regular':
-        return this.placeholders[field].state = 'error';
-      case 'error':
-        return this.placeholders[field].state = 'regular';
-    }
-  }
-
   resizeTextarea(event: Event) {
     const textArea = event.target as HTMLTextAreaElement;
     textArea.style.height = 'auto';
     textArea.style.height = textArea.scrollHeight + 'px';
   };
 
+  onSubmit(ngForm: NgForm) {
+
+    for (const key in ngForm.form.controls) {
+      if (ngForm.form.controls[key].valid) {
+        this.placeholders[key].state = 'regular';
+      } else {
+        this.placeholders[key].state = 'error';
+      }
+    }
+    
+
+    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+      this.http.post(this.post.endPoint, this.post.body(this.contactData))
+        .subscribe({
+          next: (response) => {
+
+            ngForm.resetForm();
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => console.info('send post complete'),
+        });
+    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+      ngForm.resetForm();
+    }
+
+  }
 }

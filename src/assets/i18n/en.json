@@ -104,6 +104,7 @@
                 "error": {
                     "name": "Oops! it seems your name is missing",
                     "email": "Hoppla! your email is required",
+                    "email-pattern": "Please ensure you used the pattern abc@mail.domain", 
                     "msg": "What do you need to develop?",
                     "privacy": "Please accept the privacy policy."
                 }
