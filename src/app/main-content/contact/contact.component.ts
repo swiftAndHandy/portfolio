@@ -51,12 +51,21 @@ export class ContactComponent {
     },
   };
 
-  translatePlaceholderState(field: 'name' | 'email' | 'msg' | 'privacy') {
+  translatePlaceholderState(field: 'name' | 'email' | 'msg' | 'privacy'): string {
     return `contact.form.placeholder.${this.placeholderState(field)}.${field}`;
   }
 
   placeholderState(field: 'name' | 'email' | 'msg' | 'privacy'): 'regular' | 'error' {
     return this.placeholders[field].state;
+  }
+
+  checkMailPattern(ngForm: NgForm) {
+    if (this.placeholderState('email') === 'error') {
+      if (ngForm.form.controls['email'].valid) {
+        return 'mail-pattern-fixed';
+      }
+    }
+    return '';
   }
 
   resizeTextarea(event: Event) {

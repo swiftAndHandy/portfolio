@@ -157,5 +157,8 @@
         white-space-collapse: break-spaces;
         font-family: 'Karla';
         font-size: 15px;
+        &.error.mail-pattern-fixed{
+            display: none !important;
+        }
     }
 }

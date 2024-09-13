@@ -20,7 +20,7 @@
             <div class="formular__body__email">
                 <label for="formular-email" class="formular__headline">{{ 'contact.form.headline.email' | translate }}</label>
                 <input [(ngModel)]="contactData.email" name="email" type="email" id="formular-email" placeholder="{{ translatePlaceholderState('email') | translate}}" [ngClass]="placeholderState('email')" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
-                <span class="email-pattern" [ngClass]="placeholderState('email')">{{ 'contact.form.placeholder.error.email-pattern' | translate }}</span>
+                <span class="email-pattern" [ngClass]="[placeholderState('email'), checkMailPattern(contactForm)]">{{ 'contact.form.placeholder.error.email-pattern' | translate }}</span>
             </div>
             <div class="formular__body__message">
                 <label for="formular-msg" class="formular__headline">{{ 'contact.form.headline.msg' | translate }}</label>
