@@ -10,7 +10,7 @@
                     }
                 </div>
             </div>
-            <span>{{ returnDescription(currentProject, 'short') | translate}}</span>
+            <span>{{ projects.returnDescription(currentProject, 'short') | translate}}</span>
         </div>
         <div class="item__technical-information">
             <div class="technologies technologies--desktop">
@@ -23,11 +23,11 @@
                 <a [href]="currentProject.github" target="_blank" rel="noopener noreferrer">
                     <app-buttons text="GitHub" type="link" bg="dark"></app-buttons>
                 </a>
-                <a [href]="returnLiveServer(currentProject)" target="_blank" rel="noopener noreferrer">
+                <a [href]="projects.returnLiveServer(currentProject)" target="_blank" rel="noopener noreferrer">
                     <app-buttons text="Live Test" type="link" bg="dark"></app-buttons>
                 </a>
             </div>
         </div>
     </div>
-        <img class="project-img" [src]="returnImage(currentProject)" alt="" draggable="false">
+        <img class="project-img" [src]="projects.returnImage(currentProject)" alt="" draggable="false">
 </div>

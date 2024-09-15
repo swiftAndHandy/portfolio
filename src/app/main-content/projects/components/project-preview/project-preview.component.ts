@@ -20,23 +20,4 @@ export class ProjectPreviewComponent {
 
   constructor(public projects: ProjectService) {}
 
-  returnDescription(project: Project, variant: 'short' | 'long'): string {
-    const nameResult = StringUtils.cleanStr(project.name);
-    return `portfolio.project.${nameResult}.description.${variant}`.split(' ').join('-').toLocaleLowerCase();
-  }
-
-  returnLiveServer(project: Project): string {
-    if (!project.liveserver) {
-      const nameResult = StringUtils.cleanStr(project.name);
-      return `https://${nameResult}.veltens.info`;
-    } else {
-      return project.liveserver;
-    }
-  }
-
-  returnImage(project: Project): string {
-    const nameResult = StringUtils.cleanStr(project.name);
-    return `./assets/img/${nameResult}.webp`;
-  }
-
 }

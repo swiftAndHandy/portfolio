@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Project } from '../../interfaces/projects.interface';
+import { StringUtils } from '../../utils/string-utils.utils';
 
 @Injectable({
   providedIn: 'root'
@@ -43,13 +44,33 @@ export class ProjectService {
     },
   ];
 
-  constructor() { }
-
   openProjectDetails(projectIndex: number) {
     this.projectDetails.visibleFullscreen = true;
+    this.projectDetails.projectIndex = projectIndex;
+    document.body.style.overflow = 'hidden';
   }
 
-  closeProjectDetails(project: Project) {
-    this.projectDetails.visibleFullscreen  = false;
+  closeProjectDetails() {
+    this.projectDetails.visibleFullscreen = false;
+    document.body.style.overflow = 'auto';
+  }
+
+  returnImage(project: Project): string {
+    const nameResult = StringUtils.cleanStr(project.name);
+    return `./assets/img/${nameResult}.webp`;
+  }
+
+  returnDescription(project: Project, variant: 'short' | 'long'): string {
+    const nameResult = StringUtils.cleanStr(project.name);
+    return `portfolio.project.${nameResult}.description.${variant}`.split(' ').join('-').toLocaleLowerCase();
+  }
+
+  returnLiveServer(project: Project): string {
+    if (!project.liveserver) {
+      const nameResult = StringUtils.cleanStr(project.name);
+      return `https://${nameResult}.veltens.info`;
+    } else {
+      return project.liveserver;
+    }
   }
 }
