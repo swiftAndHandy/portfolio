@@ -1,0 +1,35 @@
+@mixin afterBullet($translateX, $translateY) {
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        content: "";
+        width: 8px;
+        height: 8px;
+        background-image: url("./../../../assets/icons/dot.svg");
+        transform: translate($translateX, $translateY);
+        opacity: 0;
+        transition: all 100ms ease-in; 
+    }
+    @include hoverBullet();
+}
+
+@mixin hoverBullet() {
+    @media (pointer: fine) {
+        &:hover {
+            > img {
+                filter: brightness(0) invert(1);
+            }
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &:active {
+        &::after {
+            opacity: 0.5;
+        }
+    }
+}

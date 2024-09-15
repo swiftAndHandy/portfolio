@@ -1,0 +1,59 @@
+@use './../../shared/scss/abstracts/' as *;
+
+.details-wrapper {
+    width: 50%;
+    box-sizing: border-box;
+    align-self: flex-end;
+    transform: translateY(max(80px, 8dvh));
+    margin-bottom: 144px;
+    @media (max-width: $mobileResolution) or (orientation: portrait) {
+        width: 100%;
+        transform: unset;
+    }
+    @media (max-width: $mobileResolution) {
+        margin-bottom: unset;
+    }
+
+    article {
+        @include dflex(flex-start, flex-start, column, 32px);
+        & * {
+            img {
+                height: 32px;
+                width: 32px;
+            }
+        }
+
+        .subsumption {
+            @include karla($size: 1.125rem);
+            @media (max-width: 500px) {
+                font-size: 16px !important;
+            }
+            &__bulletpoint {
+                @include dflex(flex-start, $gap: 24px);
+                >img {
+                    align-self: flex-start;
+                    height: 32px;
+                    width: 32px;
+                }
+                & * {
+                    transition: all 125ms ease-in;
+                    @media (pointer: fine) {
+                        @include karla(400, 1.125rem, rgba($color: #ffffff, $alpha: 0.8));
+                    }
+                    @media (pointer: coarse) {
+                        @include karla(400, 1.125rem, #ffffff);
+                    }
+                    @media (max-width: 500px) {
+                        font-size: 16px !important;
+                    }
+                }
+                &:hover * {
+                    @include karla(400, 1.125rem, #ffffff);
+                    @media (max-width: 500px) {
+                        font-size: 16px !important;
+                    }
+                }
+            }
+        }
+    }
+}

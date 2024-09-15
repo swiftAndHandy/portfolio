@@ -8,7 +8,7 @@ import { MarqueeComponent } from "./marquee/marquee.component";
   standalone: true,
   imports: [ButtonsComponent, TranslateModule, MarqueeComponent],
   templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss'
+  styleUrls: ['./hero.component.scss', './hero-link-bar.scss']
 })
 export class HeroComponent {
 

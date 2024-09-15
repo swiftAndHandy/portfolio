@@ -1,4 +1,5 @@
 <div id="projects" class="anchor"></div>
+<!-- <app-project-fullscreen></app-project-fullscreen> -->
 <section id="projects" class="projects">
     <article class="section__header">
         <div class="titles">
@@ -9,39 +10,7 @@
     </article>
     <div class="items-wrapper">
         @for (project of project.projects; track $index) {
-        <div class="single-item-wrapper">
-            <div class="item">
-                <div class="item__general-information">
-                    <div class="project-name-wrapper">
-                        <h3 class="project-name">{{project.name}}</h3>
-                        <div class="technologies technologies--mobile">
-                            @for (technology of project.technologies; let last=$last; track $index) {
-                            <span>{{ technology }}</span>
-                            @if (!last) {<span class="seperator">|</span>}
-                            }
-                        </div>
-                    </div>
-                    <span>{{ returnDescription(project, 'short') | translate}}</span>
-                </div>
-                <div class="item__technical-information">
-                    <div class="technologies technologies--desktop">
-                        @for (technology of project.technologies; let last=$last; track $index) {
-                        <span>{{ technology }}</span>
-                        @if (!last) {<span class="seperator">|</span>}
-                        }
-                    </div>
-                    <div class="item__links">
-                        <a [href]="project.github" target="_blank" rel="noopener noreferrer">
-                            <app-buttons text="GitHub" type="link" bg="dark"></app-buttons>
-                        </a>
-                        <a [href]="returnLiveServer(project)" target="_blank" rel="noopener noreferrer">
-                            <app-buttons text="Live Test" type="link" bg="dark"></app-buttons>
-                        </a>
-                    </div>
-                </div>
-            </div>
-                <img class="project-img" [src]="returnImage(project)" alt="" draggable="false">
-        </div>
+        <app-project-preview [project]="project" [last]="$last"></app-project-preview>
         }
     </div>
 </section>

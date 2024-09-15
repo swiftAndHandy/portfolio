@@ -1,10 +1,5 @@
 @use "./../../shared/scss/abstracts/" as *;
 
-$itemBorder: 2px solid $signatureColor;
-$itemDetailsGap: 16px;
-
-$SmallMobileResolution: 600px;
-
 @mixin itemText() {
     @include karla(400, 1.125rem);
 }
@@ -33,153 +28,12 @@ $SmallMobileResolution: 600px;
     }
 }
 
-.single-item-wrapper {
-    @include dflex(space-between, center, row, 48px);
-    width: 100%;
-    & * {
-        transition: all 125ms ease-in;
-    }
-    .project-img {
-        opacity: 0;
-    }
-}
-
 .projects {
     @include widthLimiter();
     @include dflex(stretch, flex-start, column, 0);
     @include applyLimitMargin();
 }
 
-.item {
-    @include dflex(space-between, $gap: 24px);
-    width: inherit;
-    box-sizing: border-box;
-    @media (max-width: $desktopResolution) {
-        width: 100%;
-        
-    }
-    @media (max-width: 1099px) {
-        @include dflex(center, flex-start, column, 24px);
-        padding: 30px clamp(2px, 1dvw, 32px);
-    }
-    @media (max-width: $mobileResolution) {
-        padding: 40px clamp(2px, 1dvw, 32px);
-    }
-    padding: 60px clamp(2px, 1dvw, 32px);
-    border-top: $itemBorder;
-    transition: all 125ms ease-in;
-
-    @media (pointer: fine) {
-        &:hover {
-            background: #3dcfb64d;
-            cursor: pointer;
-            & .project-name::after {
-                opacity: 1;
-            }
-
-            & + .project-img {
-                opacity: 1;
-            }
-        }
-    }
-
-    @media (pointer: coarse) {
-        & + .project-img {
-            opacity: 1;
-        }
-    }
-
-    &:active {
-        background: #3dcfb64d;
-        cursor: pointer;
-        & .project-name::after {
-            opacity: 1;
-        }
-    }
-
-    &:last-child {
-        border-bottom: $itemBorder;
-    }
-
-    &__general-information {
-        @include dflex(center, flex-start, column, $itemDetailsGap);
-        width: 100%;
-        & .project-name {
-            font-family: "Fira Code";
-            font-weight: 700;
-            color: #ffffff;
-            font-size: 1.5rem;
-        }
-        & * {
-            @include itemText();
-        }
-    }
-
-    &__technical-information {
-        @include dflex(center, flex-end, column, $itemDetailsGap);
-        @media (max-width: $mobileResolution) {
-            @include dflex(center, center, column, $itemDetailsGap);
-            align-self: center;
-        }
-        & * {
-            @include itemText();
-        }
-        .item__links {
-            @include dflex(center, flex-start, row, 8px);
-            @media (max-width: $SmallMobileResolution) {
-                @include dflex(center, center, column, 8px);
-            }
-        }
-    }
-}
-
-.project-img {
-    @media (max-width: $mobileResolution) {
-        display: none;
-    }
-}
-
-.seperator {
-    color: $signatureColor !important;
-}
-
-.technologies {
-    @include dflex($gap: 4px);
-    &.technologies--mobile {
-        @media (min-width: 1100px) {
-            display: none !important;
-        }
-    }
-
-    &.technologies--desktop {
-        @media (max-width: 1099px) {
-            display: none;
-        }
-    }
-}
-
-.project-name-wrapper {
-    width: inherit;
-    @include dflex(center, flex-start, column, 8px);
-    flex-wrap: wrap;
-    @media (max-width: $mobileResolution) {
-        margin-bottom: 16px;
-    }
-
-    & .project-name {
-        position: relative;
-        &::after {
-            position: absolute;
-            top: 0%;
-            left: 100%;
-            content: "";
-            display: block;
-            width: 20px;
-            height: 20px;
-            opacity: 0;
-            background-image: url("./../../../assets/icons/arrow_outward_white.svg");
-            background-repeat: no-repeat;
-            transform: translate(50%, 50%);
-        }
-    }
+app-project-preview {
+    width: 100%;
 }
