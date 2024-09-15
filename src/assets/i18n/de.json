@@ -96,7 +96,7 @@
             },
             "placeholder": {
                 "regular": {
-                    "name": "Bitte Ihren Namen eintragen",
+                    "name": "Bitte tragen Sie Ihren Namen ein",
                     "email": "sie@beispiel.de",
                     "msg": "Hallo Andre, ich benötige...",
                     "privacy": ""

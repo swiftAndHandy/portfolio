@@ -15,11 +15,4 @@ export class ProjectsComponent {
 
   constructor(public project: ProjectService) { }
 
-  openProjectDetails() {
-    this.project.visibleFullscreen = true;
-  }
-
-  closeProjectDetails() {
-    this.project.visibleFullscreen  = false;
-  }
 }

@@ -35,6 +35,6 @@ export class SingleSkillComponent {
 
   returnImgPath(popup: boolean = false): string {
     const imageName: string = this.skill.name.split(' ').join('-').toLowerCase();
-    return popup ? `./assets/icons/${this.skill.category}/${imageName}-popup_${this.translate.currentLang}.svg` : `./assets/icons/${this.skill.category}/${imageName}.svg`;
+    return popup ? `./assets/icons/${this.skill.category}/${imageName}-popup_${this.translate.currentLang}.webp` : `./assets/icons/${this.skill.category}/${imageName}.svg`;
   }
 }

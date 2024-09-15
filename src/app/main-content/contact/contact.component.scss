@@ -39,21 +39,21 @@
     content: "";
     min-width: 24px;
     height: 24px;
-    background-image: url("./../../../assets/icons/checkbox_default.png");
+    background-image: url("./../../../assets/icons/checkbox_default.webp");
     background-position: center;
 }
 
 .checkbox + label:hover::before {
-    background-image: url("./../../../assets/icons/checkbox_default_hovered.png");
+    background-image: url("./../../../assets/icons/checkbox_default_hovered.webp");
 }
 
 .checkbox:checked + label::before {
-    background-image: url("./../../../assets/icons/checkbox_checked.png");
+    background-image: url("./../../../assets/icons/checkbox_checked.webp");
     background-position: center;
 }
 
 .checkbox:checked + label:hover::before {
-    background-image: url("./../../../assets/icons/checkbox_checked_hovered.png");
+    background-image: url("./../../../assets/icons/checkbox_checked_hovered.webp");
 }
 
 .titles {

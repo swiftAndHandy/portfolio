@@ -11,7 +11,7 @@
 <header class="header--small">
     <app-logo size="small"></app-logo>
     <div class="burger-menu-wrapper">
-        <img src="./assets/icons/burger-menu.svg" alt="" class="burger-menu--toggle" (click)="showBurgerMenu()">
+        <img src="./assets/icons/burger-menu.webp" alt="" class="burger-menu--toggle" (click)="showBurgerMenu()">
         <div id="dimmer" class="dimmer" [ngClass]="{'d-none': !displayBurgerMenu}" (click)="hideBurgerMenu()"></div>
         <app-burger-menu [ngClass]="{'d-none': !displayBurgerMenu}"></app-burger-menu>
     </div>

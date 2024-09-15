@@ -10,7 +10,7 @@
     </article>
     <div class="items-wrapper">
         @for (project of project.projects; track $index) {
-        <app-project-preview [project]="project" [last]="$last"></app-project-preview>
+        <app-project-preview [currentProject]="project" [index]="$index" [last]="$last"></app-project-preview>
         }
     </div>
 </section>

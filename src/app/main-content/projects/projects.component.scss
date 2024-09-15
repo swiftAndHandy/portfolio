@@ -23,7 +23,7 @@
     @include dflex(center, flex-start, column);
     @media (min-width: $desktopResolution) {
         @media (pointer: coarse) {
-            gap: 24px
+            gap: 12px
         }
     }
 }

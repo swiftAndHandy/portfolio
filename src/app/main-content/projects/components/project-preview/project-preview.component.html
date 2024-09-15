@@ -1,33 +1,33 @@
 <div class="single-item-wrapper">
-    <div class="item" [ngClass]="{'last': last}">
+    <div class="item" [ngClass]="{'last': last}" (click)="projects.openProjectDetails(index)">
         <div class="item__general-information">
             <div class="project-name-wrapper">
-                <h3 class="project-name">{{project.name}}</h3>
+                <h3 class="project-name">{{currentProject.name}}</h3>
                 <div class="technologies technologies--mobile">
-                    @for (technology of project.technologies; let last=$last; track $index) {
+                    @for (technology of currentProject.technologies; let last=$last; track $index) {
                     <span>{{ technology }}</span>
                     @if (!last) {<span class="seperator">|</span>}
                     }
                 </div>
             </div>
-            <span>{{ returnDescription(project, 'short') | translate}}</span>
+            <span>{{ returnDescription(currentProject, 'short') | translate}}</span>
         </div>
         <div class="item__technical-information">
             <div class="technologies technologies--desktop">
-                @for (technology of project.technologies; let last=$last; track $index) {
+                @for (technology of currentProject.technologies; let last=$last; track $index) {
                 <span>{{ technology }}</span>
                 @if (!last) {<span class="seperator">|</span>}
                 }
             </div>
             <div class="item__links">
-                <a [href]="project.github" target="_blank" rel="noopener noreferrer">
+                <a [href]="currentProject.github" target="_blank" rel="noopener noreferrer">
                     <app-buttons text="GitHub" type="link" bg="dark"></app-buttons>
                 </a>
-                <a [href]="returnLiveServer(project)" target="_blank" rel="noopener noreferrer">
+                <a [href]="returnLiveServer(currentProject)" target="_blank" rel="noopener noreferrer">
                     <app-buttons text="Live Test" type="link" bg="dark"></app-buttons>
                 </a>
             </div>
         </div>
     </div>
-        <img class="project-img" [src]="returnImage(project)" alt="" draggable="false">
+        <img class="project-img" [src]="returnImage(currentProject)" alt="" draggable="false">
 </div>

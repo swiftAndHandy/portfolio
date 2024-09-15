@@ -6,7 +6,10 @@ import { Project } from '../../interfaces/projects.interface';
 })
 export class ProjectService {
 
-  visibleFullscreen: boolean = false;
+  projectDetails = {
+    visibleFullscreen: false,
+    projectIndex: 0,
+  }
 
   projects: Project[] = [
     {
@@ -41,4 +44,12 @@ export class ProjectService {
   ];
 
   constructor() { }
+
+  openProjectDetails(projectIndex: number) {
+    this.projectDetails.visibleFullscreen = true;
+  }
+
+  closeProjectDetails(project: Project) {
+    this.projectDetails.visibleFullscreen  = false;
+  }
 }

@@ -4,6 +4,7 @@ import { StringUtils } from '../../../../utils/string-utils.utils';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonsComponent } from '../../../../shared/components/buttons/buttons.component';
 import { CommonModule } from '@angular/common';
+import { ProjectService } from '../../projects.service';
 
 @Component({
   selector: 'app-project-preview',
@@ -13,8 +14,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './project-preview.component.scss'
 })
 export class ProjectPreviewComponent {
-  @Input() project!: Project;
-  @Input() last!: boolean;
+  @Input() currentProject!: Project;
+  @Input() last: boolean = false;
+  @Input() index: number = 0;
+
+  constructor(public projects: ProjectService) {}
 
   returnDescription(project: Project, variant: 'short' | 'long'): string {
     const nameResult = StringUtils.cleanStr(project.name);
