@@ -21,17 +21,17 @@
         "portrait-alt": "An image of Andre Veltens, working on a MacBook",
         "subheadline": "Who I Am",
         "title": "About me",
-        "subsumption": "Hi, I'm a german speaking Frontend Developer based in Paderborn. I have made it my mission to design websites and applications that are both appealing and practical. I am driven by my experience as a former employee in various industries and the associated knowledge of which software solutions can run better and how. ",
+        "subsumption": "I am a German-speaking front-end developer based in Paderborn. From my point of view, websites must primarily fulfill two tasks: They have to provide a good user experience and look their best. Realizing such websites is my mission. I am driven by my experience as a former employee in various industries. This has given me the knowledge of how software solutions can be applied in reality and run in a customer-optimized way.",
         "bulletpoints": {
-            "location": "Flexible in terms of working environments, I can work effectively both on-site in Paderborn and remotely.",
+            "location": "Whether on site in Paderborn or remotely - I work effectively to implement your ideas.",
             "mind": "I am open-minded and always looking for personal challenges to constantly improve my knowledge and skills.",
-            "goals": "I like solving issues. Programming is a powerfull and economic way of problem-solving. You can benefit from my knowledge and skills. I'm glad to bring your visions to life. "
+            "goals": "I like solving issues. Programming is a powerfull and economic way of problem-solving. You can benefit from my knowledge and skills. I'm glad to bring your visions to life."
         }
     },
     "skills": {
         "subheadline": "Technologies",
         "title": "Skill Set",
-        "intro": "In the meantime, I have been involved in various projects.  I have used a variety of frontend technologies and concepts. I am open to embracing new technologies and methodologies to Continously enhance my skills and stay ahead in the ever-evolving landscape of web development.",
+        "intro": "In the meantime, I have worked on various projects.  I have been able to use a variety of frontend technologies and concepts. New technologies and methods do not scare me, but I see them as a means to continuously improve my skills and stay ahead in the ever-evolving landscape of web development.",
         "sub-subheadline": {
             "part": {
                 "one": "You need ",

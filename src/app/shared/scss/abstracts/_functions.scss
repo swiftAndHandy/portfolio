@@ -29,7 +29,7 @@
 }
 
 @mixin karla($weight: 400, $size: 1rem, $color: #ffffff, $align: left) {
-    font-family: "Karla";
+    font-family: "Karla", Arial, Helvetica, sans-serif;
     font-weight: $weight;
     color: $color;
     font-size: $size;

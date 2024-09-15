@@ -8,7 +8,7 @@
         <p class="expose">{{'portfolio.expose' | translate}}</p>
     </article>
     <div class="items-wrapper">
-        @for (project of projects; track $index) {
+        @for (project of project.projects; track $index) {
         <div class="single-item-wrapper">
             <div class="item">
                 <div class="item__general-information">

@@ -7,8 +7,8 @@
     },
     "hero": {
         "button": {
-            "check-work": "Check my work",
-            "contact": "Contact me"
+            "check-work": "Mein Portfolio",
+            "contact": "Schreiben Sie mir"
         },
         "marquee": {
             "remote": "Available for remote work",
@@ -18,33 +18,33 @@
         }
     },
     "about-me": {
-        "portrait-alt": "An image of Andre Veltens, working on a MacBook",
-        "subheadline": "Who I Am",
-        "title": "About me",
-        "subsumption": "Hi, I'm a german speaking Frontend Developer based in Paderborn. I have made it my mission to design websites and applications that are both appealing and practical. I am driven by my experience as a former employee in various industries and the associated knowledge of which software solutions can run better and how. ",
+        "portrait-alt": "Andre Veltens, arbeitend am MacBook",
+        "subheadline": "Wer ich bin",
+        "title": "Vorstellung",
+        "subsumption": "Hallo, ich bin ein deutschsprachiger Frontend-Entwickler mit Sitz in Paderborn. Webseiten müssen aus meiner Sicht primär zwei Aufgaben Erfüllen: Sie müssen eine gute Benutzererfahrung bieten und dabei bestmöglich aussehen. Solche Webseiten umzusetzen ist meine Mission. Angetrieben werde ich dabei von meiner Erfahrung als ehemaliger Angestellter in verschiedenen Branchen. Dadurch habe ich das Wissen, wie Softwarelösungen in der Realität angewendet werden und Kundenoptimiert laufen können.",
         "bulletpoints": {
-            "location": "Flexible in terms of working environments, I can work effectively both on-site in Paderborn and remotely.",
-            "mind": "I am open-minded and always looking for personal challenges to constantly improve my knowledge and skills.",
-            "goals": "I like solving issues. Programming is a powerfull and economic way of problem-solving. You can benefit from my knowledge and skills. I'm glad to bring your visions to life. "
+            "location": "Egal ob vor Ort in Paderborn oder im Remote - ich arbeite effektiv an der Umsetzung Ihrer Ideen.",
+            "mind": "Ich freue mich auf persönliche Herausforderungen und die Möglichkeit, meine Fähigkeiten auszubauen.",
+            "goals": "Probleme lösen ist meine Passion. Programmieren stellt eine leistungsfähige und wirtschaftliche Art der Problemlösung dar. Sie können von meinen Kenntnissen und Fähigkeiten profitieren. Ich freue mich darauf, Ihre Visionen zum Leben zu erwecken."
         }
     },
     "skills": {
-        "subheadline": "Technologies",
-        "title": "Skill Set",
-        "intro": "In the meantime, I have been involved in various projects.  I have used a variety of frontend technologies and concepts. I am open to embracing new technologies and methodologies to Continously enhance my skills and stay ahead in the ever-evolving landscape of web development.",
+        "subheadline": "Technologien",
+        "title": "Skills",
+        "intro": "Inzwischen habe ich an verschiedenen Projekten mitgewirkt.  Dabei konnte eine Vielzahl von Frontend-Technologien und Konzepten verwenden. Neue Technologien und Methoden schrecken mich nicht ab, sondern sehe ich als ein Mittel, meine Fähigkeiten kontinuierlich zu verbessern und in der sich ständig weiterentwickelnden Landschaft der Webentwicklung vorne zu bleiben.",
         "sub-subheadline": {
             "part": {
-                "one": "You need ",
-                "two": "another skill?"
+                "one": "Sie brauchen ",
+                "two": "einen anderen Skill?"
             },
-            "body": "Feel free to contact me. I look forward to expanding on my previous knowledge."
+            "body": "Nehmen Sie gerne Kontakt zu mir auf. Ich freue mich darauf, meine Kompetenzen zu erweitern."
         },
         "button": "Let's Talk"
     },
     "portfolio": {
-        "title": "Featured Projects",
+        "title": "Projektauszüge",
         "subheadline": "Portfolio",
-        "expose": "Explore a selection of my work here - Interact with projects to see my skills in action.",
+        "expose": "Anbei eine Auswahl meiner Arbeiten - probieren Sie die Projekte gerne aus.",
         "project": {
             "join": {
                 "description": {
@@ -98,7 +98,7 @@
                 "regular": {
                     "name": "Bitte Ihren Namen eintragen",
                     "email": "sie@beispiel.de",
-                    "msg": "Hallo Andre, ich habe Interesse an...",
+                    "msg": "Hallo Andre, ich benötige...",
                     "privacy": ""
                 },
                 "error": {

@@ -1,73 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
 @use "./app/shared/scss/fonts";
-@use "./app/shared/scss/abstracts/" as *;
+@use './app/shared/scss/variables' as *;
 
 html {
-    background: $backgroundDark;
+  background: $backgroundDark;
 }
 
 * {
-    margin: 0;
-    font-family: "Fira Code";
-    color: #ffffff;
-    scroll-behavior: smooth;
+  margin: 0;
+  font-family: "Fira Code", Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  scroll-behavior: smooth;
 }
 
 .d-none {
-    display: none;
+  display: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .anchor {
-    position: relative;
-    top: -150px;
-    visibility: hidden;
-  }
+  position: relative;
+  top: -150px;
+  visibility: hidden;
+}
 
 .section__subheadline {
-    font-family: "Karla";
-    font-weight: 500;
-    font-size: clamp(1rem, 8dvw, 1.5rem);
-    color: $signatureColor;
-    margin-bottom: 20px;
+  font-family: "Karla", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1rem, 8dvw, 1.5rem);
+  color: $signatureColor;
+  margin-bottom: 20px;
 }
 
 .section__main-title {
-    font-family: "Fira Code";
-    font-size: clamp(1.2rem, 6dvw, 4rem);
-    font-weight: 700;
-    color: $signatureColor;
-    white-space: nowrap;
+  font-family: "Fira Code", Arial, Helvetica, sans-serif;
+  font-size: clamp(1.2rem, 6dvw, 4rem);
+  font-weight: 700;
+  color: $signatureColor;
+  white-space: nowrap;
 }
 
-
 body {
-    --sb-track-color: #1c1c1c;
-    --sb-thumb-color: #3dcfb6;
-    --sb-size: 8px;
+  --sb-track-color: #1c1c1c;
+  --sb-thumb-color: #3dcfb6;
+  --sb-size: 8px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 8px;
+  border: 1px solid #4cb5a3;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
   }
-  
-  body::-webkit-scrollbar {
-    width: var(--sb-size)
-  }
-  
-  body::-webkit-scrollbar-track {
-    background: var(--sb-track-color);
-    border-radius: 8px;
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background: var(--sb-thumb-color);
-    border-radius: 8px;
-    border: 1px solid #4cb5a3;
-  }
-  
-  @supports not selector(::-webkit-scrollbar) {
-    body {
-      scrollbar-color: var(--sb-thumb-color)
-                       var(--sb-track-color);
-    }
-  }
+}

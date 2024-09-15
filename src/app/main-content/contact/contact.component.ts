@@ -37,7 +37,7 @@ export class ContactComponent {
     }
   }
 
-  mailTest = true;
+  mailTest = false;
   http = inject(HttpClient);
 
   post = {
@@ -89,8 +89,7 @@ export class ContactComponent {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-            console.log(response);
-            
+            console.log(response);        
             ngForm.resetForm();
           },
           error: (error) => {

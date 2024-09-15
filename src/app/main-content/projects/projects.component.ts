@@ -3,6 +3,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Project } from '../../interfaces/projects.interface';
 import { ButtonsComponent } from "../../shared/components/buttons/buttons.component";
 import { StringUtils } from '../../utils/string-utils.utils';
+import { ProjectService } from './projects.service';
 
 @Component({
   selector: 'app-projects',
@@ -13,39 +14,7 @@ import { StringUtils } from '../../utils/string-utils.utils';
 })
 export class ProjectsComponent {
 
-  visiblePopup: boolean = false;
-
-  projects: Project[] = [
-    {
-      name: 'Join',
-      technologies: [
-        'Javascript',
-        'Firebase',
-        'HTML',
-        'CSS'
-      ],
-      github: 'https://github.com/swiftAndHandy/Join'
-    },
-    {
-      name: 'El Pollo Loco',
-      technologies: [
-        'Javascript',
-        'Firebase',
-        'HTML',
-        'CSS'
-      ],
-      github: 'https://github.com/swiftAndHandy/Join'
-    },
-    {
-      name: 'Pokédex',
-      technologies: [
-        'Javascript',
-        'HTML',
-        'CSS'
-      ],
-      github: ''
-    },
-  ];
+  constructor(public project: ProjectService) { }
 
   returnDescription(project: Project, variant: 'short' | 'long'): string {
     const nameResult = StringUtils.cleanStr(project.name);
@@ -67,10 +36,10 @@ export class ProjectsComponent {
   }
 
   openPopup() {
-    this.visiblePopup = true;
+    this.project.visibleFullscreen = true;
   }
 
   closePopup() {
-    this.visiblePopup = false;
+    this.project.visibleFullscreen  = false;
   }
 }

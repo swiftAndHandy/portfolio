@@ -113,7 +113,7 @@ app-marquee {
                     display: block;
                     transform: rotate(270deg);
                     text-decoration: none;
-                    font-family: "Karla";
+                    font-family: "Karla", Arial, Helvetica, sans-serif;
                     font-size: 18px;
                     font-weight: 400;
                     transition: all 100ms ease-in;
@@ -166,13 +166,11 @@ app-marquee {
         margin-bottom: 24px;
 
         > span {
-            font-family: "Fira Code";
+            font-family: "Fira Code", Arial, Helvetica, sans-serif;
             font-size: clamp(1.25rem, 6dvw, 2.5rem);
         }
         > h1 {
-            font-family: "Karla";
-            font-weight: 700;
-            font-size: clamp(2.5rem, 12dvw, 8rem);
+            @include karla(700, clamp(2.5rem, 12dvw, 8rem));
         }
     }
     .button-wrapper {
