@@ -123,10 +123,10 @@
                 "privacy-policy": "Datenschutzbestimmung",
                 "confirm": "gelesen und stimme der Verarbeitung meiner Daten entsprechend dieser zu."
             },
-            "submit": "Say Hello :)"
+            "submit": "Absenden"
         }
     },
     "footer": {
-        "imprint": "Imprint"
+        "imprint": "Impressum"
     }
 }
