@@ -1,14 +1,8 @@
 @use './../shared/scss/abstracts/' as *;
 
-p {
-    margin: 1rem;
-}
-
 .wrapper {
     background: $boxGradient;
     min-height: 100vh;
-    max-height: 100vh;
-    overflow: hidden;
     @include dflex(center, space-between);
     >div {
         @include widthLimiter();
@@ -24,9 +18,7 @@ p {
 }
 
 article {
-    margin: 150px 12px 0 0;
-    padding: 0 24px;
-    overflow: auto;
+    margin: 200px min(10dvw, 96px) 0;
 }
 
 > app-footer {
