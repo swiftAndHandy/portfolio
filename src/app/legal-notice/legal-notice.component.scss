@@ -1,0 +1,17 @@
+@use './../shared/scss/abstracts/' as *;
+
+.wrapper {
+    background: $boxGradient;
+    min-height: 100vh;
+    @include dflex(center, space-between);
+    >div {
+        @include widthLimiter();
+        @include applyLimitMargin();
+    }
+}
+
+> app-footer {
+    @include dflex(center, flex-start);
+    background: $backgroundDark;
+    margin-bottom: 144px;
+}
