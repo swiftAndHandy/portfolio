@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { ProjectService } from './projects.service';
+import { ProjectService } from '../../services/projects.service';
 import { ProjectFullScreenComponent } from "./components/full-screen/fullscreen.component";
 import { ProjectPreviewComponent } from './components/project-preview/project-preview.component';
 import { CommonModule } from '@angular/common';

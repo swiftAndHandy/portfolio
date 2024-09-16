@@ -2,7 +2,7 @@ import { Component, ElementRef, Input, Renderer2 } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { StringUtils } from '../../../utils/string-utils.utils';
 import { CommonModule } from '@angular/common';
-import { RefService } from '../ref.service';
+import { RefService } from '../../../services/ref.service';
 
 @Component({
   selector: 'app-reference-box',

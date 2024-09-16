@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, QueryList, ViewChildren } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { ReferenceBoxComponent } from "./reference-box/reference-box.component";
-import { RefService } from './ref.service';
+import { RefService } from '../../services/ref.service';
 
 @Component({
   selector: 'app-references',
@@ -67,7 +67,6 @@ export class ReferencesComponent {
   nextButton() {
     this.updateCurrentReference(1);
     this.refService.direction = 'next';
-
   }
 
   currentTranslateX(ref: HTMLElement): number {

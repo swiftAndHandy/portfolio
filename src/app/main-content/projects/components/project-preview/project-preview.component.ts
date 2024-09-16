@@ -4,7 +4,7 @@ import { StringUtils } from '../../../../utils/string-utils.utils';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonsComponent } from '../../../../shared/components/buttons/buttons.component';
 import { CommonModule } from '@angular/common';
-import { ProjectService } from '../../projects.service';
+import { ProjectService } from '../../../../services/projects.service';
 
 @Component({
   selector: 'app-project-preview',

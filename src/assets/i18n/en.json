@@ -45,6 +45,11 @@
         "title": "Featured Projects",
         "subheadline": "Portfolio",
         "expose": "Explore a selection of my work here - Interact with projects to see my skills in action.",
+        "fullscreen": {
+            "project-is-about": "What is this project about?",
+            "previous": "Previous project",
+            "next": "Next project"
+        },
         "project": {
             "join": {
                 "description": {
@@ -72,6 +77,10 @@
             "giver": {
                 "phillip-sauer": {
                     "body": "Andre is a focused and dedicated colleague. It's a pleasure to collaborate on a project. He is always there to help, no matter the task.",
+                    "position": "Frontend Developer"
+                },
+                "marcel-menke": {
+                    "body": "Andre has both technical know-how and the ability to explain complex issues clearly and comprehensibly. His technical expertise has often helped me and many others.",
                     "position": "Frontend Developer"
                 }
             }

@@ -1,10 +1,47 @@
 <section class="project-detail-screen" (click)="projects.closeProjectDetails()">
     <div class="project-details-box" (click)="$event.stopPropagation()">
         <div class="close-btn" (click)="projects.closeProjectDetails()"></div>
-        <div class="project-details">
-            <span>
-                @if(projects.projectDetails.projectIndex < 10) { 0{{projects.projectDetails.projectIndex+1}} } @else { {{projects.projectDetails.projectIndex+1}} }</span>
-                    {{project.name }}
+        <div class="project-controls">
+            <div class="prev-btn" (click)="projects.previousProject()">
+                <img draggable="false" class="arrow-prev" src="./assets/icons/arrow_right_green.svg" alt="">
+                <span>
+                    {{'portfolio.fullscreen.previous' | translate }}
+                </span>
+            </div>
+            <div class="next-btn" (click)="projects.nextProject()">
+                <span>
+                    {{'portfolio.fullscreen.next' | translate }}
+                </span>
+                <img draggable="false" class="arrow-next" src="./assets/icons/arrow_right_green.svg" alt="">
+            </div>
         </div>
+        <div class="project">
+            <div class="project__head">
+                <span class="project__id">
+                    @if(projects.projectDetails.projectIndex < 10) { 0{{projects.projectDetails.projectIndex+1}} } @else { {{projects.projectDetails.projectIndex+1}} }</span>
+                        <span class="project__name">{{ projects.project().name }}</span>
+            </div>
+            <article class="project__body">
+                <h3 class="subheadline">{{ 'portfolio.fullscreen.project-is-about' | translate }}</h3>
+                <p>{{ projects.returnDescription(projects.project(), 'long') | translate }}</p>
+                <div class="skills-wrapper">
+                    @for (skill of projects.project().technologies; track $index) {
+                    <div class="single-skill">
+                        <img [src]="projects.returnSkillIcon(projects.project(), $index)" alt="" draggable="false">
+                        <span>{{projects.project().technologies[$index]}}</span>
+                    </div>
+                    }
+                </div>
+            </article>
+            <div class="project__footer">
+                <a [href]="projects.project().github" target="_blank" rel="noopener noreferrer">
+                    <app-buttons text="GitHub" type="link" bg="dark"></app-buttons>
+                </a>
+                <a [href]="projects.returnLiveServer(projects.project())" target="_blank" rel="noopener noreferrer">
+                    <app-buttons text="Live Test" type="link" bg="dark"></app-buttons>
+                </a>
+            </div>
+        </div>
+        <img draggable="false" class="project__image" [src]="projects.returnImage(projects.project(), true)" alt="">
     </div>
 </section>

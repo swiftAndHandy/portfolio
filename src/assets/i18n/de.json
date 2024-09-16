@@ -11,10 +11,10 @@
             "contact": "Schreiben Sie mir"
         },
         "marquee": {
-            "remote": "Available for remote work",
+            "remote": "Remote oder vor Ort",
             "skills": "Frontend Developer",
-            "location": "Based in Paderborn",
-            "open-to-work": "Open to work"
+            "location": "Standort Paderborn",
+            "open-to-work": "Offen für Anfragen"
         }
     },
     "about-me": {
@@ -45,6 +45,11 @@
         "title": "Projektauszüge",
         "subheadline": "Portfolio",
         "expose": "Anbei eine Auswahl meiner Arbeiten - probieren Sie die Projekte gerne aus.",
+        "fullscreen": {
+            "project-is-about": "Worum geht's im Projekt?",
+            "previous": "Zurück",
+            "next": "Weiter"
+        },
         "project": {
             "join": {
                 "description": {
@@ -72,6 +77,10 @@
             "giver": {
                 "phillip-sauer": {
                     "body": "Andre ist ein konzentrierter und engagierter Kollege. Es ist eine Freude, mit ihm an einem Projekt zu arbeiten. Er ist immer da, um zu helfen, egal bei welcher Aufgabe.",
+                    "position": "Frontend Developer"
+                },
+                "marcel-menke": {
+                    "body": "Andre bringt sowohl technisches Know-how als auch die Fähigkeit mit, komplexe Zusammenhänge klar und verständlich zu erklären. Seine fachliche Kompetenz hat mir und vielen anderen bereits oft weitergeholfen.",
                     "position": "Frontend Developer"
                 }
             }

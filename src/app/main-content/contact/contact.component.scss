@@ -85,3 +85,9 @@
         max-width: 50%;
     }
 }
+
+a {
+    &:hover {
+        filter: brightness(1.5);
+    }
+}

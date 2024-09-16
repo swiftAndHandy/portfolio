@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Project } from '../../interfaces/projects.interface';
-import { StringUtils } from '../../utils/string-utils.utils';
+import { Project } from '../interfaces/projects.interface';
+import { StringUtils } from '../utils/string-utils.utils';
 
 @Injectable({
   providedIn: 'root'
@@ -44,6 +44,8 @@ export class ProjectService {
     },
   ];
 
+  project = () => this.projects[this.projectDetails.projectIndex];
+
   openProjectDetails(projectIndex: number) {
     this.projectDetails.visibleFullscreen = true;
     this.projectDetails.projectIndex = projectIndex;
@@ -55,9 +57,27 @@ export class ProjectService {
     document.body.style.overflow = 'auto';
   }
 
-  returnImage(project: Project): string {
+  returnImage(project: Project, fullscreen: boolean = false): string {
     const nameResult = StringUtils.cleanStr(project.name);
-    return `./assets/img/${nameResult}.webp`;
+    if (fullscreen) {
+      return `./assets/img/${nameResult}-fullscreen.webp`;
+    } else {
+      return `./assets/img/${nameResult}.webp`;
+    }
+  }
+
+  previousProject() {
+    this.projectDetails.projectIndex--;
+    if (this.projectDetails.projectIndex < 0) {
+      this.projectDetails.projectIndex = this.projects.length - 1;
+    }
+  }
+
+  nextProject() {
+    this.projectDetails.projectIndex++;
+    if (this.projectDetails.projectIndex >= this.projects.length) {
+      this.projectDetails.projectIndex = 0;
+    }
   }
 
   returnDescription(project: Project, variant: 'short' | 'long'): string {
@@ -72,5 +92,10 @@ export class ProjectService {
     } else {
       return project.liveserver;
     }
+  }
+
+  returnSkillIcon(project: Project, index: number): string {
+    const skillname = StringUtils.cleanStr(project.technologies[index]);
+    return `./assets/icons/project-skills/${skillname}.png`;
   }
 }

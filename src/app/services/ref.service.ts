@@ -7,7 +7,7 @@ export class RefService {
 
   referenceGivers: [string, string, string] = [
     'Phillip Sauer',
-    'Phillip Sauer',
+    'Marcel Menke',
     'Phillip Sauer',
   ];
   

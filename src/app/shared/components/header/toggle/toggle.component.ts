@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { RefService } from '../../../../services/ref.service';
 
 @Component({
   selector: 'app-toggle',
@@ -10,7 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './toggle.component.scss'
 })
 export class ToggleComponent {
-  constructor(public translate: TranslateService) {
+  constructor(public translate: TranslateService, public refs: RefService) {
   }
 
   toggleLanguage() {
