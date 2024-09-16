@@ -15,6 +15,7 @@
     &.project-fullscreen {
         display: unset;
         background-color: rgba($color: $backgroundDark, $alpha: 0.2);
+        backdrop-filter: blur(10px);
     }
 }
 

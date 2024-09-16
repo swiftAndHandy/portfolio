@@ -10,7 +10,7 @@
     position: relative;
     top: 50%;
     left: 50%;
-    padding: 24px 48px;
+    padding: 48px 24px;
     box-sizing: border-box;
     border-radius: 30px;
     background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
@@ -20,18 +20,25 @@
     height: 80%;
     max-height: 1080px;
     transform: translate(-50%, -50%);
-    @media (orientation: landscape) and (min-width: $desktopResolution) {
+    @media (orientation: landscape) or (min-width: $desktopResolution) {
         @include dflex($gap: 48px);
     }
-    @media (orientation: portrait) {
+    @media (orientation: portrait) and (max-width: $mobileResolution) {
+        @include dflex(flex-start, flex-start, column-reverse, 48px);
+        overflow: auto;
+        height: 95%;
     }
 }
 
 .close-btn {
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     right: 48px;
     top: 24px;
+    @media (orientation: portrait) and (max-width: $mobileResolution) {
+        right: 0;
+        top: 0;
+    }
     height: 48px;
     width: 48px;
     &::after {
@@ -53,9 +60,21 @@
 
 .project-controls {
     cursor: pointer;
-    position: absolute;
-    bottom: 10%;
+    position: fixed;
+    bottom: 5%;
     right: 5%;
+    @media (orientation: portrait) and (max-width: $mobileResolution) {
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+    }
+    @media (orientation: portrait) and (max-width: $mobileResolution) {
+        @include dflex(center, center, row, 48px);
+        position: unset;
+        width: 100%;
+        margin: 12px 0;
+        
+    }
     @include dflex($gap: 48px);
     > div {
         @include dflex();
@@ -86,8 +105,14 @@
 .project {
     max-width: 50%;
     max-height: 100%;
+    padding-right: 24px;
     overflow: auto;
     @include dflex(flex-start, flex-start, column, 40px);
+    @media (orientation: portrait) or (max-width: $mobileResolution) {
+        @include dflex(flex-start, flex-start, column, 48px);
+        max-width: unset;
+        overflow: auto;
+    }
     &__head {
         @include dflex(center, flex-start, column);
         .project__id {
@@ -95,7 +120,7 @@
             font-weight: 700;
             color: $signatureColor;
             font-size: clamp(4rem, 5dvw, 8rem);
-            margin-bottom: -12px;
+            margin-block: 0;
         }
         .project__name {
             font-family: "Fira-Code", Arial, Helvetica, sans-serif;
@@ -106,7 +131,6 @@
 
     &__body {
         @include dflex(flex-start, flex-start, column, 20px);
-        max-height: 30%;
         .subheadline {
             font-family: "Fira Code", Arial, Helvetica, sans-serif;
             font-weight: 700;
@@ -118,7 +142,6 @@
             font-weight: 400;
             font-size: clamp(1rem, 3dvw, 1.125rem);
         }
-
     }
 
     .skills-wrapper {
@@ -132,10 +155,19 @@
 
     &__footer {
         @include dflex(flex-start, center, row, 12px);
-        //width: 200% + center center when overflow?
+        @media (max-width: $mobileResolution) {
+            width: 100%;
+            justify-content: center;
+            @include dflex(center, center, column, 12px);
+        }
     }
 
     &__image {
         max-width: 40%;
+        @media (orientation: portrait) or (max-width: $mobileResolution) {
+            max-width: 100%;
+            max-height: 30%;
+            align-self: center;
+        }
     }
 }
