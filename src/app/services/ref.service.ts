@@ -14,6 +14,7 @@ export class RefService {
   currentRef: number = 1 ;
 
   direction: 'prev' | 'next'  | 'none' = 'none';
+  update: boolean = false;
 
   constructor() { }
 }

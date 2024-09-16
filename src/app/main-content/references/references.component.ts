@@ -36,6 +36,8 @@ export class ReferencesComponent {
         return this.translatePrev(currentTranslateX, lastRefId, id);
       case 'next':
         return this.translateNext(currentTranslateX, lastRefId, id);
+      case 'none': 
+        return { transform: `translateX(${currentTranslateX}%)` };
     }
   }
 
@@ -62,11 +64,17 @@ export class ReferencesComponent {
   previousButton() {
     this.updateCurrentReference(-1);
     this.refService.direction = 'prev';
+    setTimeout(() => {
+      this.refService.direction = 'none';
+    }, 26);
   }
 
   nextButton() {
     this.updateCurrentReference(1);
     this.refService.direction = 'next';
+    setTimeout(() => {
+      this.refService.direction = 'none';
+    }, 26);
   }
 
   currentTranslateX(ref: HTMLElement): number {
