@@ -2,20 +2,20 @@
     <div class="project-details-box" (click)="$event.stopPropagation()">
         <div class="close-btn" (click)="projects.closeProjectDetails()"></div>
         <div class="project-controls">
-            <div class="prev-btn" (click)="projects.previousProject()">
+            <div class="prev-btn" (click)="changeProject('previous')">
                 <img draggable="false" class="arrow-prev" src="./assets/icons/arrow_right_green.svg" alt="">
                 <span>
                     {{'portfolio.fullscreen.previous' | translate }}
                 </span>
             </div>
-            <div class="next-btn" (click)="projects.nextProject()">
+            <div class="next-btn" (click)="changeProject('next')">
                 <span>
                     {{'portfolio.fullscreen.next' | translate }}
                 </span>
                 <img draggable="false" class="arrow-next" src="./assets/icons/arrow_right_green.svg" alt="">
             </div>
         </div>
-        <div class="project">
+        <div class="project" #project>
             <div class="project__head">
                 <span class="project__id">
                     @if(projects.projectDetails.projectIndex < 10) { 0{{projects.projectDetails.projectIndex+1}} } @else { {{projects.projectDetails.projectIndex+1}} }</span>
