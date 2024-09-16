@@ -8,21 +8,20 @@
 
 .project-details-box {
     position: relative;
-    overflow: auto;
     top: 50%;
     left: 50%;
-    padding: 12px 48px;
+    padding: 24px 48px;
     box-sizing: border-box;
     border-radius: 30px;
     background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
     border: 1px solid $signatureColor;
     width: 85%;
     max-width: $maxWidth;
-    height: 70%;
+    height: 80%;
     max-height: 1080px;
     transform: translate(-50%, -50%);
-    @media (orientation: landscape) {
-        @include dflex(space-between, center);
+    @media (orientation: landscape) and (min-width: $desktopResolution) {
+        @include dflex($gap: 48px);
     }
     @media (orientation: portrait) {
     }
@@ -86,6 +85,8 @@
 
 .project {
     max-width: 50%;
+    max-height: 100%;
+    overflow: auto;
     @include dflex(flex-start, flex-start, column, 40px);
     &__head {
         @include dflex(center, flex-start, column);
@@ -93,18 +94,19 @@
             font-family: "Karla", Arial, Helvetica, sans-serif;
             font-weight: 700;
             color: $signatureColor;
-            font-size: clamp(4rem, 10dvw, 8rem);
+            font-size: clamp(4rem, 5dvw, 8rem);
             margin-bottom: -12px;
         }
         .project__name {
             font-family: "Fira-Code", Arial, Helvetica, sans-serif;
             font-weight: 700;
-            font-size: clamp(2rem, 10dvw, 4rem);
+            font-size: clamp(2rem, 5dvw, 4rem);
         }
     }
 
     &__body {
         @include dflex(flex-start, flex-start, column, 20px);
+        max-height: 30%;
         .subheadline {
             font-family: "Fira Code", Arial, Helvetica, sans-serif;
             font-weight: 700;
@@ -117,13 +119,14 @@
             font-size: clamp(1rem, 3dvw, 1.125rem);
         }
 
-        .skills-wrapper {
-            @include dflex(center, center, row, 8px);
-            flex-wrap: wrap;
+    }
 
-            .single-skill {
-                @include dflex($gap: 8px);
-            }
+    .skills-wrapper {
+        @include dflex(center, center, row, 8px);
+        flex-wrap: wrap;
+
+        .single-skill {
+            @include dflex($gap: 8px);
         }
     }
 

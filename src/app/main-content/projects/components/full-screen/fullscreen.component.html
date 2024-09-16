@@ -24,15 +24,15 @@
             <article class="project__body">
                 <h3 class="subheadline">{{ 'portfolio.fullscreen.project-is-about' | translate }}</h3>
                 <p>{{ projects.returnDescription(projects.project(), 'long') | translate }}</p>
-                <div class="skills-wrapper">
-                    @for (skill of projects.project().technologies; track $index) {
-                    <div class="single-skill">
-                        <img [src]="projects.returnSkillIcon(projects.project(), $index)" alt="" draggable="false">
-                        <span>{{projects.project().technologies[$index]}}</span>
-                    </div>
-                    }
-                </div>
             </article>
+            <div class="skills-wrapper">
+                @for (skill of projects.project().technologies; track $index) {
+                <div class="single-skill">
+                    <img [src]="projects.returnSkillIcon(projects.project(), $index)" alt="" draggable="false">
+                    <span>{{projects.project().technologies[$index]}}</span>
+                </div>
+                }
+            </div>
             <div class="project__footer">
                 <a [href]="projects.project().github" target="_blank" rel="noopener noreferrer">
                     <app-buttons text="GitHub" type="link" bg="dark"></app-buttons>
