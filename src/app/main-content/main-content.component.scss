@@ -49,7 +49,7 @@ main {
     }
     > app-footer {
         @include dflex(center, flex-start);
-        width: min(100%, 2100px);
+        @include widthLimiter();
         background: $backgroundDark;
         margin-bottom: 144px;
     }

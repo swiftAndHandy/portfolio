@@ -5,6 +5,9 @@ footer {
     flex: 1;
     max-width: 100%;
     margin: 64px min(10dvw, 96px) 0;
+    @media (min-width: $maxWidth) {
+        margin: 64px calc(96px - (100dvw - $maxWidth)) 0;
+    }
     height: $footerHeight;
 }
 
