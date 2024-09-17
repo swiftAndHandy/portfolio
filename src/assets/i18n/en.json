@@ -127,6 +127,8 @@
         }
     },
     "footer": {
-        "legal-notice": "Legal Notice"
-    }
+        "legal-notice": "Legal Notice",
+        "privacy-policy": "Privacy Policy"
+    },
+    "privacy": "The privacy policy is only available in german language."
 }

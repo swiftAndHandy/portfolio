@@ -1,10 +1,14 @@
-@use './../shared/scss/abstracts/' as *;
+@use "./../shared/scss/abstracts/" as *;
+
+p {
+    margin: clamp(2px, 2dvw, 1rem);
+}
 
 .wrapper {
     background: $boxGradient;
     min-height: 100vh;
     @include dflex(center, space-between);
-    >div {
+    > div {
         @include widthLimiter();
     }
 }
@@ -15,14 +19,12 @@
 
 .footer-wrapper {
     width: 100%;
+    margin-bottom: 64px;
 }
 
 article {
-    margin: 200px min(10dvw, 96px) 0;
-}
-
-> app-footer {
-    @include dflex(center, flex-start);
-    background: $backgroundDark;
-    margin-bottom: 144px;
+    margin: 150px 12px 0 clamp(0px, 2dvw, 48px);
+    @include dflex(flex-start, flex-start, column);
+    height: 100%;
+    box-sizing: border-box;
 }

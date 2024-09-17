@@ -127,6 +127,8 @@
         }
     },
     "footer": {
-        "legal-notice": "Impressum"
-    }
+        "legal-notice": "Impressum",
+        "privacy-policy": "Datenschutz"
+    },
+    "privacy": ""
 }

@@ -2,13 +2,13 @@
 
 p {
     margin: 1rem;
+    font-family: 'Karla', Arial, Helvetica, sans-serif;
+    font-weight: 400;
 }
 
 .wrapper {
     background: $boxGradient;
     min-height: 100vh;
-    max-height: 100vh;
-    overflow: hidden;
     @include dflex(center, space-between);
     >div {
         @include widthLimiter();
@@ -21,16 +21,19 @@ p {
 
 .footer-wrapper {
     width: 100%;
+    margin-bottom: 64px;
 }
 
 article {
-    margin: 150px 12px 0 0;
+    margin: 150px 12px 0 clamp(0px, 2dvw, 48px);
     padding: 0 24px;
-    overflow: auto;
+    @include dflex(flex-start, flex-start, column);
+    height: 100%;
+    box-sizing: border-box;
 }
 
-> app-footer {
-    @include dflex(center, flex-start);
-    background: $backgroundDark;
-    margin-bottom: 144px;
+h1 {
+    font-size: 2rem;
+    color: $signatureColor;
+    margin-bottom: 24px;
 }
