@@ -19,7 +19,7 @@
                 @if (!last) {<span class="seperator">|</span>}
                 }
             </div>
-            <div class="item__links">
+            <div class="item__links" (click)="$event.stopPropagation()">
                 <a [href]="currentProject.github" target="_blank" rel="noopener noreferrer">
                     <app-buttons text="GitHub" type="link" bg="dark"></app-buttons>
                 </a>

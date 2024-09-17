@@ -15,6 +15,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ContactComponent {
 
+  sendComplete: boolean = false;
+
   contactData = {
     name: '',
     email: '',
@@ -83,23 +85,22 @@ export class ContactComponent {
         this.placeholders[key].state = 'error';
       }
     }
-    
+
 
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-            console.log(response);        
             ngForm.resetForm();
           },
           error: (error) => {
-            console.error(error);
+
           },
-          complete: () => console.info('send post complete'),
+          complete: () => this.sendComplete = true,
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       ngForm.resetForm();
     }
-
   }
+
 }

@@ -91,6 +91,10 @@
         }
     },
     "contact": {
+        "success": {
+            "base": "Ihre Nachricht wurde erfolgreich gesendet.",
+            "button": "Was vergessen?"
+        },
         "subheadline": "Unsere Zusammenarbeit",
         "title": "Schreiben Sie mir",
         "article": {

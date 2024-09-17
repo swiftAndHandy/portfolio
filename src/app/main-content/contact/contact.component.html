@@ -11,15 +11,16 @@
             <p>{{ 'contact.article.p.2' | translate }}&nbsp;<span>{{ 'contact.article.talk' | translate }}</span></p>
         </article>
     </div>
+    @if (!sendComplete) {
     <form class="right" (ngSubmit)="onSubmit(contactForm);" #contactForm="ngForm">
         <div class="formular__body">
             <div class="formular__body__name">
                 <label for="formular-name" class="formular__headline">{{ 'contact.form.headline.name' | translate }}</label>
-                <input [(ngModel)]="contactData.name" name="name" maxlength="25" type="name" id="formular-name" placeholder="{{ translatePlaceholderState('name') | translate}}" [ngClass]="placeholderState('name')" required>
+                <input autocomplete="name" [(ngModel)]="contactData.name" name="name" maxlength="25" type="name" id="formular-name" placeholder="{{ translatePlaceholderState('name') | translate}}" [ngClass]="placeholderState('name')" required>
             </div>
             <div class="formular__body__email">
                 <label for="formular-email" class="formular__headline">{{ 'contact.form.headline.email' | translate }}</label>
-                <input [(ngModel)]="contactData.email" name="email" type="email" id="formular-email" placeholder="{{ translatePlaceholderState('email') | translate}}" [ngClass]="placeholderState('email')" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
+                <input autocomplete="email" [(ngModel)]="contactData.email" name="email" type="email" id="formular-email" placeholder="{{ translatePlaceholderState('email') | translate}}" [ngClass]="placeholderState('email')" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
                 <span class="email-pattern" [ngClass]="[placeholderState('email'), checkMailPattern(contactForm)]">{{ 'contact.form.placeholder.error.email-pattern' | translate }}</span>
             </div>
             <div class="formular__body__message">
@@ -38,7 +39,13 @@
                 </label>
                 <span class="privacy-error" [ngClass]="placeholderState('privacy')">{{ translatePlaceholderState('privacy') | translate}}</span>
             </div>
-            <app-buttons text="{{ 'contact.form.submit' | translate }}" type="static"></app-buttons>
+            <app-buttons text="{{ 'contact.form.submit' | translate }}" type="static" disabled="" #submitBtn></app-buttons>
         </div>
     </form>
+    } @else {
+        <div class="success-msg right">
+            <span>{{'contact.success.base' | translate}}</span>
+            <app-buttons type="regular" text="{{'contact.success.button' | translate}}" (click)="sendComplete=false"></app-buttons>
+        </div>
+    }
 </section>

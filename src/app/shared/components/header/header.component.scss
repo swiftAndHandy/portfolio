@@ -27,6 +27,10 @@
             background-color: rgba($color: $backgroundDark, $alpha: 0.6);
             backdrop-filter: blur(5px);
         }
+        @media (pointer: coarse) {
+            background-color: rgba($color: $backgroundDark, $alpha: 0.6);
+            backdrop-filter: blur(5px);
+        }
     }
 }
 

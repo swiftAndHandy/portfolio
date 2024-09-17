@@ -91,6 +91,10 @@
         }
     },
     "contact": {
+        "success": {
+            "base": "Your message has been sent successfully.",
+            "button": "Forgot something?"
+        },
         "subheadline": "Contact me",
         "title": "Let's work together",
         "article": {

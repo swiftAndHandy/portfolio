@@ -91,3 +91,12 @@ a {
         filter: brightness(1.5);
     }
 }
+
+
+.success-msg {
+    align-self: center;
+    align-items: center !important;
+    & * {
+        color: $signatureColor;
+    }
+}
