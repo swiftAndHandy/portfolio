@@ -82,6 +82,10 @@
                 "marcel-menke": {
                     "body": "Andre has both technical know-how and the ability to explain complex issues clearly and comprehensibly. His technical expertise has often helped me and many others.",
                     "position": "Frontend Developer"
+                },
+                "daniel-h.": {
+                    "body": "Thanks to his quick comprehension, Mr. Veltens immediately grasps even complex relationships and was always able to quickly familiarize himself with new tasks.",
+                    "position": "Law firm owner"
                 }
             }
         }
@@ -113,7 +117,7 @@
                 "error": {
                     "name": "Oops! it seems your name is missing",
                     "email": "Hoppla! your email is required",
-                    "email-pattern": "Please ensure you used the pattern abc@mail.domain", 
+                    "email-pattern": "Please ensure you used the pattern abc@mail.domain",
                     "msg": "What do you need to develop?",
                     "privacy": "Please accept the privacy policy."
                 }
