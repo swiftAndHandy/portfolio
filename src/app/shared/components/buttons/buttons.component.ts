@@ -12,4 +12,5 @@ export class ButtonsComponent {
   @Input() text: string = 'Demo-Button';
   @Input() type: 'regular' | 'link' | 'static' = 'regular';
   @Input() bg: 'transparent' | 'dark' = 'transparent';
+  @Input() disabled: boolean = false;
 }

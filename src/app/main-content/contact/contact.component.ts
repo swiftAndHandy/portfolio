@@ -39,7 +39,7 @@ export class ContactComponent {
     }
   }
 
-  mailTest = false;
+  mailTest = true;
   http = inject(HttpClient);
 
   post = {
@@ -100,6 +100,24 @@ export class ContactComponent {
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       ngForm.resetForm();
+    }
+  }
+
+  buttonDisabled(ngForm: NgForm): boolean {
+    return !ngForm.form.valid;
+  }
+
+  checkError(target: string, ngForm: NgForm) {
+    if (ngForm.form.controls[target].valid) {
+      this.placeholders[target].state = 'regular';
+    } else {
+      this.placeholders[target].state = 'error';
+    }
+  }
+
+  removeMailError(ngForm: NgForm) {
+    if (ngForm.form.controls["email"].valid) {
+      this.placeholders["email"].state = 'regular';
     }
   }
 

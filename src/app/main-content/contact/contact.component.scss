@@ -10,16 +10,6 @@
     }
 }
 
-.error {
-    display: unset !important;
-    color: #ec7b7bcc;
-    &::placeholder {
-        color: #ec7b7bcc;
-        white-space-collapse: break-spaces;
-        font-size: 15px;
-    }
-}
-
 .checkbox {
     position: absolute;
     width: 0px;
@@ -92,11 +82,24 @@ a {
     }
 }
 
-
 .success-msg {
     align-self: center;
     align-items: center !important;
     & * {
         color: $signatureColor;
+    }
+}
+
+.error-field {
+    color: #ec7b7bcc;
+    white-space-collapse: break-spaces;
+    font-size: 15px;
+    visibility: hidden;
+
+    font-family: 'Karla', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+
+    &--active {
+        visibility: visible;
     }
 }

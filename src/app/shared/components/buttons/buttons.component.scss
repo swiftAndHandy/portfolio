@@ -1,5 +1,13 @@
 @use "./../../scss/abstracts/" as *;
 
+.disabled {
+    filter: brightness(0.7);
+    cursor: not-allowed;
+    &:hover {
+        border: 1px solid #ec7b7bcc;
+    }
+}
+
 button {
     @include dflex();
     position: relative;

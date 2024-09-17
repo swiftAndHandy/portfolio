@@ -16,16 +16,18 @@
         <div class="formular__body">
             <div class="formular__body__name">
                 <label for="formular-name" class="formular__headline">{{ 'contact.form.headline.name' | translate }}</label>
-                <input autocomplete="name" [(ngModel)]="contactData.name" name="name" maxlength="25" type="name" id="formular-name" placeholder="{{ translatePlaceholderState('name') | translate}}" [ngClass]="placeholderState('name')" required>
+                <input autocomplete="name" (blur)="checkError('name', contactForm)" [(ngModel)]="contactData.name" name="name" maxlength="25" type="name" id="formular-name" placeholder="{{ 'contact.form.placeholder.regular.name' | translate}}" required>
+                <span class="error-field" [ngClass]="{'error-field--active': placeholderState('name') === 'error'}">{{ 'contact.form.placeholder.error.name' | translate}}</span>
             </div>
             <div class="formular__body__email">
                 <label for="formular-email" class="formular__headline">{{ 'contact.form.headline.email' | translate }}</label>
-                <input autocomplete="email" [(ngModel)]="contactData.email" name="email" type="email" id="formular-email" placeholder="{{ translatePlaceholderState('email') | translate}}" [ngClass]="placeholderState('email')" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
-                <span class="email-pattern" [ngClass]="[placeholderState('email'), checkMailPattern(contactForm)]">{{ 'contact.form.placeholder.error.email-pattern' | translate }}</span>
+                <input (input)="removeMailError(contactForm)" autocomplete="email" (blur)="checkError('email', contactForm)" [(ngModel)]="contactData.email" name="email" type="email" id="formular-email" placeholder="{{ 'contact.form.placeholder.regular.email' | translate}}" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
+                <span class="error-field" [ngClass]="{'error-field--active': placeholderState('email') === 'error'}">{{ 'contact.form.placeholder.error.email-pattern' | translate }}</span>
             </div>
             <div class="formular__body__message">
                 <label for="formular-msg" class="formular__headline">{{ 'contact.form.headline.msg' | translate }}</label>
-                <textarea [(ngModel)]="contactData.msg" id="formular-msg" name="msg" placeholder="{{ translatePlaceholderState('msg') | translate}}" (input)="resizeTextarea($event)" [ngClass]="placeholderState('msg')" required></textarea>
+                <textarea [(ngModel)]="contactData.msg" (blur)="checkError('msg', contactForm)" id="formular-msg" name="msg" placeholder="{{ 'contact.form.placeholder.regular.msg' | translate}}" (input)="resizeTextarea($event)" required></textarea>
+                <span class="error-field" [ngClass]="{'error-field--active': placeholderState('msg') === 'error'}">{{ 'contact.form.placeholder.error.msg' | translate}}</span>
             </div>
         </div>
         <div class="formular__footer">
@@ -37,15 +39,15 @@
                         {{ 'contact.form.checkbox-label.confirm' | translate }}
                     </div>
                 </label>
-                <span class="privacy-error" [ngClass]="placeholderState('privacy')">{{ translatePlaceholderState('privacy') | translate}}</span>
+                <span class="error-field" [ngClass]="placeholderState('privacy')">{{ translatePlaceholderState('privacy') | translate}}</span>
             </div>
-            <app-buttons text="{{ 'contact.form.submit' | translate }}" type="static" disabled="" #submitBtn></app-buttons>
+            <app-buttons text="{{ 'contact.form.submit' | translate }}" type="static" [disabled]="buttonDisabled(contactForm)" #submitBtn></app-buttons>
         </div>
     </form>
     } @else {
-        <div class="success-msg right">
-            <span>{{'contact.success.base' | translate}}</span>
-            <app-buttons type="regular" text="{{'contact.success.button' | translate}}" (click)="sendComplete=false"></app-buttons>
-        </div>
+    <div class="success-msg right">
+        <span>{{'contact.success.base' | translate}}</span>
+        <app-buttons type="regular" text="{{'contact.success.button' | translate}}" (click)="sendComplete=false"></app-buttons>
+    </div>
     }
 </section>
