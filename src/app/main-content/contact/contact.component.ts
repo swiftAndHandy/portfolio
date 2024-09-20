@@ -39,7 +39,7 @@ export class ContactComponent {
     }
   }
 
-  mailTest = true;
+  mailTest = false;
   http = inject(HttpClient);
 
   post = {

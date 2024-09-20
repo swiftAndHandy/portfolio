@@ -16,11 +16,11 @@ switch ($_SERVER['REQUEST_METHOD']) {
     
             $email = $params->email;
             $name = $params->name;
-            $message = $params->message;
+            $msg = $params->msg;
     
             $recipient = 'andre@veltens.info';  
             $subject = "Contact From <$email>";
-            $message = "From:" . $name . "<br>" . $message ;
+            $msg = "Absender: " . $name . "<br>" . nl2br($msg);
     
             $headers   = array();
             $headers[] = 'MIME-Version: 1.0';
@@ -29,7 +29,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
             // Additional headers
             $headers[] = "From: noreply@veltens.info";
 
-            mail($recipient, $subject, $message, implode("\r\n", $headers));
+            mail($recipient, $subject, $msg, implode("\r\n", $headers));
             break;
         default: //Reject any non POST or OPTIONS requests.
             header("Allow: POST", true, 405);

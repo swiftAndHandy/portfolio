@@ -1,5 +1,5 @@
 <header class="header--large">
-    <nav>
+    <nav [ngClass]="{'reduced-visibility': pageScrolled}">
         <app-toggle></app-toggle>
         <app-link-list></app-link-list>
     </nav>

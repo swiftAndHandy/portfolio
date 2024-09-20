@@ -23,12 +23,24 @@
     > nav {
         @include dflex($gap: 24px);
         padding: 24px 24px;
-        background-color: rgba($color: $backgroundDark, $alpha: 0.0);
+        background-color: rgba($color: $backgroundDark, $alpha: 0);
         border-radius: 30px;
-        transition: all 100ms ease-in;
+        transition: all 200ms ease-in;
+        &.reduced-visibility {
+            @media (pointer: fine) {
+                opacity: 0.1;
+            }
+        }
+
         &:hover {
             background-color: rgba($color: $backgroundDark, $alpha: 0.6);
             backdrop-filter: blur(5px);
+
+            &.reduced-visibility {
+                @media (pointer: fine) {
+                    opacity: 1;
+                }
+            }
         }
         @media (pointer: coarse) {
             background-color: rgba($color: $backgroundDark, $alpha: 0.6);
@@ -49,7 +61,7 @@
     }
 
     & .burger-menu-wrapper {
-         & .dimmer {
+        & .dimmer {
             position: fixed;
             background-color: $backgroundDark;
             opacity: 0.2;
