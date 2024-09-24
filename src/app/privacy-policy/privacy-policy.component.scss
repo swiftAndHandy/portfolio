@@ -1,7 +1,8 @@
 @use "./../shared/scss/abstracts/" as *;
 
-p {
+p, li {
     margin: clamp(2px, 2dvw, 1rem);
+    font-family: 'Karla', Arial, Helvetica, sans-serif;
 }
 
 .wrapper {
