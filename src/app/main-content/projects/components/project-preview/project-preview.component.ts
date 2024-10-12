@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { Project } from '../../../../interfaces/projects.interface';
-import { StringUtils } from '../../../../utils/string-utils.utils';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonsComponent } from '../../../../shared/components/buttons/buttons.component';
 import { CommonModule } from '@angular/common';

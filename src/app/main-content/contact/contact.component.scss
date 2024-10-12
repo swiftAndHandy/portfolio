@@ -51,6 +51,9 @@
     @media (orientation: landscape) {
         @include dflex(center, flex-start, column, 20px);
     }
+    .section__subheadline {
+        margin-bottom: 0;
+    }
     .section__main-title {
         white-space: unset;
     }
@@ -64,6 +67,7 @@
         font-size: clamp(1rem, 4vw, 1.5rem);
     }
     > p {
+        font-family: "Karla", Arial, Helvetica, sans-serif;
         > span {
             color: $signatureColor;
         }

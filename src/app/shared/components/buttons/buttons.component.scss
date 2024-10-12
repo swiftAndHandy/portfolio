@@ -3,6 +3,7 @@
 .disabled {
     filter: brightness(0.7);
     cursor: not-allowed;
+    background-color: rgba($color: grey, $alpha: 0.3) !important;
     &:hover {
         border: 1px solid #ec7b7bcc;
     }

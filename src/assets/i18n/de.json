@@ -14,18 +14,20 @@
             "remote": "Remote oder vor Ort",
             "skills": "Frontend Developer",
             "location": "Standort Paderborn",
-            "open-to-work": "Offen für Anfragen"
+            "open-to-work": "Auftragsarbeiten"
         }
     },
     "about-me": {
         "portrait-alt": "Andre Veltens, arbeitend am MacBook",
         "subheadline": "Wer ich bin",
         "title": "Vorstellung",
-        "subsumption": "Hallo, ich bin ein deutschsprachiger Frontend-Entwickler mit Sitz in Paderborn. Webseiten müssen aus meiner Sicht primär zwei Aufgaben erfüllen: Sie müssen eine gute Benutzererfahrung bieten und dabei bestmöglich aussehen. Solche Webseiten umzusetzen ist meine Mission. Angetrieben werde ich dabei von meiner Erfahrung als ehemaliger Angestellter in verschiedenen Branchen. Dadurch habe ich das Wissen, wie Softwarelösungen in der Realität angewendet werden und Kundenoptimiert laufen können.",
+        "subsumption": {
+            "main": "Als zertifizierter Frontend Developer liegt mein Fokus auf der Entwicklung mit Angular sowie Type- und JavaScript. Dabei bringe ich sowohl Praxiserfahrung aus zahlreichen Einzelprojekten als auch fundierte Kenntnisse in der Zusammenarbeit in agilen Teams mit. Neben dem Einsatz von Projektmanagement-Methoden wie SCRUM und Kanban habe ich durch meine analytischen Fähigkeiten maßgeblich zum Projekterfolg beigetragen."
+        },
         "bulletpoints": {
             "location": "Egal ob vor Ort in Paderborn oder im Remote - ich arbeite effektiv an der Umsetzung Ihrer Ideen.",
             "mind": "Ich freue mich auf persönliche Herausforderungen und die Möglichkeit, meine Fähigkeiten auszubauen.",
-            "goals": "Probleme lösen ist meine Passion. Programmieren stellt eine leistungsfähige und wirtschaftliche Art der Problemlösung dar. Sie können von meinen Kenntnissen und Fähigkeiten profitieren. Ich freue mich darauf, Ihre Visionen zum Leben zu erwecken."
+            "goals": "Digitale Prozesse zu gestalten und optimieren, ist mein persönliches Ziel. Gerne biete ich Ihnen meine Fähigkeiten als effiziente und ökonomische Art der Problemlösung an."
         }
     },
     "skills": {
@@ -95,7 +97,7 @@
             "base": "Ihre Nachricht wurde erfolgreich gesendet.",
             "button": "Was vergessen?"
         },
-        "subheadline": "Unsere Zusammenarbeit",
+        "subheadline": "Kontakt",
         "title": "Schreiben Sie mir",
         "article": {
             "headline": "Sie haben ein Problem?",
@@ -115,7 +117,7 @@
                 "regular": {
                     "name": "Bitte tragen Sie Ihren Namen ein",
                     "email": "sie@beispiel.de",
-                    "msg": "Hallo Andre, ich benötige...",
+                    "msg": "Hallo Herr Veltens, ich benötige...",
                     "privacy": ""
                 },
                 "error": {

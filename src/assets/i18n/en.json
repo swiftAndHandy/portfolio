@@ -14,14 +14,16 @@
             "remote": "Available for remote work",
             "skills": "Frontend Developer",
             "location": "Based in Paderborn",
-            "open-to-work": "Open to work"
+            "open-to-work": "Contract work"
         }
     },
     "about-me": {
         "portrait-alt": "An image of Andre Veltens, working on a MacBook",
         "subheadline": "Who I Am",
         "title": "About me",
-        "subsumption": "I am a German-speaking front-end developer based in Paderborn. From my point of view, websites must primarily fulfill two tasks: They have to provide a good user experience and look their best. Realizing such websites is my mission. I am driven by my experience as a former employee in various industries. This has given me the knowledge of how software solutions can be applied in reality and run in a customer-optimized way.",
+        "subsumption": {
+            "main": "Als zertifizierter Frontend Developer liegt mein Fokus auf der Entwicklung mit Angular sowie Type- und JavaScript. Dabei bringe ich sowohl Praxiserfahrung aus zahlreichen Einzelprojekten als auch fundierte Kenntnisse in der Zusammenarbeit in agilen Teams mit."
+        },
         "bulletpoints": {
             "location": "Whether on site in Paderborn or remotely - I work effectively to implement your ideas.",
             "mind": "I am open-minded and always looking for personal challenges to constantly improve my knowledge and skills.",
