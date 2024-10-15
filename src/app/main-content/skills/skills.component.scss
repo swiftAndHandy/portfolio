@@ -42,6 +42,32 @@
     }
 }
 
+.right {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 32px;
+
+    .skillset-links {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        font-size: clamp(2vw, 24px, 3vw);
+
+        .skillset-toggle {
+            cursor: pointer;
+            &.active {
+                color: $signatureColor;
+                cursor: default;
+            }
+        }
+    }
+
+    @media (max-width: $mobileResolution) {
+        width: 100%;
+    }
+}
+
 .main {
     @include dflex(space-between, flex-start);
     gap: min(4dvw, 96px);

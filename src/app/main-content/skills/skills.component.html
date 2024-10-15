@@ -13,10 +13,23 @@
                 </article>
             </div>
         </div>
-        <div class="skills__list">
-            @for (skill of frontendSkills; track skill) {
-            <app-single-skill [name]="skill.name" category="frontend" [container]="checkContainer(skill)"></app-single-skill>
-            }
-        </div>
+        <section class="right">
+            <div class="skills__list">
+                @if (displayedSkillSet == "frontend") {
+                @for (skill of frontendSkills; track skill) {
+                <app-single-skill [name]="skill.name" category="frontend" [container]="checkContainer(skill)"></app-single-skill>
+                }
+                } @else{
+                @for (skill of backendSkills; track skill) {
+                <app-single-skill [name]="skill.name" category="backend" [container]="checkContainer(skill)"></app-single-skill>
+                }
+                }
+            </div>
+            <div class="skillset-links">
+                <span [ngClass]="{'active': displayedSkillSet=='frontend'}" class="skillset-toggle" (click)="displayedSkillSet !== 'frontend' && toggleSkillset()">Frontend</span>
+                <span>|</span>
+                <span [ngClass]="{'active': displayedSkillSet=='backend'}" class="skillset-toggle" (click)="displayedSkillSet !== 'backend' && toggleSkillset()">Backend</span>
+            </div>
+        </section>
     </div>
 </section>
