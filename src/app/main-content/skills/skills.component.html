@@ -25,11 +25,13 @@
                 }
                 }
             </div>
-            <div class="skillset-links">
-                <span [ngClass]="{'active': displayedSkillSet=='frontend'}" class="skillset-toggle" (click)="displayedSkillSet !== 'frontend' && toggleSkillset()">Frontend</span>
-                <span>|</span>
-                <span [ngClass]="{'active': displayedSkillSet=='backend'}" class="skillset-toggle" (click)="displayedSkillSet !== 'backend' && toggleSkillset()">Backend</span>
-            </div>
+            @if (displayedSkillToggle) {
+                <div class="skillset-links">
+                    <span [ngClass]="{'active': displayedSkillSet=='frontend'}" class="skillset-toggle" (click)="displayedSkillSet !== 'frontend' && toggleSkillset()">Frontend</span>
+                    <span>|</span>
+                    <span [ngClass]="{'active': displayedSkillSet=='backend'}" class="skillset-toggle" (click)="displayedSkillSet !== 'backend' && toggleSkillset()">Backend</span>
+                </div>
+            }
         </section>
     </div>
 </section>

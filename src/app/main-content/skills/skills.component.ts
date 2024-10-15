@@ -13,8 +13,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
-  displayedSkillSet: 'frontend' | 'backend' = 'frontend';
   displayedSkillToggle: boolean = false;
+  
+  displayedSkillSet: 'frontend' | 'backend' = 'frontend';
 
   frontendSkills: Skill[] = [
     {'name': 'Angular'},
