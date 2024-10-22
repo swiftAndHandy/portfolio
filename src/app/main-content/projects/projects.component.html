@@ -1,10 +1,10 @@
 <div id="projects" class="anchor"></div>
 <app-project-fullscreen class="detail-wrapper" [ngClass]="{'project-fullscreen': project.projectDetails.visibleFullscreen}"></app-project-fullscreen>
 <section id="projects" class="projects">
-    <article class="section__header">
+    <article [attr.aria-label]="('portfolio.subheadline' | translate)" class="section__header">
         <div class="titles">
-            <h2 class="section__subheadline">{{'portfolio.subheadline' | translate }}</h2>
-            <h1 class="section__main-title">{{'portfolio.title' | translate }}</h1>
+            <h2 aria-hidden="true" class="section__subheadline">{{'portfolio.subheadline' | translate }}</h2>
+            <h1 aria-hidden="true" class="section__main-title">{{'portfolio.title' | translate }}</h1>
         </div>
         <p class="expose">{{'portfolio.expose' | translate}}</p>
     </article>

@@ -14,7 +14,7 @@
             </div>
         </div>
         <section class="right">
-            <div class="skills__list">
+            <div aria-label="Skills" class="skills__list">
                 @if (displayedSkillSet == "frontend") {
                 @for (skill of frontendSkills; track skill) {
                 <app-single-skill [name]="skill.name" category="frontend" [container]="checkContainer(skill)"></app-single-skill>
@@ -27,9 +27,9 @@
             </div>
             @if (displayedSkillToggle) {
                 <div class="skillset-links">
-                    <span [ngClass]="{'active': displayedSkillSet=='frontend'}" class="skillset-toggle" (click)="displayedSkillSet !== 'frontend' && toggleSkillset()">Frontend</span>
-                    <span>|</span>
-                    <span [ngClass]="{'active': displayedSkillSet=='backend'}" class="skillset-toggle" (click)="displayedSkillSet !== 'backend' && toggleSkillset()">Backend</span>
+                    <span [attr.aria-hidden]="displayedSkillSet !== 'frontend'" [ngClass]="{'active': displayedSkillSet=='frontend'}" class="skillset-toggle" (click)="displayedSkillSet !== 'frontend' && toggleSkillset()">Frontend</span>
+                    <span aria-hidden="true">|</span>
+                    <span [attr.aria-hidden]="displayedSkillSet !== 'backend'" [ngClass]="{'active': displayedSkillSet=='backend'}" class="skillset-toggle" (click)="displayedSkillSet !== 'backend' && toggleSkillset()">Backend</span>
                 </div>
             }
         </section>

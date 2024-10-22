@@ -1,4 +1,9 @@
 {
+    "language": {
+        "toggle": "Change language to: ",
+        "german": "German",
+        "english": "English"
+    },
     "nav": {
         "about": "About me",
         "skills": "Skills",
@@ -53,6 +58,7 @@
             "next": "Next project"
         },
         "project": {
+            "open": "Open Project details of: ",
             "join": {
                 "description": {
                     "short": "Task manager inspired by the Kanban System.",

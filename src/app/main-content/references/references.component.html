@@ -8,8 +8,8 @@
         }
         <div class="blur blur--right"></div>
     </div>
-    <div class="controls">
-        <div class="arrow-wrapper" (click)="previousButton()">
+    <div class="controls" aria-hidden="true">
+        <div aria-hidden="true" class="arrow-wrapper" (click)="previousButton()">
             <div class="arrow">
                 <img class="arrow--prev left" src="./assets/icons/arrow_right_white.svg" alt="previous" draggable="false">
             </div>
@@ -17,7 +17,7 @@
         @for (item of refService.referenceGivers; let i = $index; track i;) {
         <img src="./assets/icons/dot.svg" draggable="false" class="bullet-point" [ngClass]="{'active': i == refService.currentRef}">
         }
-        <div class="arrow-wrapper" (click)="nextButton()">
+        <div aria-hidden="true" class="arrow-wrapper" (click)="nextButton()">
             <div class="arrow">
                 <img class="arrow--next" src="./assets/icons/arrow_right_white.svg" alt="previous" draggable="false">
             </div>

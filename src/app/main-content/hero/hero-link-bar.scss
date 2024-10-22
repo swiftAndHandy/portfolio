@@ -25,6 +25,10 @@
                 display: none;
             }
 
+            .mail-icon {
+                display: none !important;
+            }
+
             @media (max-width: $mobileResolution) {
                 .mail-icon {
                     position: relative;

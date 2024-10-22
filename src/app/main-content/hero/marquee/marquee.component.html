@@ -9,7 +9,7 @@
             }
             } @else {
             @for (item of marqueeItems; track $index) {
-            <span class="marquee-item second-iteration">{{'hero.marquee.'+item | translate}}</span>
+            <span aria-hidden="true" class="marquee-item second-iteration">{{'hero.marquee.'+item | translate}}</span>
             }
             }
         </div>

@@ -1,4 +1,4 @@
-<div class="toggle" (click)="toggleLanguage()">
-    <span [ngClass]="(translate.store.currentLang == 'en') ? 'active' : 'inactive'" class="toggle-state--en">EN</span>
-    <span [ngClass]="(translate.store.currentLang == 'de') ? 'active' : 'inactive'" class="toggle-state--de">DE</span>
+<div role="button" [attr.aria-label]="('language.toggle' | translate) + (returnNewLanguage() | translate)" class="toggle" (click)="toggleLanguage()">
+    <span aria-hidden="true" [ngClass]="(translate.store.currentLang == 'en') ? 'active' : 'inactive'" class="toggle-state--en">EN</span>
+    <span aria-hidden="true" [ngClass]="(translate.store.currentLang == 'de') ? 'active' : 'inactive'" class="toggle-state--de">DE</span>
 </div>

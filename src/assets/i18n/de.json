@@ -1,4 +1,9 @@
 {
+    "language": {
+        "toggle": "Ändere Sprache zu: ",
+        "german": "Deutsch",
+        "english": "Englisch"
+    },
     "nav": {
         "about": "Vorstellung",
         "skills": "Skills",
@@ -41,7 +46,7 @@
             },
             "body": "Nehmen Sie gerne Kontakt zu mir auf. Ich freue mich darauf, meine Kompetenzen zu erweitern."
         },
-        "button": "Let's Talk"
+        "button": "Schreiben Sie mir"
     },
     "portfolio": {
         "title": "Projektauszüge",
@@ -53,6 +58,7 @@
             "next": "Weiter"
         },
         "project": {
+            "open": "Öffne Projekt-Details zu: ",
             "join": {
                 "description": {
                     "short": "Ein Task Manager basierend auf dem Kanban System.",

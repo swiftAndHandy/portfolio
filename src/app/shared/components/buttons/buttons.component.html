@@ -1,7 +1,7 @@
 <button [ngClass]="[type, 'bg--' + bg, disabled ? 'disabled' : '']" [disabled]="disabled">
     <span class="label">{{ text }}</span>
     @if (type == 'regular') {
-    <span class="label--cloned">{{ text }}</span>
-    <span class="spacer">{{ text }}</span>
+    <span aria-hidden="true" class="label--cloned">{{ text }}</span>
+    <span aria-hidden="true" class="spacer">{{ text }}</span>
     }
 </button>

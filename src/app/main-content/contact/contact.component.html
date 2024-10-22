@@ -3,10 +3,10 @@
     <div class="left">
         <div class="titles">
             <h2 class="section__subheadline">{{ 'contact.subheadline' | translate }}</h2>
-            <h1 class="section__main-title">{{ 'contact.title' | translate }}</h1>
+            <h1 aria-hidden="true" class="section__main-title">{{ 'contact.title' | translate }}</h1>
         </div>
         <article class="contact-content">
-            <h3 class="article__headline">{{ 'contact.article.headline' | translate }}</h3>
+            <h3 aria-hidden="true" class="article__headline">{{ 'contact.article.headline' | translate }}</h3>
             <p>{{ 'contact.article.p.1' | translate }}</p>
             <p>{{ 'contact.article.p.2' | translate }}&nbsp;<span>{{ 'contact.article.talk' | translate }}</span></p>
         </article>
@@ -15,18 +15,18 @@
     <form class="right" (ngSubmit)="onSubmit(contactForm);" #contactForm="ngForm">
         <div class="formular__body">
             <div class="formular__body__name">
-                <label for="formular-name" class="formular__headline">{{ 'contact.form.headline.name' | translate }}</label>
-                <input autocomplete="name" (blur)="checkError('name', contactForm)" [(ngModel)]="contactData.name" name="name" maxlength="25" type="name" id="formular-name" placeholder="{{ 'contact.form.placeholder.regular.name' | translate}}" required>
+                <label id="label-name" for="formular-name" class="formular__headline">{{ 'contact.form.headline.name' | translate }}</label>
+                <input aria-labelledby="label-name" autocomplete="name" (blur)="checkError('name', contactForm)" [(ngModel)]="contactData.name" name="name" maxlength="25" type="name" id="formular-name" placeholder="{{ 'contact.form.placeholder.regular.name' | translate}}" required>
                 <span class="error-field" [ngClass]="{'error-field--active': placeholderState('name') === 'error'}">{{ 'contact.form.placeholder.error.name' | translate}}</span>
             </div>
             <div class="formular__body__email">
-                <label for="formular-email" class="formular__headline">{{ 'contact.form.headline.email' | translate }}</label>
-                <input (input)="removeMailError(contactForm)" autocomplete="email" (blur)="checkError('email', contactForm)" [(ngModel)]="contactData.email" name="email" type="email" id="formular-email" placeholder="{{ 'contact.form.placeholder.regular.email' | translate}}" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
+                <label id="label-email" for="formular-email" class="formular__headline">{{ 'contact.form.headline.email' | translate }}</label>
+                <input aria-labelledby="label-email" (input)="removeMailError(contactForm)" autocomplete="email" (blur)="checkError('email', contactForm)" [(ngModel)]="contactData.email" name="email" type="email" id="formular-email" placeholder="{{ 'contact.form.placeholder.regular.email' | translate}}" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
                 <span class="error-field" [ngClass]="{'error-field--active': placeholderState('email') === 'error'}">{{ 'contact.form.placeholder.error.email-pattern' | translate }}</span>
             </div>
             <div class="formular__body__message">
-                <label for="formular-msg" class="formular__headline">{{ 'contact.form.headline.msg' | translate }}</label>
-                <textarea [(ngModel)]="contactData.msg" (blur)="checkError('msg', contactForm)" id="formular-msg" name="msg" placeholder="{{ 'contact.form.placeholder.regular.msg' | translate}}" (input)="resizeTextarea($event)" required></textarea>
+                <label id="label-msg" for="formular-msg" class="formular__headline">{{ 'contact.form.headline.msg' | translate }}</label>
+                <textarea aria-labelledby="label-msg" [(ngModel)]="contactData.msg" (blur)="checkError('msg', contactForm)" id="formular-msg" name="msg" placeholder="{{ 'contact.form.placeholder.regular.msg' | translate}}" (input)="resizeTextarea($event)" required></textarea>
                 <span class="error-field" [ngClass]="{'error-field--active': placeholderState('msg') === 'error'}">{{ 'contact.form.placeholder.error.msg' | translate}}</span>
             </div>
         </div>
