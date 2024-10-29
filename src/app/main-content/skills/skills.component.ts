@@ -23,7 +23,7 @@ export class SkillsComponent {
     {'name': 'JavaScript'},
     {'name': 'Firebase'},
     {'name': 'Git'},
-    {'name': 'Rest-API'},
+    {'name': 'REST-API'},
     {'name': 'Material Design'},
     {'name': 'Scrum'},
     {'name': 'HTML'},

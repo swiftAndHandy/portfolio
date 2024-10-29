@@ -54,6 +54,7 @@
 
     .formular__footer {
         @include dflex(center, flex-start, column, 16px);
+        width: 100%;
         * {
             font-size: 15px;
             font-family: "Karla", Arial, Helvetica, sans-serif;

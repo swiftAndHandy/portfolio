@@ -27,24 +27,24 @@
         "subheadline": "Who I Am",
         "title": "About me",
         "subsumption": {
-            "main": "Als zertifizierter Frontend Developer liegt mein Fokus auf der Entwicklung mit Angular sowie Type- und JavaScript. Dabei bringe ich sowohl Praxiserfahrung aus zahlreichen Einzelprojekten als auch fundierte Kenntnisse in der Zusammenarbeit in agilen Teams mit."
+            "main": "As a certified front-end developer, my focus is on development with Angular as well as Type and JavaScript. I have practical experience from numerous individual projects as well as in-depth knowledge of working in agile teams."
         },
         "bulletpoints": {
             "location": "Whether on site in Paderborn or remotely - I work effectively to implement your ideas.",
-            "mind": "I am open-minded and always looking for personal challenges to constantly improve my knowledge and skills.",
-            "goals": "I like solving issues. Programming is a powerfull and economic way of problem-solving. You can benefit from my knowledge and skills. I'm glad to bring your visions to life."
+            "mind": "I am looking forward to personal challenges and the opportunity to develop my skills.",
+            "goals": "Designing and optimizing digital processes is my personal goal. I am happy to offer you my skills as an efficient and economical way of solving problems."
         }
     },
     "skills": {
         "subheadline": "Technologies",
         "title": "Skill Set",
-        "intro": "In the meantime, I have worked on various projects.  I have been able to use a variety of frontend technologies and concepts. New technologies and methods do not scare me, but I see them as a means to continuously improve my skills and stay ahead in the ever-evolving landscape of web development.",
+        "intro": "With my experience from a large number of projects and in-depth knowledge of modern front-end technologies, I effectively implement sophisticated web applications. In addition to Angular and REST APIs, I use Git for versioning and work efficiently and in a solution-oriented manner in agile team projects.",
         "sub-subheadline": {
             "part": {
-                "one": "You need ",
-                "two": "another skill?"
+                "one": "Are you looking for ",
+                "two": "a specific skill?"
             },
-            "body": "Feel free to contact me. I look forward to expanding on my previous knowledge."
+            "body": "Feel free to contact me. Together we will find an optimal solution."
         },
         "button": "Let's Talk"
     },
@@ -104,26 +104,26 @@
             "button": "Forgot something?"
         },
         "subheadline": "Contact me",
-        "title": "Let's work together",
+        "title": "Send me a message",
         "article": {
-            "headline": "Got a problem to solve?",
+            "headline": "Your vision, my expertise",
             "p": {
-                "1": "Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.",
-                "2": "Need a Frontend Developer?"
+                "1": "You can contact me directly using the form on the right. Whether it's about visions, questions or specific requirements - I look forward to developing a suitable solution together with you!",
+                "2": "Do you need someone with front-end expertise?"
             },
-            "talk": "Let's talk!"
+            "talk": "You've come to the right place!"
         },
         "form": {
             "headline": {
-                "name": "What's your name?",
-                "email": "What's your email?",
+                "name": "Your name?",
+                "email": "Your email?",
                 "msg": "How can I help you?"
             },
             "placeholder": {
                 "regular": {
-                    "name": "You name goes here",
+                    "name": "Please enter your name",
                     "email": "youremail@example.com",
-                    "msg": "Hello Andre, I'm interested in...",
+                    "msg": "Hello Mr. Veltens, I'm interested in...",
                     "privacy": ""
                 },
                 "error": {
@@ -139,7 +139,7 @@
                 "privacy-policy": "privacy policy",
                 "confirm": "and agree to the processing of my data as outlined."
             },
-            "submit": "Say Hello :)"
+            "submit": "Send Mail"
         }
     },
     "footer": {

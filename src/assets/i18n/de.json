@@ -27,7 +27,7 @@
         "subheadline": "Wer ich bin",
         "title": "Vorstellung",
         "subsumption": {
-            "main": "Als zertifizierter Frontend Developer liegt mein Fokus auf der Entwicklung mit Angular sowie Type- und JavaScript. Dabei bringe ich sowohl Praxiserfahrung aus zahlreichen Einzelprojekten als auch fundierte Kenntnisse in der Zusammenarbeit in agilen Teams mit. Neben dem Einsatz von Projektmanagement-Methoden wie SCRUM und Kanban habe ich durch meine analytischen Fähigkeiten maßgeblich zum Projekterfolg beigetragen."
+            "main": "Als zertifizierter Frontend Developer liegt mein Fokus auf der Entwicklung mit Angular sowie Type- und JavaScript. Dabei bringe ich sowohl Praxiserfahrung aus zahlreichen Einzelprojekten als auch fundierte Kenntnisse in der Zusammenarbeit in agilen Teams mit."
         },
         "bulletpoints": {
             "location": "Egal ob vor Ort in Paderborn oder im Remote – ich arbeite effektiv an der Umsetzung Ihrer Ideen.",
@@ -122,7 +122,7 @@
             "placeholder": {
                 "regular": {
                     "name": "Bitte tragen Sie Ihren Namen ein",
-                    "email": "sie@beispiel.de",
+                    "email": "ihremail@beispiel.de",
                     "msg": "Hallo Herr Veltens, ich benötige...",
                     "privacy": ""
                 },
