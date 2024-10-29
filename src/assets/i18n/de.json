@@ -30,21 +30,21 @@
             "main": "Als zertifizierter Frontend Developer liegt mein Fokus auf der Entwicklung mit Angular sowie Type- und JavaScript. Dabei bringe ich sowohl Praxiserfahrung aus zahlreichen Einzelprojekten als auch fundierte Kenntnisse in der Zusammenarbeit in agilen Teams mit. Neben dem Einsatz von Projektmanagement-Methoden wie SCRUM und Kanban habe ich durch meine analytischen Fähigkeiten maßgeblich zum Projekterfolg beigetragen."
         },
         "bulletpoints": {
-            "location": "Egal ob vor Ort in Paderborn oder im Remote - ich arbeite effektiv an der Umsetzung Ihrer Ideen.",
+            "location": "Egal ob vor Ort in Paderborn oder im Remote – ich arbeite effektiv an der Umsetzung Ihrer Ideen.",
             "mind": "Ich freue mich auf persönliche Herausforderungen und die Möglichkeit, meine Fähigkeiten auszubauen.",
-            "goals": "Digitale Prozesse zu gestalten und optimieren, ist mein persönliches Ziel. Gerne biete ich Ihnen meine Fähigkeiten als effiziente und ökonomische Art der Problemlösung an."
+            "goals": "Digitale Prozesse zu gestalten und zu optimieren, ist mein persönliches Ziel. Gerne biete ich Ihnen meine Fähigkeiten als effiziente und ökonomische Art der Problemlösung an."
         }
     },
     "skills": {
         "subheadline": "Technologien",
         "title": "Skills",
-        "intro": "Inzwischen habe ich an verschiedenen Projekten mitgewirkt.  Dabei konnte eine Vielzahl von Frontend-Technologien und Konzepten verwenden. Neue Technologien und Methoden schrecken mich nicht ab, sondern sehe ich als ein Mittel, meine Fähigkeiten kontinuierlich zu verbessern und in der sich ständig weiterentwickelnden Landschaft der Webentwicklung vorne zu bleiben.",
+        "intro": "Mit meiner Erfahrung aus einer Vielzahl an Projekten und fundierten Kenntnissen in modernen Frontend-Technologien setze ich anspruchsvolle Webanwendungen effektiv um. Neben Angular und REST-APIs nutze ich Git zur Versionierung und arbeite in agilen Team-Projekten lösungsorientiert und effizient.",
         "sub-subheadline": {
             "part": {
-                "one": "Sie brauchen ",
-                "two": "einen anderen Skill?"
+                "one": "Sie suchen nach ",
+                "two": "einem spezifischen Skill?"
             },
-            "body": "Nehmen Sie gerne Kontakt zu mir auf. Ich freue mich darauf, meine Kompetenzen zu erweitern."
+            "body": "Nehmen Sie gerne Kontakt zu mir auf. Gemeinsam finden wir eine optimale Lösung."
         },
         "button": "Schreiben Sie mir"
     },
@@ -106,17 +106,17 @@
         "subheadline": "Kontakt",
         "title": "Schreiben Sie mir",
         "article": {
-            "headline": "Sie haben ein Problem?",
+            "headline": "Ihre Vision, meine Expertise",
             "p": {
-                "1": "Schreiben Sie mich über das nebenstehende Formular an. Ich freue mich darauf von Ihnen zu hören. Erzählen Sie mir von Ihren Ideen, ich setze Sie um.",
-                "2": "Sie brauchen einen Frontend Entwickler?"
+                "1": "Über das nebenstehende Formular erreichen Sie mich direkt. Ob es um Visionen, Fragen oder konkrete Anforderungen – ich freue mich darauf, gemeinsam mit Ihnen eine passende Lösung zu entwickeln!",
+                "2": "Brauchen Sie Unterstützung im Frontend?"
             },
-            "talk": "Sie haben ihn gefunden!"
+            "talk": "Bei mir sind Sie an der richtigen Adresse."
         },
         "form": {
             "headline": {
-                "name": "Wie lautet Ihr Name?",
-                "email": "Und Ihre E-Mail?",
+                "name": "Ihr Name?",
+                "email": "Ihre E-Mail-Adresse?",
                 "msg": "Wie kann ich helfen?"
             },
             "placeholder": {
@@ -127,7 +127,7 @@
                     "privacy": ""
                 },
                 "error": {
-                    "name": "Denken Sie an Ihren Namen ;-)",
+                    "name": "Ihr Name fehlt noch.",
                     "email": "Hoppla! Die E-Mail wird benötigt.",
                     "email-pattern": "Bitte benutzen Sie das Muster abc@mail.domain",
                     "msg": "Was darf ich für Sie entwickeln?",
