@@ -5,6 +5,7 @@ import { HeaderComponent } from "./shared/components/header/header.component";
 import { MouseComponent } from "./shared/components/mouse/mouse.component";
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Meta } from '@angular/platform-browser';
+import { AnalyticsService } from './services/analytics.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ import { Meta } from '@angular/platform-browser';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  constructor(private translate: TranslateService, private meta: Meta) {
+  constructor(private translate: TranslateService, private meta: Meta, private analyticsService: AnalyticsService) {
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('en');
     this.translate.use(navigator.language.split('-')[0]);

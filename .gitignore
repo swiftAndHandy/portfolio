@@ -42,3 +42,5 @@ testem.log
 Thumbs.db
 
 /src/environments
+/src/app/track-view.php
+/src/app/services/analytics.service.ts
