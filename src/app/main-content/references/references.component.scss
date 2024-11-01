@@ -56,9 +56,9 @@
     @include dflex($gap: 20px);
     .arrow-wrapper {
         width: 40px;
+        cursor: pointer;
         @include afterArrow();
         .arrow {
-            cursor: pointer;
             user-select: none;
             position: relative;
             @include dflex();
