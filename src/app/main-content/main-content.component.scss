@@ -51,7 +51,10 @@ main {
         @include dflex(center, flex-start);
         @include widthLimiter();
         background: $backgroundDark;
-        margin-bottom: 144px;
+        margin-bottom: 64px;
+        @media (max-width: $mobileResolution) {
+          margin-bottom: 100px;
+        }
     }
 }
 
