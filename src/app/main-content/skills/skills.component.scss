@@ -1,4 +1,4 @@
-@use "./../../shared/scss/abstracts/" as *;
+@use "./../../shared/scss/abstracts" as *;
 @use "./../../shared/scss/boxes" as *;
 
 .box--regular {
@@ -31,7 +31,7 @@
             &--colorized {
                 color: $signatureColor !important;
             }
-            
+
         }
     }
 }

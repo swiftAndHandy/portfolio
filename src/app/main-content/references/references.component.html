@@ -1,6 +1,6 @@
 <div id="references" class="anchor"></div>
-<section class="reference-section">
-    <h1 class="headline">{{ 'references.title' | translate }}</h1>
+<section class="reference-section" aria-labelledby="reference-title">
+    <h1 id="reference-title" class="headline">{{ 'references.title' | translate }}</h1>
     <div class="references">
         <div class="blur blur--left"></div>
         @for (giver of refService.referenceGivers; let id = $index; track id;) {

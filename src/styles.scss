@@ -19,12 +19,12 @@ html {
   &::-webkit-scrollbar {
     width: var(--sb-size);
   }
-  
+
   &::-webkit-scrollbar-track {
     background: var(--sb-track-color);
     border-radius: 8px;
   }
-  
+
   &::-webkit-scrollbar-thumb {
     background: var(--sb-thumb-color);
     border-radius: 8px;
@@ -55,10 +55,10 @@ a {
 }
 
 .section__main-title {
-  font-family: "Fira Code", Arial, Helvetica, sans-serif;
-  font-size: clamp(1.2rem, 6dvw, 4rem);
-  font-weight: 700;
-  color: $signatureColor;
+  font-family: "Fira Code", Arial, Helvetica, sans-serif !important;
+  font-size: clamp(1.2rem, 6dvw, 4rem) !important;
+  font-weight: 700 !important;
+  color: $signatureColor !important;
   white-space: nowrap;
 }
 

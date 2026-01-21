@@ -1,5 +1,5 @@
 <article class="reference">
-    <img [id]="'quote' + count" src="./assets/icons/quotes.png" alt="" class="quotes" [ngClass]="{'active': toggleQuotes()}" draggable="false">
+    <img [attr.id]="'quote' + count" src="./assets/icons/quotes.png" alt="" class="quotes" [ngClass]="{'active': toggleQuotes()}" draggable="false">
     <p class="reference__body">{{ returnReferenceTranslation('giver.', '.body') | translate }}</p>
     <div class="reference__footer">
         <div class="spacer line"></div>
@@ -8,7 +8,7 @@
                 <span class="giver__name">{{ refService.referenceGivers[this.count] }}</span>
                 <span aria-hidden="true">-</span>
             </div>
-            <span class="giver__position">{{ returnReferenceTranslation('giver.', '.position') | translate }}</span>
+            <span [attr.id]="'referenceGiver_' +count" class="giver__position">{{ returnReferenceTranslation('giver.', '.position') | translate }}</span>
         </div>
     </div>
 </article>

@@ -81,6 +81,7 @@
     },
     "references": {
         "title": "What my colleagues say about me",
+        "short_title": "Reference",
         "single-reference": {
             "giver": {
                 "phillip-sauer": {
