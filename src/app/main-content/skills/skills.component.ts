@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 })
 export class SkillsComponent {
   displayedSkillToggle: boolean = false;
-  
+
   displayedSkillSet: 'frontend' | 'backend' = 'frontend';
 
   frontendSkills: Skill[] = [
@@ -28,7 +28,8 @@ export class SkillsComponent {
     {'name': 'Scrum'},
     {'name': 'HTML'},
     {'name': 'CSS'},
-    {'name': 'Growth mindset', container: true}
+    {'name': 'Swift'}
+    // {'name': 'Growth mindset', container: true}
   ];
 
   backendSkills: Skill[] = [
@@ -46,12 +47,7 @@ export class SkillsComponent {
   ];
 
   checkContainer(skill: Skill) {
-    return skill.container ? true : false;
-  }
-
-  contactMe() {
-    console.log('klappt');
-    
+    return !!skill.container;
   }
 
   toggleSkillset() {
